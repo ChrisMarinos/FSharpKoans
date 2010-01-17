@@ -1,0 +1,8 @@
+Starting the F# branch of the functional koans.
+
+-The solution is VS2008 because I use ViEmu (a vim plugin for Studio)
+ and it is not released for 2010. I'll try to post a 2010 solution
+ soon.
+
+-The test runner is up and running, but there is some stinky code
+ to refactor.
