@@ -1,0 +1,6 @@
+FSharpKoans.Core/bin/
+FSharpKoans.Core/obj/
+FSharpKoans/bin/
+FSharpKoans/obj/
+KoansRunner.Test/bin/
+KoansRunner.Test/obj/
