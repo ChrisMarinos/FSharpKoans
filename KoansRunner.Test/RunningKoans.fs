@@ -1,6 +1,6 @@
 ﻿module KoansRunner.Test.RunningKoans
-open NUnit.Framework
 open FSharpKoans.Core
+open NUnit.Framework
 
 type FailureContainer() =
     [<Koan>]

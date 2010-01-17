@@ -32,6 +32,10 @@
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core" />
+    <Reference Include="nunit.framework">
+      <HintPath>C:\Users\marinosc\Documents\Visual Studio 2008\Projects\Functional-Koans\functional-koans\lib\NUnit\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -39,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KoanAttribute.fs" />
+    <Compile Include="Helpers.fs" />
     <Compile Include="KoanResult.fs" />
     <Compile Include="KoanContainer.fs" />
     <Compile Include="KoanRunner.fs" />

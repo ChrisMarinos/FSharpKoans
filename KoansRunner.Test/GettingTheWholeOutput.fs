@@ -1,6 +1,6 @@
 ﻿module KoansRunner.Test.GetttingTheWholeOutput
-open NUnit.Framework
 open FSharpKoans.Core
+open NUnit.Framework
 
 type ContainerOne() =
     [<Koan>]

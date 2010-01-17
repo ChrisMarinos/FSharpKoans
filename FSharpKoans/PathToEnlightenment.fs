@@ -1,7 +1,7 @@
 ﻿open FSharpKoans
 open FSharpKoans.Core
 
-let runner = KoanRunner([AboutAsserts()])
+let runner = KoanRunner([``about asserts``()])
 let result = runner.ExecuteKoans
 
 match result with
