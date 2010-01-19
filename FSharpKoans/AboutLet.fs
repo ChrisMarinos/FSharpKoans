@@ -7,7 +7,7 @@ type ``about let``() =
     member this.LetBindsANameToAValue() =
         let x = 50
         
-        AssertEquality 50 __ 
+        AssertEquality x __ 
     
     (* I want to get the following to work. Unfortunately, the current version
        of the F# FSharpCodeProvider requires that fsc.exe be in your path. 
@@ -26,10 +26,12 @@ type ``about let``() =
         AssertEquality __ error *)
     
     [<Koan>]
-    member this.LetAlsoCreatesFunctions() =
+    member this.LetCanAlsoCreateAFunction() =
         let add x y =
             x + y
         
-        let result = add 2 2
+        let result1 = add 2 2
+        let result2 = add 5 2
         
-        AssertEquality result __
+        AssertEquality result1 __
+        AssertEquality result2 __
