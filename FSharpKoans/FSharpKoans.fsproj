@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -32,10 +32,6 @@
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core" />
-    <Reference Include="nunit.framework">
-      <HintPath>C:\Users\marinosc\Documents\Visual Studio 2008\Projects\FSharpKoans\lib\NUnit\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -43,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutAsserts.fs" />
+    <Compile Include="AboutLet.fs" />
     <Compile Include="PathToEnlightenment.fs" />
   </ItemGroup>
   <ItemGroup>

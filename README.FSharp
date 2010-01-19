@@ -1,8 +1,9 @@
 Starting the F# branch of the functional koans.
 
--The solution is VS2008 because I use ViEmu (a vim plugin for Studio)
- and it is not released for 2010. I'll try to post a 2010 solution
- soon.
+-Set the FSharpKoans project as your startup project and run it
+ to get started with the koans.
 
--The test runner is up and running, but there is some stinky code
- to refactor.
+-There are solutions for VS2008 and 2010 because I use ViEmu 
+ (a vim plugin for Studio) and it is not released for 2010. 
+
+-The test runner has some stinky code to refactor.
