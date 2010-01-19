@@ -40,11 +40,12 @@
   <ItemGroup>
     <Compile Include="AboutAsserts.fs" />
     <Compile Include="AboutLet.fs" />
+    <Compile Include="AboutLists.fs" />
     <Compile Include="PathToEnlightenment.fs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FSharpKoans.Core\FsharpKoans.Core.fsproj">
-      <Name>FsharpKoans.Core</Name>
+    <ProjectReference Include="..\FSharpKoans.Core\FSharpKoans.Core.fsproj">
+      <Name>FSharpKoans.Core</Name>
       <Project>{940f1e56-da0a-41df-8ba4-d73ebc95618a}</Project>
       <Private>True</Private>
     </ProjectReference>

@@ -2,7 +2,9 @@
 open FSharpKoans.Core
 
 let (containers: obj list) = [ ``about asserts``(); 
-                               ``about let``() ]
+                               ``about let``();
+                               ``about lists``();
+                               ]
 let runner = KoanRunner(containers)
 let result = runner.ExecuteKoans
 
