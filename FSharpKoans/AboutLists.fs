@@ -5,22 +5,21 @@ type ``about lists``() =
 
     [<Koan>]
     member this.CreatingLists() =
-        let list = [1;2;3;4]
+        let list = ["apple"; "pear"; "grape"; "peach"]
         
-        (* Note: Lists in F# are linked lists, so indexing elements is O(n). 
-                 If you're coming from another .NET language, lists in F# 
-                 are not System.Collections.Generic.List! *)
+        //Note: Lists in F# are linked lists, and indexing elements is O(n). 
         
         AssertEquality list.Head __
         AssertEquality list.Tail __
+        AssertInequality (list.GetType()) typeof<System.Collections.Generic.List<string>>
         
     [<Koan>]
     member this.BuildingLists() =
-        let first = [3; 4]
-        let second = 2 :: first
-        let third = 1 :: second
+        let first = ["grape"; "peach"]
+        let second = "pear" :: first
+        let third = "apple" :: second
         
-        AssertEquality [1; 2; 3; 4] third
+        AssertEquality ["apple"; "pear"; "grape"; "peach"] third
         AssertEquality second __
         AssertEquality first __
         
@@ -33,9 +32,15 @@ type ``about lists``() =
         
     [<Koan>]
     member this.CreatingListsWithComprehensions() =
-        let list = [for i in 0..10 do
-                        if i % 2 = 0 then
-                            yield i ]
+        let list = [for i in 0..4 do yield i ]
+                            
+        AssertEquality list.Head __
+        AssertEquality list.Tail __
+    
+    [<Koan>]
+    member this.ComprehensionsWithConditions() =
+        let list = [for i in 0..10 do 
+                        if i % 2 = 0 then yield i ]
                             
         AssertEquality list.Head __
         AssertEquality list.Tail __

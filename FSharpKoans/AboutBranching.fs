@@ -16,6 +16,10 @@ type ``about branching``() =
     
     [<Koan>]
     member this.IfStatementsReturnValues() =
+    
+        (* In some languages, if statements do not yield results; they only
+           execute code. This isn't true in F# (or most functional languages *)
+           
         let result = 
             if 2 = 3 then
                 "something is REALLY wrong"
@@ -25,7 +29,7 @@ type ``about branching``() =
         AssertEquality result __
 
     [<Koan>]
-    member this.PatternMatchingIsAnotherWayToBranch() =
+    member this.BranchingWithPatternMatching() =
         let isApple x =
             match x with
             | "apple" -> true
@@ -38,11 +42,10 @@ type ``about branching``() =
         AssertEquality result2 __
     
     [<Koan>]
-    member this.UsingTuplesWithIfStatementsCanBeClumsy() =
+    member this.UsingTuplesWithIfStatementsQuicklyBecomesClumsy() =
         
         let getDinner x = 
-            let name = fst x
-            let foodChoice = snd x
+            let name, foodChoice = x
             
             if foodChoice = "veggies" || foodChoice ="fish" || 
                foodChoice = "chicken" then
