@@ -7,7 +7,7 @@ type ``about let``() =
     member this.LetBindsANameToAValue() =
         let x = 50
         
-        AssertEquality x 50
+        AssertEquality x __
     
     [<Koan>]
     member this.LetInfersTheTypesOfValuesWherePossible() =
@@ -15,7 +15,7 @@ type ``about let``() =
         
         let expectedType = x.GetType()
         
-        AssertEquality expectedType typeof<___>
+        AssertEquality expectedType typeof<FILL_ME_IN>
     
     [<Koan>]
     member this.YouCannotModifyAValueOnceItIsBound() =
@@ -29,7 +29,7 @@ type ``about let``() =
 
         //What compile error does statement2 cause?
         //Hint: execute the above statements in F# Interactive
-        AssertEquality __ error
+        AssertEquality error __
     
     [<Koan>]
     member this.LetCanAlsoCreateFunctions() =

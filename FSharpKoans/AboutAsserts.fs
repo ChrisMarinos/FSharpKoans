@@ -30,4 +30,4 @@ type ``about asserts``() =
     // Sometimes we will ask you to fill in the values
     [<Koan>]
     member this.FillInValues() =
-        AssertEquality (1 + 1) __ 
+        AssertEquality (1 + 1) __

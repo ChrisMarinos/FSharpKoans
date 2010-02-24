@@ -43,7 +43,6 @@
     <Compile Include="AboutTuples.fs" />
     <Compile Include="AboutBranching.fs" />
     <Compile Include="AboutLists.fs" />
-    <Compile Include="AboutSeq.fs" />
     <Compile Include="PathToEnlightenment.fs" />
   </ItemGroup>
   <ItemGroup>

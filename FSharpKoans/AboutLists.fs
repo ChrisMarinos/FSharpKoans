@@ -34,13 +34,11 @@ type ``about lists``() =
     member this.CreatingListsWithComprehensions() =
         let list = [for i in 0..4 do yield i ]
                             
-        AssertEquality list.Head __
-        AssertEquality list.Tail __
+        AssertEquality list __
     
     [<Koan>]
     member this.ComprehensionsWithConditions() =
         let list = [for i in 0..10 do 
                         if i % 2 = 0 then yield i ]
                             
-        AssertEquality list.Head __
-        AssertEquality list.Tail __
+        AssertEquality list __

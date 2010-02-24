@@ -6,7 +6,7 @@ open NUnit.Framework
 
 let __ = "FILL ME IN"
 
-type ___ =
+type FILL_ME_IN =
     class end
 
 let AssertWithMessage x message = Assert.IsTrue(x, message)

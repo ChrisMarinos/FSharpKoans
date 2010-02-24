@@ -36,7 +36,7 @@ type ``about branching``() =
             | _ -> false
         
         let result1 = isApple "apple"
-        let result2 = isApple "apple"
+        let result2 = isApple ""
         
         AssertEquality result1 __
         AssertEquality result2 __
@@ -67,7 +67,7 @@ type ``about branching``() =
             | (name, "veggies")
             | (name, "fish")
             | (name, "chicken") -> name + " doesn't want red meat"
-            | (name, foodChoice) -> name + "wants 'em some " + foodChoice 
+            | (name, foodChoice) -> name + " wants 'em some " + foodChoice 
             
         let person1 = ("Bob", "fish")
         let person2 = ("Sally", "Burger")
