@@ -19,7 +19,7 @@ let Assert x = Assert.IsTrue(x)
 
 
 let compileCode statements =
-    let code = 
+    let code =  
         statements
         |> String.concat System.Environment.NewLine
     

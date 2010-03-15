@@ -1,9 +1,15 @@
-Starting the F# branch of the functional koans.
+-Before you begin, make sure to install the F# PowerPack.
+ You can find installation instructions at http://fsharppowerpack.codeplex.com/.
 
--Set the FSharpKoans project as your startup project and run it
- to get started with the koans.
+-After installing the Powerpack, open the Visual Studio project, right click on
+ the "FSharpKoans" project in the solution explorer and select 
+ "Set as StartUp Project".
 
--There are solutions for VS2008 and 2010 because I use ViEmu 
- (a vim plugin for Studio) and it is not released for 2010. 
+-You'll want to turn off User-unhandled Exceptions. Go to Debug|Exceptions and
+ uncheck the User-unhandled box from the Common Language Runtime Exceptions
+ item.
 
--The test runner has some stinky code to refactor.
+-You can now run the Koans by selecting Debug|Start Debugging (defaults to f5).
+ NOTE: the koans currently run slow in the VS2010 RC debugger. It is
+ reccomended that you run the koans without the debugger. You can do this by
+ selecting Debug|Start Without Debugging (defaults to Ctrl-f5).
