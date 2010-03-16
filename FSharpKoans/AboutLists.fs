@@ -11,17 +11,31 @@ type ``about lists``() =
         
         AssertEquality list.Head __
         AssertEquality list.Tail __
+        AssertEquality list.Length __
         AssertInequality (list.GetType()) typeof<System.Collections.Generic.List<string>>
         
     [<Koan>]
-    member this.BuildingLists() =
+    member this.BuildingListsWithCons() =
         let first = ["grape"; "peach"]
         let second = "pear" :: first
         let third = "apple" :: second
+
+        //Note: "::" is known as "cons"
         
         AssertEquality ["apple"; "pear"; "grape"; "peach"] third
         AssertEquality second __
         AssertEquality first __
+
+    [<Koan>]
+    member this.AppendingToLists() =
+        let first = ["apple"; "pear"; "grape"]
+        let second = first @ ["peach"]
+
+        AssertEquality first __
+        AssertEquality second __
+
+    (* THINK ABOUT IT: In general, what performs better
+       for building lists, :: or @? Why? *)
         
     [<Koan>]
     member this.CreatingListsWithARange() =
@@ -42,3 +56,36 @@ type ``about lists``() =
                         if i % 2 = 0 then yield i ]
                             
         AssertEquality list __
+
+    [<Koan>]
+    member this.TransofmingListsWithMap() =
+        let square x =
+            x * x
+
+        let original = [0..5]
+        let result = List.map square original
+
+        AssertEquality original __
+        AssertEquality result __
+
+    [<Koan>]
+    member this.FilteringListsWithWhere() =
+        let isEven x =
+            x % 2 = 0
+
+        let original = [0..5]
+        let result = List.filter isEven original
+
+        AssertEquality original __
+        AssertEquality result __
+
+    [<Koan>]
+    member this.DividingListsWithPartition() =
+        let isOdd x =
+            not(x % 2 = 0)
+
+        let original = [0..5]
+        let result1, result2 = List.partition isOdd original
+        
+        AssertEquality result1 __
+        AssertEquality result2 __

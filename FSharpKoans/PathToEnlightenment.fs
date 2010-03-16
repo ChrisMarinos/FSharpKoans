@@ -6,7 +6,8 @@ let (containers: obj list) = [ ``about asserts``();
                                ``about functions``();
                                ``about tuples``();
                                ``about branching``();
-                               ``about lists``();
+                               ``about lists``
+                               ``about pipelining``();
                                ]
 let runner = KoanRunner(containers)
 let result = runner.ExecuteKoans
