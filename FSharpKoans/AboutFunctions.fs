@@ -13,7 +13,7 @@ type ``about functions``() =
         x + y
 
     [<Koan>]
-    member this.CreatingFunctions() =
+    member this.CreatingFunctionsWithLet() =
         let result1 = add 2 2
         let result2 = add 5 2
         
@@ -29,16 +29,4 @@ type ``about functions``() =
             double(double(x))
 
         let result = quadruple 4
-        AssertEquality result __
-
-    [<Koan>]
-    member this.LambdasAreAnotherWayToDefineMethods() =
-        let double = (fun x -> x * 2)
-        
-        (* The difference between this syntax and let 
-           bound functions may seem subtle now. You'll 
-           encounter situations where both are useful
-           as you progress. *)
-
-        let result = double 8
         AssertEquality result __
