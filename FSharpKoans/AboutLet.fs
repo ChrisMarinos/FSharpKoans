@@ -18,7 +18,7 @@ type ``about let``() =
         AssertEquality expectedType typeof<FILL_ME_IN>
     
     [<Koan>]
-    member this.YouCannotModifyAValueOnceItIsBound() =
+    member this.YouCannotModifyAnImmutableValue() =
     
         // the following is syntactically invalid F# code, so
         // we compile it using strings: 
@@ -32,12 +32,8 @@ type ``about let``() =
         AssertEquality error __
     
     [<Koan>]
-    member this.LetCanAlsoCreateFunctions() =
-        let add x y =
-            x + y
-        
-        let result1 = add 2 2
-        let result2 = add 5 2
-        
-        AssertEquality result1 __
-        AssertEquality result2 __
+    member this.YouCanModifyMutableVariables() =
+        let mutable x = 100
+        x <- 200
+
+        AssertEquality x __

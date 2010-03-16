@@ -3,6 +3,7 @@ open FSharpKoans.Core
 
 let (containers: obj list) = [ ``about asserts``(); 
                                ``about let``();
+                               ``about functions``();
                                ``about tuples``();
                                ``about branching``();
                                ``about lists``();

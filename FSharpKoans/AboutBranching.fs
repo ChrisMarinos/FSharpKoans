@@ -18,7 +18,7 @@ type ``about branching``() =
     member this.IfStatementsReturnValues() =
     
         (* In some languages, if statements do not yield results; they only
-           execute code. This isn't true in F# (or most functional languages *)
+           execute code. This isn't true in F# (or most functional languages) *)
            
         let result = 
             if 2 = 3 then

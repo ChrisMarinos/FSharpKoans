@@ -18,6 +18,10 @@ type ``about tuples``() =
         
         AssertEquality fruit __
         AssertEquality animal __
+
+    (* although you can access the items
+       of a two element tuple with fst and snd,
+       it's far more common to use pattern matching *)
         
     [<Koan>]
     member this.AccessingTupleElementsWithPatternMatching() =
