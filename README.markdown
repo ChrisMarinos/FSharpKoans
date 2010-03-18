@@ -1,4 +1,4 @@
-# Functional Koans - F\#
+# Functional Koans - F# #
 
 Based on EdgeCase's fantastic [Ruby koans](http://github.com/edgecase/ruby_koans),
 the goal of the F# koans is to teach you F# through testing.
@@ -17,7 +17,7 @@ you to solve more complicated problems and use more advanced techniques.
 ### Getting Started
 
 The F# koans require the F# PowerPack. Installation instructions for the
-can be found at [http://fsharppowerpack.codeplex.com/]
+can be found at its [codeplex page](fsharppowerpack.codeplex.com)
 
 
 ### Running the Koans
