@@ -1,6 +1,6 @@
-# Functional Koans - F#
+# Functional Koans - F\#
 
-Based on EdgeCase's fantastic Ruby koans http://github.com/edgecase/ruby_koans,
+Based on EdgeCase's fantastic [Ruby koans](http://github.com/edgecase/ruby_koans),
 the goal of the F# koans is to teach you F# through testing.
 
 When you first run the koans, you'll be presented with a runtime error and a
@@ -17,7 +17,7 @@ you to solve more complicated problems and use more advanced techniques.
 ### Getting Started
 
 The F# koans require the F# PowerPack. Installation instructions for the
-can be found at http://fsharppowerpack.codeplex.com/
+can be found at [http://fsharppowerpack.codeplex.com/]
 
 
 ### Running the Koans
@@ -33,7 +33,7 @@ item.
 You can now run the Koans by selecting Debug|Start Debugging (defaults to f5).
 
 
-A note for VisualStudio2010 RC users:
+*A note for VisualStudio2010 RC users:*
 
 The koans currently run slow in the VS2010 RC debugger. It is
 reccomended that you run the koans without the debugger. You can do this by
