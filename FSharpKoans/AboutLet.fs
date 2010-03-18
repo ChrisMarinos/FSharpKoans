@@ -12,9 +12,11 @@ type ``about let``() =
     [<Koan>]
     member this.LetInfersTheTypesOfValuesWherePossible() =
         let x = 50
-        
-        let expectedType = x.GetType()
-        
+        let typeOfX = x.GetType()
+        AssertEquality x typeof<int>
+
+        let y = "a string"
+        let expectedType = y.GetType()
         AssertEquality expectedType typeof<FILL_ME_IN>
     
     [<Koan>]

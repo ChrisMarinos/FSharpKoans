@@ -12,6 +12,10 @@ type ``about lists``() =
         AssertEquality list.Head __
         AssertEquality list.Tail __
         AssertEquality list.Length __
+
+        (* .NET developers coming from other languages may be surprised
+          that the following assertion is true. Note that F#'s built in 
+          list type is not the same as the base class library's List<T> *)
         AssertInequality (list.GetType()) typeof<System.Collections.Generic.List<string>>
         
     [<Koan>]
@@ -27,15 +31,22 @@ type ``about lists``() =
         AssertEquality first __
 
     [<Koan>]
-    member this.AppendingToLists() =
+    member this.ConcatenatingLists() =
         let first = ["apple"; "pear"; "grape"]
         let second = first @ ["peach"]
 
         AssertEquality first __
         AssertEquality second __
 
-    (* THINK ABOUT IT: In general, what performs better
-       for building lists, :: or @? Why? *)
+    (* THINK ABOUT IT:
+       In general, what performs better for 
+       building lists, :: or @? Why?
+       
+       Hint:
+       There is no way to modify "first" in
+       the above example. It's immutable.
+       With that in mind, how can ["peach"] be
+       appended to "first" to create "second"? *)
         
     [<Koan>]
     member this.CreatingListsWithARange() =
