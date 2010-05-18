@@ -18,7 +18,8 @@ type ``about branching``() =
     member this.IfStatementsReturnValues() =
     
         (* In some languages, if statements do not yield results; they only
-           execute code. This isn't true in F# (or most functional languages) *)
+           execute code. This isn't true in F# due to its functional programming
+           roots. *)
            
         let result = 
             if 2 = 3 then
@@ -29,7 +30,7 @@ type ``about branching``() =
         AssertEquality result __
 
     [<Koan>]
-    member this.BranchingWithPatternMatching() =
+    member this.BranchingWithAPatternMatch() =
         let isApple x =
             match x with
             | "apple" -> true

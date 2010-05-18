@@ -21,7 +21,9 @@ type ``about tuples``() =
 
     (* although you can access the items
        of a two element tuple with fst and snd,
-       it's far more common to use pattern matching *)
+       it's often better to use a technique
+       called pattern matching to access the
+       elements of a tuple *)
         
     [<Koan>]
     member this.AccessingTupleElementsWithPatternMatching() =
@@ -41,8 +43,8 @@ type ``about tuples``() =
         
         AssertEquality animal __
     
-    (* NOTE: Pattern matching is found in many places
-             throughout F#, we'll revisit it again later *)
+    (* NOTE: pattern matching is found in many places
+             throughout F#, and we'll revisit it again later *)
         
     [<Koan>]
     member this.ReturningMultipleValuesFromAFunction() =
@@ -55,7 +57,9 @@ type ``about tuples``() =
         AssertEquality squared __
         AssertEquality cubed __
     
-    //THINK ABOUT IT: Are there really multiple return values?
+    (* THINK ABOUT IT: Is there really more than one return value?
+                       What type does the squareAndCube function
+                       return? *)
     
     [<Koan>]
     member this.TheTruthBehindMultipleReturnValues() =

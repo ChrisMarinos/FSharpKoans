@@ -13,7 +13,7 @@ type ``about let``() =
     member this.LetInfersTheTypesOfValuesWherePossible() =
         let x = 50
         let typeOfX = x.GetType()
-        AssertEquality x typeof<int>
+        AssertEquality typeOfX typeof<int>
 
         let y = "a string"
         let expectedType = y.GetType()
@@ -22,15 +22,17 @@ type ``about let``() =
     [<Koan>]
     member this.YouCannotModifyAnImmutableValue() =
     
-        // the following is syntactically invalid F# code, so
-        // we compile it using strings: 
+        (* the following is syntactically invalid F# code, so
+           we compile it using strings: *)
         let statement1 = "let x = 50"
         let statement2 = "x <- 100"
          
         let error = compileCode [statement1; statement2] 
 
-        //What compile error does statement2 cause?
-        //Hint: execute the above statements in F# Interactive
+        (* What compile error does statement2 cause?
+           Hint: execute the above statements in F# Interactive
+                 (note that the below blank asks for the error
+                  message, not the error number) *) 
         AssertEquality error __
     
     [<Koan>]

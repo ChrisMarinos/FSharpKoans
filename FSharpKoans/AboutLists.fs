@@ -15,7 +15,8 @@ type ``about lists``() =
 
         (* .NET developers coming from other languages may be surprised
           that the following assertion is true. Note that F#'s built in 
-          list type is not the same as the base class library's List<T> *)
+          list type is not the same as the base class library's List<T>.
+          In other words, the following assertion is true *)
         AssertInequality (list.GetType()) typeof<System.Collections.Generic.List<string>>
         
     [<Koan>]
@@ -42,11 +43,9 @@ type ``about lists``() =
        In general, what performs better for 
        building lists, :: or @? Why?
        
-       Hint:
-       There is no way to modify "first" in
-       the above example. It's immutable.
-       With that in mind, how can ["peach"] be
-       appended to "first" to create "second"? *)
+       Hint: There is no way to modify "first" in the above example. It's
+       immutable. With that in mind, what does the @ function have to do in
+       order to append ["peach"] to "first" to create "second"? *)
         
     [<Koan>]
     member this.CreatingListsWithARange() =

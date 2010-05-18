@@ -7,7 +7,7 @@ type ``about asserts``() =
 
     [<Koan>]
     member this.AssertTruth() =
-        // This should be true 
+        // This should be true
         Assert false 
         
     (* Enlightenment may be more easily achieved with appropriate
