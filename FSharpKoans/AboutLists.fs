@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
+open System.Collections.Generic
 
 type ``about lists``() =
 
@@ -14,11 +15,34 @@ type ``about lists``() =
         AssertEquality list.Length __
 
         (* .NET developers coming from other languages may be surprised
-          that the following assertion is true. Note that F#'s built in 
-          list type is not the same as the base class library's List<T>.
-          In other words, the following assertion is true *)
-        AssertInequality (list.GetType()) typeof<System.Collections.Generic.List<string>>
+           that F#'s list type is not the same as the base class library's
+           List<T>. In other words, the following assertion is true *)
+
+        let dotNetList = new List<string>()
+        AssertInequality (list.GetType()) (dotNetList.GetType())
+
+    [<Koan>]
+    member this.ListImmutability() =
+        let statement1 = "let list = [1; 2; 4]"
+        let statement2 = "let newTail = [3; 5]"
+        let statement3 = "list.Tail <- newTail"
         
+        let error = compileCode [statement1; statement2; statement3]
+
+        AssertEquality error __
+
+    [<Koan>]
+    member this.MoreListImmutability() =
+        let statement1 = "let list = [1; 2; 4]"
+        let statement2 = "list.Head <- 0"
+        
+        let error = compileCode [statement1; statement2]
+
+        AssertEquality error __
+
+    (* THINK ABOUT IT: If you can't modify the head or tail of the list, 
+       can you change the contents of F# lists? *)
+
     [<Koan>]
     member this.BuildingListsWithCons() =
         let first = ["grape"; "peach"]
@@ -39,9 +63,8 @@ type ``about lists``() =
         AssertEquality first __
         AssertEquality second __
 
-    (* THINK ABOUT IT:
-       In general, what performs better for 
-       building lists, :: or @? Why?
+    (* THINK ABOUT IT: In general, what performs better for building lists, 
+       :: or @? Why?
        
        Hint: There is no way to modify "first" in the above example. It's
        immutable. With that in mind, what does the @ function have to do in
@@ -99,3 +122,7 @@ type ``about lists``() =
         
         AssertEquality result1 __
         AssertEquality result2 __
+
+    (* Note: There are many other useful methods in the List module. Check them
+       via intellisense in Visual Studio by typing '.' after List, or online at
+       http://msdn.microsoft.com/en-us/library/ee353738.aspx *)
