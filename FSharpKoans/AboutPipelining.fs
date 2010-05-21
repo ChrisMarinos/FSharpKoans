@@ -39,7 +39,7 @@ type ``about pipelining``() =
     [<Koan>]
     member this.SquareEvenNumbersWithPipelineOperator() =
         (* In F#, you can use the pipeline operator to get the benefit of the 
-           parens style with the readablity of the stateemnt style. *)
+           parens style with the readablity of the statement style. *)
 
         let result =
             [0..5]
