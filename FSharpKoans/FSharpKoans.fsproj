@@ -50,6 +50,7 @@
     <Compile Include="AboutBranching.fs" />
     <Compile Include="AboutLists.fs" />
     <Compile Include="AboutPipelining.fs" />
+    <Compile Include="AboutHowToApplyWhatYouLearnedSoFar.fs" />
     <Compile Include="PathToEnlightenment.fs" />
   </ItemGroup>
   <ItemGroup>
