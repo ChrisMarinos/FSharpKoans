@@ -20,7 +20,5 @@ type ``about how to apply what you've learned so far``() =
        in order to make it pass. *)
 
     [<Koan>]
-    member this.TODO() =
+    member this.Multipl() =
         ()
-        
-

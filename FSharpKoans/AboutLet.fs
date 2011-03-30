@@ -20,24 +20,22 @@ type ``about let``() =
         AssertEquality expectedType typeof<FILL_ME_IN>
     
     [<Koan>]
-    member this.YouCannotModifyAnImmutableValue() =
-    
-        (* the following is syntactically invalid F# code, so
-           we compile it using strings: *)
-        let statement1 = "let x = 50"
-        let statement2 = "x <- 100"
-         
-        let error = compileCode [statement1; statement2] 
-
-        (* What compile error does statement2 cause?
-           Hint: execute the above statements in F# Interactive
-                 (note that the below blank asks for the error
-                  message, not the error number) *) 
-        AssertEquality error __
-    
-    [<Koan>]
-    member this.YouCanModifyMutableVariables() =
+    member this.ModifyingTheValueOfVariables() =
         let mutable x = 100
         x <- 200
 
+        AssertEquality x __
+
+    [<Koan>]
+    member this.YouCannotModifyALetBoundValueIfItIsNotMutable() =
+        let x = 50
+        
+        //What happens if you uncomment the following?
+        //
+        //x <- 100
+
+        //NOTE: Although you can't modify immutable values, it is possible
+        //      to reuse the name of a value in some cases using "shadowing".
+        let x = 100
+         
         AssertEquality x __

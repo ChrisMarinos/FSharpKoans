@@ -37,7 +37,6 @@
     <Compile Include="FindingKoans.fs" />
     <Compile Include="RunningKoans.fs" />
     <Compile Include="GettingTheWholeOutput.fs" />
-    <Compile Include="GettingCompileErrorsInStrings.fs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

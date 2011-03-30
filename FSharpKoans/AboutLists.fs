@@ -22,29 +22,7 @@ type ``about lists``() =
         AssertInequality (list.GetType()) (dotNetList.GetType())
 
     [<Koan>]
-    member this.ListImmutability() =
-        let statement1 = "let list = [1; 2; 4]"
-        let statement2 = "let newTail = [3; 5]"
-        let statement3 = "list.Tail <- newTail"
-        
-        let error = compileCode [statement1; statement2; statement3]
-
-        AssertEquality error __
-
-    [<Koan>]
-    member this.MoreListImmutability() =
-        let statement1 = "let list = [1; 2; 4]"
-        let statement2 = "list.Head <- 0"
-        
-        let error = compileCode [statement1; statement2]
-
-        AssertEquality error __
-
-    (* THINK ABOUT IT: If you can't modify the head or tail of the list, 
-       can you change the contents of F# lists? *)
-
-    [<Koan>]
-    member this.BuildingListsWithCons() =
+    member this.BuildingNewLists() =
         let first = ["grape"; "peach"]
         let second = "pear" :: first
         let third = "apple" :: second
@@ -54,6 +32,15 @@ type ``about lists``() =
         AssertEquality ["apple"; "pear"; "grape"; "peach"] third
         AssertEquality second __
         AssertEquality first __
+
+        //What happens if you uncomment the following?
+
+        //first.Head <- "apple"
+        //first.Tail <- ["peach"; "pear"]
+
+        //THINK ABOUT IT: Can you change the contents of a list once it has been
+        //                created?
+
 
     [<Koan>]
     member this.ConcatenatingLists() =
