@@ -31,10 +31,3 @@ uncheck the User-unhandled box from the Common Language Runtime Exceptions
 item.
 
 You can now run the Koans by selecting Debug|Start Debugging (defaults to f5).
-
-
-*A note for VisualStudio2010 RC users:*
-
-The koans currently run slow in the VS2010 RC debugger. It is
-reccomended that you run the koans without the debugger. You can do this by
-selecting Debug|Start Without Debugging (defaults to Ctrl-f5).
