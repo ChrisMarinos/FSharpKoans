@@ -17,7 +17,7 @@ you to solve more complicated problems and use more advanced techniques.
 ### Getting Started
 
 The F# koans require the F# PowerPack. Installation instructions for the powerpack
-can be found at its [codeplex page](fsharppowerpack.codeplex.com)
+can be found at its [codeplex page](http://fsharppowerpack.codeplex.com)
 
 
 ### Running the Koans
