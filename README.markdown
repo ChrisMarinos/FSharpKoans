@@ -16,9 +16,9 @@ you to solve more complicated problems and use more advanced techniques.
 
 ### Getting Started
 
-The F# koans require the F# PowerPack. Installation instructions for the powerpack
-can be found at its [codeplex page](http://fsharppowerpack.codeplex.com)
-
+The F# Koans are currently target Visual Studio 2010. The koans
+should also work with Visual Studio 2008, comand line Mono, and monodevelop.
+Instructions for those configurations are still //TODO for the time being.
 
 ### Running the Koans
 
