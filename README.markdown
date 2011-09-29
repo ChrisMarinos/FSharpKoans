@@ -24,7 +24,7 @@ Instructions for those configurations are still //TODO for the time being.
 
 ### Running the Koans
 
-After installing the Powerpack, open the Visual Studio project, right click on
+After installing the Powerpack (http://fsharppowerpack.codeplex.com/), open the Visual Studio project, right click on
 the "FSharpKoans" project in the solution explorer and select 
 "Set as StartUp Project".
 
