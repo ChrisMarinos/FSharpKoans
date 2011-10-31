@@ -7,9 +7,9 @@ type ``about branching``() =
     member this.BasicBranching() =
         let isEven x =
             if x % 2 = 0 then
-                "true"
+                "it's even!"
             else
-                "false"
+                "it's odd!"
                 
         let result = isEven 2                
         AssertEquality result __
