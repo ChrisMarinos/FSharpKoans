@@ -78,7 +78,7 @@ type ``about lists``() =
         AssertEquality list __
 
     [<Koan>]
-    member this.TransofmingListsWithMap() =
+    member this.TransformingListsWithMap() =
         let square x =
             x * x
 

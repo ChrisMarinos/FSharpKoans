@@ -20,9 +20,11 @@ The F# Koans are currently target Visual Studio 2010. The koans
 should also work with Visual Studio 2008, comand line Mono, and monodevelop.
 Instructions for those configurations are still //TODO for the time being.
 
+*NOTE: nuget (http://nuget.codeplex.com/) is required to properly resolve dependencies.*
+
 ### Running the Koans
 
-After installing the Powerpack, open the Visual Studio project, right click on
+After installing the Powerpack (http://fsharppowerpack.codeplex.com/), open the Visual Studio project, right click on
 the "FSharpKoans" project in the solution explorer and select 
 "Set as StartUp Project".
 
