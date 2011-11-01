@@ -17,9 +17,9 @@ type ``about branching``() =
     [<Koan>]
     member this.IfStatementsReturnValues() =
     
-        (* In some languages, if statements do not yield results; they only
-           execute code. This isn't true in F# due to its functional programming
-           roots. *)
+        (* In languages like C#, if statements do not yield results; they can 
+           only cause side effects. If statements in F# return values due to 
+           F#'s functional programming roots. *)
            
         let result = 
             if 2 = 3 then
