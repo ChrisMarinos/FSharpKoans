@@ -36,3 +36,27 @@ type ``more about functions``() =
 
         AssertEquality unluckyNumber __
         AssertEquality luckyNumber __
+
+
+    [<Koan>]
+    member this.NonCurriedFunctions() =
+        (* The normal function syntax for F# allows you to partially apply 
+           arguments as you just saw. Functions that allow you to do this are
+           said to be curried. However, you can also write functions in an 
+           uncurried form to make them easier to use from languages like C#
+           where currying is not as commonly used. *)
+
+        let add(x, y) =
+            x + y
+
+        (* NOTE: "add 5" will not compile now. You have to pass both arguments 
+                 at once *)
+
+        let result = add(5, 40)
+
+        AssertEquality result __
+
+        (* THINK ABOUT IT: You learned earlier that functions with multiple 
+                           return values are really just functions that return
+                           tuples. Do functions defined in the uncurried form
+                           really accept more than one argument at a time? *)
