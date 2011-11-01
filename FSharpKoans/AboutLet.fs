@@ -29,6 +29,10 @@ type ``about let``() =
 
         AssertEquality typeOfX typeof<FILL_ME_IN>
         AssertEquality typeOfY typeof<FILL_ME_IN>
+
+        (* You don't usually need to provide explicit type annotations types for 
+           local varaibles, but they can come in handy in other contexts as 
+           you'll see later. *)
     
     [<Koan>]
     member this.ModifyingTheValueOfVariables() =
