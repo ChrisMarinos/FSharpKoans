@@ -18,6 +18,17 @@ type ``about let``() =
         let y = "a string"
         let expectedType = y.GetType()
         AssertEquality expectedType typeof<FILL_ME_IN>
+
+    [<Koan>]
+    member this.YouCanMakeTypesExplicit() =
+        let (x:int) = 42
+        let typeOfX = x.GetType()
+
+        let y:string = "forty two"
+        let typeOfY = y.GetType()
+
+        AssertEquality typeOfX typeof<FILL_ME_IN>
+        AssertEquality typeOfY typeof<FILL_ME_IN>
     
     [<Koan>]
     member this.ModifyingTheValueOfVariables() =
