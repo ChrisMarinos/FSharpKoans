@@ -19,17 +19,33 @@ type ``more about functions``() =
            or lambda functions. *)
 
     [<Koan>]
-    member this.PartialApplication() =
+    member this.FunctionsThatReturnFunctions() =
+        (* A neat functional programming trick is to create functions that 
+           return other functions. This leads to some interesting behaviors. *)
+        let add x =
+            (fun y -> x + y)
+
+        (* F#'s lightweight syntax allows you to call both functions as if there
+           was only one *)
+        let simpleResult = add 2 4
+        AssertEquality simpleResult __
+
+        (* ...but you can also pass only one argument at a time to create
+           residual functions. This technique is known as partial appliction. *)
+        let addTen = add 10
+        let fancyResult = addTen 14
+
+        AssertEquality fancyResult __
+
+        //NOTE: Functions written in this style are said to be curried.
+
+    [<Koan>]
+    member this.AutomaticCurrying() =
+        (* The above technique is common enough that F# actually supports this
+           by default. In other words, functions are automatically curried. *)
         let add x y = 
             x + y
 
-        (* You already know that you can pass multiple arguments to a function 
-           at once *)
-        let thirteen = add 6 7
-        AssertEquality thirteen __
-
-        (* but you can also pass arguments one at a time to create residual 
-          functions. This is called Partial Application. *)
         let addSeven = add 7
         let unluckyNumber = addSeven 6
         let luckyNumber = addSeven 0
@@ -37,14 +53,12 @@ type ``more about functions``() =
         AssertEquality unluckyNumber __
         AssertEquality luckyNumber __
 
-
     [<Koan>]
     member this.NonCurriedFunctions() =
-        (* The normal function syntax for F# allows you to partially apply 
-           arguments as you just saw. Functions defined in this form are said 
-           to be curried. However, you can also write functions in an uncurried 
-           form to make them easier to use from languages like C# where currying 
-           is not as commonly used. *)
+        (* You should stick to the auto-curried function syntax most of the 
+           time. However, you can also write functions in an uncurried form to
+           make them easier to use from languages like C# where currying is not 
+           as commonly used. *)
 
         let add(x, y) =
             x + y
