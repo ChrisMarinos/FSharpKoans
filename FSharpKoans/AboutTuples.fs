@@ -19,14 +19,17 @@ type ``about tuples``() =
         AssertEquality fruit __
         AssertEquality animal __
 
-    (* although you can access the items
-       of a two element tuple with fst and snd,
-       it's often better to use a technique
-       called pattern matching to access the
-       elements of a tuple *)
-        
     [<Koan>]
     member this.AccessingTupleElementsWithPatternMatching() =
+
+        (* fst and snd are useful in some situations, but they only work with
+           tuples containing two elements. It's usually better to use a 
+           technique called pattern matching to access the values of a tuple. 
+           
+           Pattern matching works with tuples of any arity, and it allows you to 
+           simultaneously break apart the tuple while assigning a name to each 
+           value. Here's an example. *)
+        
         let items = ("apple", "dog", "Mustang")
         
         let fruit, animal, car = items
