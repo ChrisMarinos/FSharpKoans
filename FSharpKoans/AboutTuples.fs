@@ -7,7 +7,7 @@ type ``about tuples``() =
     member this.CreatingTuples() =
         let items = ("apple", "dog")
         
-        AssertEquality items __
+        AssertEquality items ("apple", __)
         
     [<Koan>]
     member this.AccessingTupleElements() =
