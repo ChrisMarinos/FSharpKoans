@@ -41,10 +41,10 @@ type ``more about functions``() =
     [<Koan>]
     member this.NonCurriedFunctions() =
         (* The normal function syntax for F# allows you to partially apply 
-           arguments as you just saw. Functions that allow you to do this are
-           said to be curried. However, you can also write functions in an 
-           uncurried form to make them easier to use from languages like C#
-           where currying is not as commonly used. *)
+           arguments as you just saw. Functions defined in this form are said 
+           to be curried. However, you can also write functions in an uncurried 
+           form to make them easier to use from languages like C# where currying 
+           is not as commonly used. *)
 
         let add(x, y) =
             x + y
