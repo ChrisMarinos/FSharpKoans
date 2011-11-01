@@ -30,3 +30,22 @@ type ``about functions``() =
 
         let result = quadruple 4
         AssertEquality result __
+
+    [<Koan>]
+    member this.VariablesInTheParentScopeCanBeAccessed() =
+        let suffix = "!!!"
+
+        let caffinate (text:string) =
+            let exclaimed = text + suffix
+            let yelled = exclaimed.ToUpper()
+            yelled.Trim()
+
+        let caffinatedReply = caffinate "hello there"
+
+        AssertEquality caffinatedReply __
+
+        (* NOTE: Accessing the suffix variable in the nested caffinate function 
+                 is known as a closure. 
+                 
+                 See http://en.wikipedia.org/wiki/Closure_(computer_science) 
+                 for more about about closure. *)
