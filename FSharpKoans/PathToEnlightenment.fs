@@ -8,6 +8,7 @@ let (containers: obj list) = [ ``about asserts``();
                                ``about branching``();
                                ``about lists``();
                                ``about pipelining``();
+                               ``about the order of evaluation``();
                                ``more about functions``();
                                ``about record types``();
                                ``about option types``();
