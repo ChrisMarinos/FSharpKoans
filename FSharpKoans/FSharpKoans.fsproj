@@ -54,6 +54,8 @@
     <Compile Include="MoreAboutFunctions.fs" />
     <Compile Include="AboutRecordTypes.fs" />
     <Compile Include="AboutOptionTypes.fs" />
+    <Compile Include="AboutDescriminatedUnions.fs" />
+    <Compile Include="AboutModules.fs" />
     <Compile Include="PathToEnlightenment.fs" />
     <None Include="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
