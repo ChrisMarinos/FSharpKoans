@@ -10,14 +10,14 @@ type ``about record types``() =
 
     [<Koan>]
     member this.RecordsHaveProperties() =
-        let mario = { Name = "Mario"; Occupation = "plumber"; }
+        let mario = { Name = "Mario"; Occupation = "Plumber"; }
 
         AssertEquality mario.Name __
         AssertEquality mario.Occupation __
 
     [<Koan>]
     member this.CreatingFromAnExistingRecord() =
-        let mario = { Name = "Mario"; Occupation = "plumber"; }
+        let mario = { Name = "Mario"; Occupation = "Plumber"; }
         let luigi = { mario with Name = "Luigi"; }
 
         AssertEquality mario.Name __
@@ -28,9 +28,9 @@ type ``about record types``() =
 
     [<Koan>]
     member this.ComparingRecords() =
-        let greenKoopa = { Name = "Koopa"; Occupation = "soilder"; }
-        let bowser = { Name = "Bowser"; Occupation = "kidnapper"; }
-        let redKoopa = { Name = "Koopa"; Occupation = "soilder"; }
+        let greenKoopa = { Name = "Koopa"; Occupation = "Soilder"; }
+        let bowser = { Name = "Bowser"; Occupation = "Kidnapper"; }
+        let redKoopa = { Name = "Koopa"; Occupation = "Soilder"; }
 
         let koopaComparison =
              if greenKoopa = redKoopa then
@@ -46,3 +46,18 @@ type ``about record types``() =
 
         AssertEquality koopaComparison __
         AssertEquality bowserComparison __
+
+    [<Koan>]
+    member this.YouCanPatternMatchAgainstRecords() =
+        let mario = { Name = "Mario"; Occupation = "Plumber"; }
+        let luigi = { Name = "Luigi"; Occupation = "Plumber"; }
+        let bowser = { Name = "Bowser"; Occupation = "Kidnapper"; }
+
+        let determineSide character =
+            match character with
+            | { Occupation = "Plumber" } -> "good guy"
+            | _ -> "bad guy"
+
+        AssertEquality (determineSide mario) __
+        AssertEquality (determineSide luigi) __
+        AssertEquality (determineSide bowser) __
