@@ -51,6 +51,7 @@
     <Compile Include="AboutPipelining.fs" />
     <Compile Include="AboutHowToApplyWhatYouLearnedSoFar.fs" />
     <Compile Include="MoreAboutFunctions.fs" />
+    <Compile Include="AboutRecordTypes.fs" />
     <Compile Include="AboutOptionTypes.fs" />
     <Compile Include="PathToEnlightenment.fs" />
     <None Include="App.config">
