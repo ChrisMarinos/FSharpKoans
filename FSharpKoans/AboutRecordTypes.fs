@@ -1,7 +1,7 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
-type Person = {
+type Character = {
     Name: string
     Occupation: string
 }
