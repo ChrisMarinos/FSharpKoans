@@ -14,6 +14,7 @@ let (containers: obj list) = [ ``about asserts``();
                                ``about option types``();
                                ``about descriminated unions``();
                                ``about modules``();
+                               ``about classes``();
                                ]
 let runner = KoanRunner(containers)
 let result = runner.ExecuteKoans
