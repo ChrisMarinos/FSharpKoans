@@ -12,7 +12,7 @@ type ``about strings``() =
         //NOTE: you can use printf to print to standard output
 
         (* TRY IT: What happens if you change 11 to be something besides 
-                  a number? *)
+                   a number? *)
 
     [<Koan>]
     member this.FormattingOtherTypes() =
