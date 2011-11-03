@@ -9,6 +9,7 @@ let (containers: obj list) = [ ``about asserts``();
                                ``about tuples``();
                                ``about branching``();
                                ``about lists``();
+                               ``about looping``();
                                ``about pipelining``();
                                ``more about functions``();
                                ``about record types``();
