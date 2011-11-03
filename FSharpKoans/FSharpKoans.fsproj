@@ -51,8 +51,10 @@
     <Compile Include="AboutStrings.fs" />
     <Compile Include="AboutBranching.fs" />
     <Compile Include="AboutLists.fs" />
-    <Compile Include="AboutLooping.fs" />
     <Compile Include="AboutPipelining.fs" />
+    <Compile Include="AboutArrays.fs" />
+    <Compile Include="AboutDotNetCollections.fs" />
+    <Compile Include="AboutLooping.fs" />
     <Compile Include="MoreAboutFunctions.fs" />
     <Compile Include="AboutRecordTypes.fs" />
     <Compile Include="AboutOptionTypes.fs" />
