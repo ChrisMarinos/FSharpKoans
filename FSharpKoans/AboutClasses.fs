@@ -59,7 +59,8 @@ type ``about classes``() =
         let result = zombie.Eat "chicken"
         AssertEquality result __
 
-        //TRY IT: Can you access the let bound value outside of the class?
+        (* TRY IT: Can you access the let bound value Zombie2.favoriteFood
+                   outside of the class definition? *)
 
     [<Koan>]
     member this.ClassesCanHaveReadWriteProperties() =
