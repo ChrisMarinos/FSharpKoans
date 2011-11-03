@@ -7,6 +7,7 @@ let (containers: obj list) = [ ``about asserts``();
                                ``about the order of evaluation``();
                                ``about unit``();
                                ``about tuples``();
+                               ``about strings``();
                                ``about branching``();
                                ``about lists``();
                                ``about looping``();

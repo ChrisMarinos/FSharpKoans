@@ -48,6 +48,7 @@
     <Compile Include="AboutTheOrderOfEvaluation.fs" />
     <Compile Include="AboutUnit.fs" />
     <Compile Include="AboutTuples.fs" />
+    <Compile Include="AboutStrings.fs" />
     <Compile Include="AboutBranching.fs" />
     <Compile Include="AboutLists.fs" />
     <Compile Include="AboutLooping.fs" />
