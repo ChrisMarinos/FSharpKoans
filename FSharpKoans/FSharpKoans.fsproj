@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AboutAsserts.fs" />
     <Compile Include="AboutLet.fs" />
+    <Compile Include="AboutUnit.fs" />
     <Compile Include="AboutFunctions.fs" />
     <Compile Include="AboutTuples.fs" />
     <Compile Include="AboutBranching.fs" />

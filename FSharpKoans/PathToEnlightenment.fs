@@ -4,11 +4,12 @@ open FSharpKoans.Core
 let (containers: obj list) = [ ``about asserts``(); 
                                ``about let``();
                                ``about functions``();
+                               ``about the order of evaluation``();
+                               ``about unit``();
                                ``about tuples``();
                                ``about branching``();
                                ``about lists``();
                                ``about pipelining``();
-                               ``about the order of evaluation``();
                                ``more about functions``();
                                ``about record types``();
                                ``about option types``();
