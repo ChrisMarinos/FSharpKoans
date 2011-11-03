@@ -16,20 +16,18 @@ you to solve more complicated problems and use more advanced techniques.
 
 ### Getting Started
 
-The F# Koans are currently target Visual Studio 2010. The koans
-should also work with Visual Studio 2008, comand line Mono, and monodevelop.
+The F# Koans currently target Visual Studio 2010. The koans
+should also work with Visual Studio 2008, Visual Studio 11, comand line Mono, and monodevelop.
 Instructions for those configurations are still //TODO for the time being.
 
 *NOTE: nuget (http://nuget.codeplex.com/) is required to properly resolve dependencies.*
 
 ### Running the Koans
 
-After installing the Powerpack (http://fsharppowerpack.codeplex.com/), open the Visual Studio project, right click on
-the "FSharpKoans" project in the solution explorer and select 
-"Set as StartUp Project".
+1. Open the Visual Studio project, right click on the "FSharpKoans" project in the solution explorer 
+   and select "Set as StartUp Project".
 
-You'll want to turn off User-unhandled Exceptions. Go to Debug|Exceptions and
-uncheck the User-unhandled box from the Common Language Runtime Exceptions
-item.
+2. Turn off User-unhandled Exceptions. Go to Debug|Exceptions and uncheck the User-unhandled box 
+   from the Common Language Runtime Exceptions item.
 
 You can now run the Koans by selecting Debug|Start Debugging (defaults to f5).
