@@ -28,9 +28,9 @@ type ``about record types``() =
 
     [<Koan>]
     member this.ComparingRecords() =
-        let greenKoopa = { Name = "Koopa"; Occupation = "Soilder"; }
+        let greenKoopa = { Name = "Koopa"; Occupation = "Soldier"; }
         let bowser = { Name = "Bowser"; Occupation = "Kidnapper"; }
-        let redKoopa = { Name = "Koopa"; Occupation = "Soilder"; }
+        let redKoopa = { Name = "Koopa"; Occupation = "Soldier"; }
 
         let koopaComparison =
              if greenKoopa = redKoopa then
