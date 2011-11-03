@@ -23,7 +23,7 @@ type ``about option types``() =
 
         AssertEquality noValue.IsSome __
         AssertEquality noValue.IsNone __
-        AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value __)
+        AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value)
 
     [<Koan>]
     member this.UsingOptionTypesWithPatternPatching() =
