@@ -43,6 +43,8 @@ type ``about functions``() =
         let auctioneered = sayItLikeAnAuctioneer "going once going twice sold to the lady in red"
         AssertEquality auctioneered __
 
+        //TRY IT: What happens if you remove the type annotation on text?
+
     [<Koan>]
     member this.VariablesInTheParentScopeCanBeAccessed() =
         let suffix = "!!!"
