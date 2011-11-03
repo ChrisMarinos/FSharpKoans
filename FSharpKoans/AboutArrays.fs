@@ -46,3 +46,4 @@ type ``about arrays``() =
         let result = Array.map cube original
 
         AssertEquality original __
+        AssertEquality result __
