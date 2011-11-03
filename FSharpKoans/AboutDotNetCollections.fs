@@ -33,7 +33,7 @@ type ``about dot net collections``() =
 
         let verboseBook = 
             addressBook
-            |> Seq.map (fun kvp -> sprintf "Name: %s - Address: %s" kvp.Key kvp.Value)
+            |> Seq.map (fun kvp -> sprintf "Name: %s - City: %s" kvp.Key kvp.Value)
             |> Seq.toArray
 
         AssertEquality verboseBook.[0] __
