@@ -1,7 +1,7 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
-type ``about lists``() =
+type ``about looping``() =
     [<Koan>]
     member this.LoopingOverAList() =
         let values = [0..10]
@@ -17,7 +17,7 @@ type ``about lists``() =
         let mutable sum = 0
 
         for i = 1 to 5 do
-            sum <- sum + value
+            sum <- sum + i
 
         AssertEquality sum __
 
