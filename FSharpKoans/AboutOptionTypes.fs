@@ -59,4 +59,4 @@ type ``about option types``() =
 
         //HINT: look at the return type of the decide on function
         AssertEquality (decideOn chronoTrigger) __
-        AssertEquality (decideOn chronoTrigger) __
+        AssertEquality (decideOn gta) __
