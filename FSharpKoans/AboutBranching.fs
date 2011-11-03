@@ -50,9 +50,9 @@ type ``about branching``() =
             
             if foodChoice = "veggies" || foodChoice ="fish" || 
                foodChoice = "chicken" then
-                name + " doesn't want red meat"
+                sprintf "%s doesn't want red meat" name
             else
-                name + " wants 'em some " + foodChoice
+                sprintf "%s wants 'em some %s" name foodChoice
          
         let person1 = ("Chris", "steak")
         let person2 = ("Dave", "veggies")
@@ -67,8 +67,8 @@ type ``about branching``() =
             match x with
             | (name, "veggies")
             | (name, "fish")
-            | (name, "chicken") -> name + " doesn't want red meat"
-            | (name, foodChoice) -> name + " wants 'em some " + foodChoice 
+            | (name, "chicken") -> sprintf "%s doesn't want red meat" name
+            | (name, foodChoice) -> sprintf "%s wants 'em some %s" name foodChoice 
             
         let person1 = ("Bob", "fish")
         let person2 = ("Sally", "Burger")
