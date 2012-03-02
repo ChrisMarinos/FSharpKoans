@@ -1,35 +1,40 @@
 ﻿namespace FSharpKoans.Core
 open System
+open System.Collections.Generic
 
-//TODO: refactor this filth
 type KoanRunner(containers) =
-    let combine joinMessages message (next:KoanResult) =
-        let message = joinMessages message next.Message
-        
-        match next with
-        | Success _ -> Success(message)
-        | Failure (_, ex) -> Failure(message, ex)
-        
-    let combineUnlessFailed joinMessages state next =
-        match state with
-        | Success s -> combine joinMessages s next
-        | Failure _ -> state
-            
-    let executeContainer container =
+    let findFailureOrLastResult (values:seq<KoanResult>) =
+        let e = values.GetEnumerator()
+        let rec helper() =
+            let last = e.Current
+            if e.MoveNext() then
+                match e.Current with
+                | Success _ -> helper()
+                | Failure _ -> e.Current
+            else
+                last
+        helper()
+
+    let buildKoanResult builderString (current:KoanResult) (next:KoanResult) =
+        next
+        |> KoanResult.map (sprintf builderString current.Message)
+
+    let getContainerResult container =
         let name = container.GetType().Name.ToString()
         let lineOne = sprintf "When contemplating %s:" name
-        
-        let joinLines x y = String.Concat(x, System.Environment.NewLine,
-                                          "    ",  y)
-        
+
         container
         |> KoanContainer.runKoans
-        |> Seq.fold (combineUnlessFailed joinLines) (Success lineOne)
-    
+        |> Seq.scan (buildKoanResult "%s\n    %s") (Success lineOne)
+        |> findFailureOrLastResult
+        
     member this.ExecuteKoans =
-        let joinContainers x y = String.Concat(x, System.Environment.NewLine, 
-                                                  System.Environment.NewLine, y)
-            
-        containers
-        |> Seq.map executeContainer
-        |> Seq.fold (combineUnlessFailed joinContainers) (Success "")
+        let result = 
+            containers
+            |> Seq.map getContainerResult
+            |> Seq.scan (buildKoanResult "%s\n\n%s") (Success "")
+            |> findFailureOrLastResult
+
+        match result with
+        | Success m -> Success (m.Replace("\n", Environment.NewLine))
+        | Failure (m, e) -> Failure (m.Replace("\n", Environment.NewLine), e)
