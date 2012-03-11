@@ -19,6 +19,7 @@ let (containers: obj list) = [ ``about asserts``();
                                ``about option types``();
                                ``about descriminated unions``();
                                ``about modules``();
+                               ``about opened modules``();
                                ``about classes``();
                                ]
 let runner = KoanRunner(containers)
