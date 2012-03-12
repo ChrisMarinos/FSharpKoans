@@ -26,7 +26,7 @@ type ``about option types``() =
         AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value)
 
     [<Koan>]
-    member this.UsingOptionTypesWithPatternPatching() =
+    member this.UsingOptionTypesWithPatternMatching() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let gta = { Name = "Halo"; Platform = "Xbox"; Score = None }
 
