@@ -42,7 +42,7 @@ type ``about strings``() =
              see: http://msdn.microsoft.com/en-us/library/ee370560.aspx *)
 
     [<Koan>]
-    member this.BreakUpLine() =
+    member this.CombineMultiline() =
         let message = "super\
                         cali\
                         fragilistic\
