@@ -1,7 +1,6 @@
 ﻿[<AutoOpenAttribute>]
 module FSharpKoans.Core.Helpers
 open System
-open System.CodeDom
 open NUnit.Framework
 
 let __ = "FILL ME IN"
