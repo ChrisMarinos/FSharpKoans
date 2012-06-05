@@ -18,7 +18,7 @@ let (containers: obj list) = [ ``about asserts``();
                                ``about the stock example``();
                                ``about record types``();
                                ``about option types``();
-                               ``about descriminated unions``();
+                               ``about discriminated unions``();
                                ``about modules``();
                                ``about classes``();
                                ]

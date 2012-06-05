@@ -11,9 +11,17 @@ type Favorite =
     | Bourbon of string
     | Number of int
 
-type ``about descriminated unions``() =
+//---------------------------------------------------------------
+// About Discriminated Unions
+//
+// Discriminated unions are used to represent data that can be
+// one of a fixed number of cases. To start off, you can think
+// of them like a much more powerful version of enums in other
+// languages.
+//---------------------------------------------------------------
+type ``about discriminated unions``() =
     [<Koan>]
-    member this.DescriminatedUnionsCaptureASetOfOptions() =
+    member this.DiscriminatedUnionsCaptureASetOfOptions() =
 
         let toColor condiment = 
             match condiment with
@@ -30,7 +38,7 @@ type ``about descriminated unions``() =
                    match? *)
 
     [<Koan>]
-    member this.DescriminatedUnionCasesCanHaveTypes() =
+    member this.DiscriminatedUnionCasesCanHaveTypes() =
 
         let saySomethingAboutYourFavorite favorite =
             match favorite with
