@@ -1,6 +1,13 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+//---------------------------------------------------------------
+// About Classes
+//
+// As a full fledged Object Oriented language, F# allows you to
+// create traditional classes to contain data and methods.
+//---------------------------------------------------------------
+
 type Zombie() =
     member this.FavoriteFood = "brains"
 

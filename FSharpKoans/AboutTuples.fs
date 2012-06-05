@@ -1,6 +1,12 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+//---------------------------------------------------------------
+// About Tuples
+//
+// Tuples are used to easily group together values in F#. They're 
+// another fundamental construct of the language.
+//---------------------------------------------------------------
 type ``about tuples``() =
     
     [<Koan>]

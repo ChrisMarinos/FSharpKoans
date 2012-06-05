@@ -1,6 +1,13 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+//---------------------------------------------------------------
+// More About Funtions
+//
+// You've already learned a little about funcitons in F#, but
+// since F# is a functional language, there are more tricks
+// to learn!
+//---------------------------------------------------------------
 type ``more about functions``() =
     
     [<Koan>]

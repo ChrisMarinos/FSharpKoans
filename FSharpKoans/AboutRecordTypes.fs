@@ -6,6 +6,13 @@ type Character = {
     Occupation: string
 }
 
+//---------------------------------------------------------------
+// About Record Types
+//
+// Record types are lightweight ways to construct new types.
+// You can use them to group data in a more structured way than
+// tuples.
+//---------------------------------------------------------------
 type ``about record types``() =
 
     [<Koan>]

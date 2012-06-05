@@ -2,13 +2,23 @@
 open FSharpKoans.Core
 open System.Collections.Generic
 
+//---------------------------------------------------------------
+// About Lists
+//
+// Lists are important building blocks that you'll use frequently
+// in F# programming. They are used to group arbitrarily large 
+// sequences of values. It's very common to store values in a 
+// list and perform operations across each value in the 
+// list.
+//---------------------------------------------------------------
 type ``about lists``() =
 
     [<Koan>]
     member this.CreatingLists() =
         let list = ["apple"; "pear"; "grape"; "peach"]
         
-        //Note: Lists in F# are linked lists, and indexing elements is O(n). 
+        //Note: The list data type in F# is a singly linked list, 
+        //      so indexing elements is O(n). 
         
         AssertEquality list.Head __
         AssertEquality list.Tail __
@@ -19,6 +29,7 @@ type ``about lists``() =
            List<T>. In other words, the following assertion is true *)
 
         let dotNetList = new List<string>()
+        //you don't need to modify the following line
         AssertInequality (list.GetType()) (dotNetList.GetType())
 
     [<Koan>]

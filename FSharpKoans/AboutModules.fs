@@ -18,6 +18,13 @@ module MushroomKingdom =
     let powerUp character =
         { character with Power = Some Mushroom }
 
+//---------------------------------------------------------------
+// About Modules
+//
+// Modules are used to group funcitons, values, and types. 
+// They're similar to .NET namespaces, but they have slightly 
+// different semantics as you'll see below.
+//---------------------------------------------------------------
 type ``about modules``() =
 
     [<Koan>]

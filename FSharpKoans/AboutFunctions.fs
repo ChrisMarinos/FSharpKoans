@@ -1,6 +1,12 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+//---------------------------------------------------------------
+// About Functions
+//
+// Now that you've seen how to bind a name to a value with let,
+// you'll learn to use the let keyword to create functions.
+//---------------------------------------------------------------
 type ``about functions``() =
 
     (* By default, F# is whitespace sensitive.

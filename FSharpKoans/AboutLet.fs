@@ -1,6 +1,13 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+//---------------------------------------------------------------
+// About Let
+//
+// The let keyword is one of the most fundamental parts of F#.
+// You'll use it in almost every line of F# code you write, so
+// let's get to know it well! (no pun intended)
+//---------------------------------------------------------------
 type ``about let``() =
 
     [<Koan>]
@@ -9,6 +16,9 @@ type ``about let``() =
         
         AssertEquality x __
     
+    (* In F#, values created with let are inferred to have a type like
+       "int" for integer values, "string" for text values, and "bool" 
+       for true or false values. *)
     [<Koan>]
     member this.LetInfersTheTypesOfValuesWherePossible() =
         let x = 50

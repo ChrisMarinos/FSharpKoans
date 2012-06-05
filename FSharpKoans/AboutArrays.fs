@@ -2,6 +2,11 @@
 open FSharpKoans.Core
 open System.Collections.Generic
 
+//---------------------------------------------------------------
+// About Arrays
+//
+// Like lists, arrays are another basic container type in F#.
+//---------------------------------------------------------------
 type ``about arrays``() =
     [<Koan>]
     member this.CreatingArrays() =

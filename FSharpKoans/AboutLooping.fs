@@ -1,6 +1,14 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+//---------------------------------------------------------------
+// About Looping
+//
+// While it's more common in F# to use the Seq, List, or Array
+// modules to perform looping operations, you can still fall 
+// back on traditional imperative looping techniques that you may 
+// be more familiar with.
+//---------------------------------------------------------------
 type ``about looping``() =
     [<Koan>]
     member this.LoopingOverAList() =

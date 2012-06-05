@@ -1,9 +1,13 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
-(* Now that you've seen a few operations for working with lists, you can
-   combine them to do more interesting things *)
-
+//---------------------------------------------------------------
+// About Pipelining
+//
+// The forward pipe operator is one of the most commonly used
+// symbols in F# programming. You can use it combine operations
+// on lists and other data structures in a readable way.
+//---------------------------------------------------------------
 type ``about pipelining``() =
 
     let square x =

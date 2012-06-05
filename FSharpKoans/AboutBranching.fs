@@ -1,6 +1,12 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+//---------------------------------------------------------------
+// About Branching
+//
+// Branching is used to tell a program to conditionally perform
+// an operation. It's another fundamental part of F#.
+//---------------------------------------------------------------
 type ``about branching``() =
     
     [<Koan>]

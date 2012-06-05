@@ -7,6 +7,14 @@ type Game = {
     Score: int option
 }
 
+//---------------------------------------------------------------
+// About Option Types
+//
+// Option Types are used to represent calculations that may or
+// may not return a value. You may be used to using null for this
+// in other languages. However, using option types instead of nulls
+// has subtle but far reaching benefits.
+//---------------------------------------------------------------
 type ``about option types``() =
 
     [<Koan>]

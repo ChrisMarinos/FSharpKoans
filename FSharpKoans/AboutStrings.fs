@@ -1,6 +1,12 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+//---------------------------------------------------------------
+// About Strings
+//
+// Most languages have a set of utilities for manipulating 
+// strings. F# is no different.
+//---------------------------------------------------------------
 type ``about strings``() =
 
     [<Koan>]
@@ -28,3 +34,16 @@ type ``about strings``() =
 
     (* NOTE: For all the %formatters that you can use with string formatting 
              see: http://msdn.microsoft.com/en-us/library/ee370560.aspx *)
+
+    [<Koan>]
+    member this.ApplyWhatYouLearned() =
+        (* It's time to apply what you've learned so far. Fill in the function below to
+           make the asserts pass *)
+        let getFunFacts x =
+            __
+
+        let funFactsAboutThree = getFunFacts 3
+        let funFactsAboutSix = getFunFacts 6
+
+        AssertEquality "3 doubled is 6, and the square of 3 is 9!" funFactsAboutThree 
+        AssertEquality "6 doubled is 12, and the square of 6 is 36!" funFactsAboutSix 
