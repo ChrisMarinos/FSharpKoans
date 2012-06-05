@@ -10,6 +10,18 @@ open FSharpKoans.Core
 type ``about strings``() =
 
     [<Koan>]
+    member this.StringValue() =
+        let message = "hello"
+
+        AssertEquality message __
+
+    [<Koan>]
+    member this.StringConcatValue() =
+        let message = "hello " + "world"
+
+        AssertEquality message __
+
+    [<Koan>]
     member this.FormattingStringValues() =
         let message = sprintf "F# turns it to %d!" 11
 
@@ -34,6 +46,37 @@ type ``about strings``() =
 
     (* NOTE: For all the %formatters that you can use with string formatting 
              see: http://msdn.microsoft.com/en-us/library/ee370560.aspx *)
+
+    [<Koan>]
+    member this.CombineMultiline() =
+        let message = "super\
+                        cali\
+                        fragilistic\
+                        expiali\
+                        docious"
+
+        AssertEquality message __
+
+    [<Koan>]
+    member this.Multiline() =
+        let message = "This
+                        is
+                        on
+                        five
+                        lines"
+
+        AssertEquality
+              message __
+
+    [<Koan>]
+    member this.ExtractValues() =
+        let message = "hello world"
+
+        let first = message.[0]
+        let other = message.[4] 
+
+        AssertEquality first __
+        AssertEquality other __
 
     [<Koan>]
     member this.ApplyWhatYouLearned() =
