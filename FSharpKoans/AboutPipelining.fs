@@ -27,7 +27,7 @@ type ``about pipelining``() =
     [<Koan>]
     member this.SquareEvenNumbersWithParens() =
         (* You can avoid this problem by using parens to pass the result of one
-           funciton to another. This can be difficult to read since you have to 
+           function to another. This can be difficult to read since you have to 
            start from the innermost function and work your way out. *)
 
         let numbers = [0..5]
@@ -39,7 +39,7 @@ type ``about pipelining``() =
     [<Koan>]
     member this.SquareEvenNumbersWithPipelineOperator() =
         (* In F#, you can use the pipeline operator to get the benefit of the 
-           parens style with the readablity of the statement style. *)
+           parens style with the readability of the statement style. *)
 
         let result =
             [0..5]
