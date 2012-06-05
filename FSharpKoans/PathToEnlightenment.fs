@@ -15,6 +15,7 @@ let (containers: obj list) = [ ``about asserts``();
                                ``about dot net collections``();
                                ``about looping``();
                                ``more about functions``();
+                               ``about the stock example``();
                                ``about record types``();
                                ``about option types``();
                                ``about descriminated unions``();
