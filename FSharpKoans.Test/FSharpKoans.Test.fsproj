@@ -11,6 +11,8 @@
     <AssemblyName>FSharpKoans.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <Name>FSharpKoans.Test</Name>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +35,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <ItemGroup>
     <Compile Include="FindingKoans.fs" />
     <Compile Include="RunningKoans.fs" />
@@ -57,8 +60,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-    <ProjectReference Include="..\FSharpKoans.Core\FSharpKoans.Core.fsproj">
-      <Name>FSharpKoans.Core</Name>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FSharpKoans.Core\FsharpKoans.Core.fsproj">
+      <Name>FsharpKoans.Core</Name>
       <Project>{71460aa5-7357-4f1c-99bc-54244b50b00e}</Project>
       <Private>True</Private>
     </ProjectReference>
