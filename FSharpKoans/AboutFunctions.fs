@@ -7,7 +7,7 @@ open FSharpKoans.Core
 // Now that you've seen how to bind a name to a value with let,
 // you'll learn to use the let keyword to create functions.
 //---------------------------------------------------------------
-type ``about functions``() =
+module ``about functions`` =
 
     (* By default, F# is whitespace sensitive.
        For functions, this means that the last
@@ -19,7 +19,7 @@ type ``about functions``() =
         x + y
 
     [<Koan>]
-    member this.CreatingFunctionsWithLet() =
+    let CreatingFunctionsWithLet() =
         let result1 = add 2 2
         let result2 = add 5 2
         
@@ -27,7 +27,7 @@ type ``about functions``() =
         AssertEquality result2 __
 
     [<Koan>]
-    member this.NestingFunctions() =
+    let NestingFunctions() =
         let quadruple x =    
             let double x =
                 x * 2
@@ -38,7 +38,7 @@ type ``about functions``() =
         AssertEquality result __
 
     [<Koan>]
-    member this.AddingTypeAnnotations() =
+    let AddingTypeAnnotations() =
 
         (* Sometimes you need to help F#'s type inference system out with an
            explicit type annotation *)
@@ -52,7 +52,7 @@ type ``about functions``() =
         //TRY IT: What happens if you remove the type annotation on text?
 
     [<Koan>]
-    member this.VariablesInTheParentScopeCanBeAccessed() =
+    let VariablesInTheParentScopeCanBeAccessed() =
         let suffix = "!!!"
 
         let caffinate (text:string) =

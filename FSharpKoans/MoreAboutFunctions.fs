@@ -8,10 +8,10 @@ open FSharpKoans.Core
 // since F# is a functional language, there are more tricks
 // to learn!
 //---------------------------------------------------------------
-type ``more about functions``() =
+module ``more about functions`` =
     
     [<Koan>]
-    member this.DefiningLambdas() =
+    let DefiningLambdas() =
         
         let colors = ["maize"; "blue"]
 
@@ -26,7 +26,7 @@ type ``more about functions``() =
            or lambda functions. *)
 
     [<Koan>]
-    member this.FunctionsThatReturnFunctions() =
+    let FunctionsThatReturnFunctions() =
         (* A neat functional programming trick is to create functions that 
            return other functions. This leads to some interesting behaviors. *)
         let add x =
@@ -47,7 +47,7 @@ type ``more about functions``() =
         //NOTE: Functions written in this style are said to be curried.
 
     [<Koan>]
-    member this.AutomaticCurrying() =
+    let AutomaticCurrying() =
         (* The above technique is common enough that F# actually supports this
            by default. In other words, functions are automatically curried. *)
         let add x y = 
@@ -61,7 +61,7 @@ type ``more about functions``() =
         AssertEquality luckyNumber __
 
     [<Koan>]
-    member this.NonCurriedFunctions() =
+    let NonCurriedFunctions() =
         (* You should stick to the auto-curried function syntax most of the 
            time. However, you can also write functions in an uncurried form to
            make them easier to use from languages like C# where currying is not 

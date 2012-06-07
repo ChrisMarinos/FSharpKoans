@@ -9,9 +9,9 @@ open FSharpKoans.Core
 // back on traditional imperative looping techniques that you may 
 // be more familiar with.
 //---------------------------------------------------------------
-type ``about looping``() =
+module ``about looping`` =
     [<Koan>]
-    member this.LoopingOverAList() =
+    let LoopingOverAList() =
         let values = [0..10]
 
         let mutable sum = 0
@@ -21,7 +21,7 @@ type ``about looping``() =
         AssertEquality sum __
        
     [<Koan>]
-    member this.LoopingWithExpressions() =
+    let LoopingWithExpressions() =
         let mutable sum = 0
 
         for i = 1 to 5 do
@@ -30,7 +30,7 @@ type ``about looping``() =
         AssertEquality sum __
 
     [<Koan>]
-    member this.LoopingWithWhile() =
+    let LoopingWithWhile() =
         let mutable sum = 1
 
         while sum < 10 do

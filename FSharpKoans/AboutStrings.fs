@@ -7,22 +7,22 @@ open FSharpKoans.Core
 // Most languages have a set of utilities for manipulating 
 // strings. F# is no different.
 //---------------------------------------------------------------
-type ``about strings``() =
+module ``about strings`` =
 
     [<Koan>]
-    member this.StringValue() =
+    let StringValue() =
         let message = "hello"
 
         AssertEquality message __
 
     [<Koan>]
-    member this.StringConcatValue() =
+    let StringConcatValue() =
         let message = "hello " + "world"
 
         AssertEquality message __
 
     [<Koan>]
-    member this.FormattingStringValues() =
+    let FormattingStringValues() =
         let message = sprintf "F# turns it to %d!" 11
 
         AssertEquality message __
@@ -33,13 +33,13 @@ type ``about strings``() =
                    a number? *)
 
     [<Koan>]
-    member this.FormattingOtherTypes() =
+    let FormattingOtherTypes() =
         let message = sprintf "hello %s" "world"
 
         AssertEquality message __
 
     [<Koan>]
-    member this.FormattingAnything() =
+    let FormattingAnything() =
         let message = sprintf "Formatting other types is as easy as: %A" (1, 2, 3)
 
         AssertEquality message __
@@ -48,7 +48,7 @@ type ``about strings``() =
              see: http://msdn.microsoft.com/en-us/library/ee370560.aspx *)
 
     [<Koan>]
-    member this.CombineMultiline() =
+    let CombineMultiline() =
         let message = "super\
                         cali\
                         fragilistic\
@@ -58,7 +58,7 @@ type ``about strings``() =
         AssertEquality message __
 
     [<Koan>]
-    member this.Multiline() =
+    let Multiline() =
         let message = "This
                         is
                         on
@@ -69,7 +69,7 @@ type ``about strings``() =
               message __
 
     [<Koan>]
-    member this.ExtractValues() =
+    let ExtractValues() =
         let message = "hello world"
 
         let first = message.[0]
@@ -79,7 +79,7 @@ type ``about strings``() =
         AssertEquality other __
 
     [<Koan>]
-    member this.ApplyWhatYouLearned() =
+    let ApplyWhatYouLearned() =
         (* It's time to apply what you've learned so far. Fill in the function below to
            make the asserts pass *)
         let getFunFacts x =

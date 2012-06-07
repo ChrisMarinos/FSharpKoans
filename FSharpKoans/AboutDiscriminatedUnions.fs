@@ -19,9 +19,9 @@ type Favorite =
 // of them like a much more powerful version of enums in other
 // languages.
 //---------------------------------------------------------------
-type ``about discriminated unions``() =
+module ``about discriminated unions`` =
     [<Koan>]
-    member this.DiscriminatedUnionsCaptureASetOfOptions() =
+    let DiscriminatedUnionsCaptureASetOfOptions() =
 
         let toColor condiment = 
             match condiment with
@@ -38,7 +38,7 @@ type ``about discriminated unions``() =
                    match? *)
 
     [<Koan>]
-    member this.DiscriminatedUnionCasesCanHaveTypes() =
+    let DiscriminatedUnionCasesCanHaveTypes() =
 
         let saySomethingAboutYourFavorite favorite =
             match favorite with
