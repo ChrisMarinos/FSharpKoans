@@ -1,30 +1,8 @@
 ﻿open FSharpKoans
 open FSharpKoans.Core
 
-let (containers: obj list) = [ ``about asserts``(); 
-                               ``about let``();
-                               ``about functions``();
-                               ``about the order of evaluation``();
-                               ``about unit``();
-                               ``about tuples``();
-                               ``about strings``();
-                               ``about branching``();
-                               ``about lists``();
-                               ``about pipelining``();
-                               ``about arrays``();
-                               ``about dot net collections``();
-                               ``about looping``();
-                               ``more about functions``();
-                               ``about the stock example``();
-                               ``about record types``();
-                               ``about option types``();
-                               ``about discriminated unions``();
-                               ``about modules``();
-                               ``about opened modules``();
-                               ``about classes``();
-                               ]
-let runner = KoanRunner(containers)
-let result = runner.ExecuteKoans
+let runner = KoanRunner()
+let result = runner.ExecuteKoans()
 
 match result with
 | Success message -> printf "%s" message
