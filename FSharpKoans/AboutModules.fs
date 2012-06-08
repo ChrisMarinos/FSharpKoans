@@ -25,6 +25,7 @@ module MushroomKingdom =
 // They're similar to .NET namespaces, but they have slightly 
 // different semantics as you'll see below.
 //---------------------------------------------------------------
+[<Koan(Sort = 19)>]
 module ``about modules`` =
 
     [<Koan>]

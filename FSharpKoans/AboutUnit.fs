@@ -9,6 +9,7 @@ open Microsoft.FSharp.Reflection
 // a value. It's similar to void in other languages, but unit
 // is actually considered to be a type in F#.
 //---------------------------------------------------------------
+[<Koan(Sort = 5)>]
 module ``about unit`` =
 
     [<Koan>]

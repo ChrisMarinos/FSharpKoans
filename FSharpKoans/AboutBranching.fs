@@ -7,6 +7,7 @@ open FSharpKoans.Core
 // Branching is used to tell a program to conditionally perform
 // an operation. It's another fundamental part of F#.
 //---------------------------------------------------------------
+[<Koan(Sort = 8)>]
 module ``about branching`` =
     
     [<Koan>]

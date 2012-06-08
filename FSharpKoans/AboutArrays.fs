@@ -7,6 +7,7 @@ open System.Collections.Generic
 //
 // Like lists, arrays are another basic container type in F#.
 //---------------------------------------------------------------
+[<Koan(Sort = 11)>]
 module ``about arrays`` =
     [<Koan>]
     let CreatingArrays() =

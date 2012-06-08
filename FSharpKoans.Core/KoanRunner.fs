@@ -32,7 +32,10 @@ type KoanRunner(containers) =
     new () =
         let containers =
             Assembly.GetCallingAssembly().GetTypes()
-            |> Array.filter (not << Seq.isEmpty << KoanContainer.findKoanMethods)
+            |> Array.map (fun t -> t, t.GetCustomAttributes(typeof<KoanAttribute>, true))
+            |> Array.filter (not << Seq.isEmpty << snd)
+            |> Array.sortBy (fun (t, attrs) -> (attrs.[0] :?> KoanAttribute).Sort)
+            |> Array.map fst
         KoanRunner(containers)
         
     member this.ExecuteKoans() =

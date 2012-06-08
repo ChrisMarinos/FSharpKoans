@@ -7,6 +7,7 @@ open FSharpKoans.Core
 // Tuples are used to easily group together values in F#. They're 
 // another fundamental construct of the language.
 //---------------------------------------------------------------
+[<Koan(Sort = 6)>]
 module ``about tuples`` =
     
     [<Koan>]

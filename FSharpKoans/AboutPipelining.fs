@@ -8,6 +8,7 @@ open FSharpKoans.Core
 // symbols in F# programming. You can use it combine operations
 // on lists and other data structures in a readable way.
 //---------------------------------------------------------------
+[<Koan(Sort = 10)>]
 module ``about pipelining`` =
 
     let square x =

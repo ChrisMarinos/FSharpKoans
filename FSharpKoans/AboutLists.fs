@@ -11,6 +11,7 @@ open System.Collections.Generic
 // list and perform operations across each value in the 
 // list.
 //---------------------------------------------------------------
+[<Koan(Sort = 9)>]
 module ``about lists`` =
 
     [<Koan>]

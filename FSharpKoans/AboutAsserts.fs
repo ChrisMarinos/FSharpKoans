@@ -1,6 +1,7 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
+[<Koan(Sort = 1)>]
 module ``about asserts`` =
 
     // We shall contemplate truth by testing reality, via asserts.

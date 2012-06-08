@@ -8,6 +8,7 @@ open FSharpKoans.Core
 // functions are evaluated. F# offers a couple mechanisms for
 // doing this.
 //---------------------------------------------------------------
+[<Koan(Sort = 4)>]
 module ``about the order of evaluation`` =
 
     [<Koan>]

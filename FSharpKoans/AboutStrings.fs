@@ -7,6 +7,7 @@ open FSharpKoans.Core
 // Most languages have a set of utilities for manipulating 
 // strings. F# is no different.
 //---------------------------------------------------------------
+[<Koan(Sort = 7)>]
 module ``about strings`` =
 
     [<Koan>]

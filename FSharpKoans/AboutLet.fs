@@ -8,6 +8,7 @@ open FSharpKoans.Core
 // You'll use it in almost every line of F# code you write, so
 // let's get to know it well! (no pun intended)
 //---------------------------------------------------------------
+[<Koan(Sort = 2)>]
 module ``about let`` =
 
     [<Koan>]
