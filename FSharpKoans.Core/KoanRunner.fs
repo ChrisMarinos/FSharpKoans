@@ -1,6 +1,8 @@
 ﻿namespace FSharpKoans.Core
+
 open System
 open System.Collections.Generic
+open System.Reflection
 
 type KoanRunner(containers) =
     let findFailureOrLastResult (values:seq<KoanResult>) =
@@ -19,16 +21,24 @@ type KoanRunner(containers) =
         next
         |> KoanResult.map (sprintf builderString current.Message)
 
-    let getContainerResult container =
-        let name = container.GetType().Name.ToString()
+    let getContainerResult (container: Type) =
+        let name = container.Name
         let lineOne = sprintf "When contemplating %s:" name
 
-        container
-        |> KoanContainer.runKoans
+        container |> KoanContainer.runKoans
         |> Seq.scan (buildKoanResult "%s\n    %s") (Success lineOne)
         |> findFailureOrLastResult
+
+    new () =
+        let containers =
+            Assembly.GetCallingAssembly().GetTypes()
+            |> Array.map (fun t -> t, t.GetCustomAttributes(typeof<KoanAttribute>, true))
+            |> Array.filter (not << Seq.isEmpty << snd)
+            |> Array.sortBy (fun (t, attrs) -> (attrs.[0] :?> KoanAttribute).Sort)
+            |> Array.map fst
+        KoanRunner(containers)
         
-    member this.ExecuteKoans =
+    member this.ExecuteKoans() =
         let result = 
             containers
             |> Seq.map getContainerResult

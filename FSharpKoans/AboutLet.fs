@@ -8,10 +8,11 @@ open FSharpKoans.Core
 // You'll use it in almost every line of F# code you write, so
 // let's get to know it well! (no pun intended)
 //---------------------------------------------------------------
-type ``about let``() =
+[<Koan(Sort = 2)>]
+module ``about let`` =
 
     [<Koan>]
-    member this.LetBindsANameToAValue() =
+    let LetBindsANameToAValue() =
         let x = 50
         
         AssertEquality x __
@@ -20,7 +21,7 @@ type ``about let``() =
        "int" for integer values, "string" for text values, and "bool" 
        for true or false values. *)
     [<Koan>]
-    member this.LetInfersTheTypesOfValuesWherePossible() =
+    let LetInfersTheTypesOfValuesWherePossible() =
         let x = 50
         let typeOfX = x.GetType()
         AssertEquality typeOfX typeof<int>
@@ -30,7 +31,7 @@ type ``about let``() =
         AssertEquality expectedType typeof<FILL_ME_IN>
 
     [<Koan>]
-    member this.YouCanMakeTypesExplicit() =
+    let YouCanMakeTypesExplicit() =
         let (x:int) = 42
         let typeOfX = x.GetType()
 
@@ -45,7 +46,7 @@ type ``about let``() =
            contexts as you'll see later. *)
     
     [<Koan>]
-    member this.FloatsAndInts() =
+    let FloatsAndInts() =
         (* Depending on your background, you may be surprised to learn that
            in F#, integers and floating point numbers are different types. 
            In other words, the following is true. *)
@@ -63,14 +64,14 @@ type ``about let``() =
         //the double type.
 
     [<Koan>]
-    member this.ModifyingTheValueOfVariables() =
+    let ModifyingTheValueOfVariables() =
         let mutable x = 100
         x <- 200
 
         AssertEquality x __
 
     [<Koan>]
-    member this.YouCannotModifyALetBoundValueIfItIsNotMutable() =
+    let YouCannotModifyALetBoundValueIfItIsNotMutable() =
         let x = 50
         
         //What happens if you uncomment the following?

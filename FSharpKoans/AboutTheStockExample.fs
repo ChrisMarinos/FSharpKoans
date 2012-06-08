@@ -22,7 +22,8 @@ open FSharpKoans.Core
 // let splitCommas (x:string) =
 //     x.Split([|','|])
 //---------------------------------------------------------------
-type ``about the stock example``() =
+[<Koan(Sort = 15)>]
+module ``about the stock example`` =
     
     let stockData =
         [ "Date,Open,High,Low,Close,Volume,Adj Close";
@@ -55,7 +56,7 @@ type ``about the stock example``() =
     // using the F# Interactive window to check your progress.
 
     [<Koan>]
-    member this.YouGotTheAnswerCorrect() =
+    let YouGotTheAnswerCorrect() =
         let result =  __
         
         AssertEquality "2012-3-13" result

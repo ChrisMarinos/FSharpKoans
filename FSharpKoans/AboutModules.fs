@@ -25,10 +25,11 @@ module MushroomKingdom =
 // They're similar to .NET namespaces, but they have slightly 
 // different semantics as you'll see below.
 //---------------------------------------------------------------
-type ``about modules``() =
+[<Koan(Sort = 19)>]
+module ``about modules`` =
 
     [<Koan>]
-    member this.ModulesCanContainValuesAndTypes() =
+    let ModulesCanContainValuesAndTypes() =
 
         AssertEquality MushroomKingdom.Mario.Name __
         AssertEquality MushroomKingdom.Mario.Occupation __
@@ -37,7 +38,7 @@ type ``about modules``() =
         AssertEquality moduleType typeof<FILL_ME_IN>
 
     [<Koan>]
-    member this.ModulesCanContainFunctions() =
+    let ModulesCanContainFunctions() =
         let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
 
         AssertEquality superMario.Power __
@@ -50,8 +51,6 @@ open MushroomKingdom
 
 type ``about opened modules``() =
     [<Koan>]
-    member this.OpenedModulesBringTheirContentsInScope() = 
+    let OpenedModulesBringTheirContentsInScope() = 
         AssertEquality Mario.Name __
         AssertEquality Mario.Occupation __
-
-   

@@ -13,17 +13,18 @@ type Character = {
 // You can use them to group data in a more structured way than
 // tuples.
 //---------------------------------------------------------------
-type ``about record types``() =
+[<Koan(Sort = 16)>]
+module ``about record types`` =
 
     [<Koan>]
-    member this.RecordsHaveProperties() =
+    let RecordsHaveProperties() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
 
         AssertEquality mario.Name __
         AssertEquality mario.Occupation __
 
     [<Koan>]
-    member this.CreatingFromAnExistingRecord() =
+    let CreatingFromAnExistingRecord() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
         let luigi = { mario with Name = "Luigi"; }
 
@@ -34,7 +35,7 @@ type ``about record types``() =
         AssertEquality luigi.Occupation __
 
     [<Koan>]
-    member this.ComparingRecords() =
+    let ComparingRecords() =
         let greenKoopa = { Name = "Koopa"; Occupation = "Soldier"; }
         let bowser = { Name = "Bowser"; Occupation = "Kidnapper"; }
         let redKoopa = { Name = "Koopa"; Occupation = "Soldier"; }
@@ -55,7 +56,7 @@ type ``about record types``() =
         AssertEquality bowserComparison __
 
     [<Koan>]
-    member this.YouCanPatternMatchAgainstRecords() =
+    let YouCanPatternMatchAgainstRecords() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
         let luigi = { Name = "Luigi"; Occupation = "Plumber"; }
         let bowser = { Name = "Bowser"; Occupation = "Kidnapper"; }

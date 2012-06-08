@@ -15,10 +15,11 @@ type Game = {
 // in other languages. However, using option types instead of nulls
 // has subtle but far reaching benefits.
 //---------------------------------------------------------------
-type ``about option types``() =
+[<Koan(Sort = 17)>]
+module ``about option types`` =
 
     [<Koan>]
-    member this.OptionTypesMightContainAValue() =
+    let OptionTypesMightContainAValue() =
         let someValue = Some 10
         
         AssertEquality someValue.IsSome __
@@ -26,7 +27,7 @@ type ``about option types``() =
         AssertEquality someValue.Value __
 
     [<Koan>]
-    member this.OrTheyMightNot() =
+    let OrTheyMightNot() =
         let noValue = None
 
         AssertEquality noValue.IsSome __
@@ -34,7 +35,7 @@ type ``about option types``() =
         AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value)
 
     [<Koan>]
-    member this.UsingOptionTypesWithPatternMatching() =
+    let UsingOptionTypesWithPatternMatching() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let gta = { Name = "Halo"; Platform = "Xbox"; Score = None }
 
@@ -56,7 +57,7 @@ type ``about option types``() =
         AssertEquality (getScore gta) __
 
     [<Koan>]
-    member this.ProjectingValuesFromOptionTypes() =
+    let ProjectingValuesFromOptionTypes() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let gta = { Name = "Halo"; Platform = "Xbox"; Score = None }
 

@@ -36,23 +36,24 @@ type Person2(name:string) =
     member this.Speak() =
         "Hi my name is " + this.Name
 
-type ``about classes``() =
+[<Koan(Sort = 20)>]
+module ``about classes`` =
 
     [<Koan>]
-    member this.ClassesCanHaveProperties() =
+    let ClassesCanHaveProperties() =
         let zombie = new Zombie()
 
         AssertEquality zombie.FavoriteFood __
 
     [<Koan>]
-    member this.ClassesCanHaveMethods() =
+    let ClassesCanHaveMethods() =
         let zombie = new Zombie()
 
         let result = zombie.Eat "brains"
         AssertEquality result __
     
     [<Koan>]
-    member this.ClassesCanHaveConstructors() =
+    let ClassesCanHaveConstructors() =
     
         let person = new Person("Shaun")
 
@@ -60,7 +61,7 @@ type ``about classes``() =
         AssertEquality result __
 
     [<Koan>]
-    member this.ClassesCanHaveLetBindingsInsideThem() =
+    let ClassesCanHaveLetBindingsInsideThem() =
         let zombie = new Zombie2()
 
         let result = zombie.Eat "chicken"
@@ -70,7 +71,7 @@ type ``about classes``() =
                    outside of the class definition? *)
 
     [<Koan>]
-    member this.ClassesCanHaveReadWriteProperties() =
+    let ClassesCanHaveReadWriteProperties() =
         let person = new Person2("Shaun")
 
         let firstPhrase = person.Speak()

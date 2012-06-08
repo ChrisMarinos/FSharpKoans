@@ -1,39 +1,40 @@
 ﻿module KoansRunner.Test.RunningKoans
+
 open FSharpKoans.Core
 open NUnit.Framework
 
 type FailureContainer() =
     [<Koan>]
-    member this.FailureKoan() =
+    static member FailureKoan() =
         Assert.Fail("expected failure")
         
 type SuccessContainer() =
     [<Koan>]
-    member this.SuccessKoan() =
+    static member SuccessKoan() =
         "FTW!"
 
 type SomeSuccesses() =
     [<Koan>]
-    member this.One() =
+    static member One() =
         "YAY"
     
     [<Koan>]
-    member this.Two() =
+    static member Two() =
         "WOOT"
         
 type MixedBag() =
     [<Koan>]
-    member this.One() =
+    static member One() =
         Assert.Fail("Game over")
     
     [<Koan>]
-    member this.Two() =
+    static member Two() =
         "OH YEAH!"
         
 [<Test>]
 let ``A failing koan returns its exception`` () =
     let result = 
-        new FailureContainer()
+        typeof<FailureContainer>
         |> KoanContainer.runKoans
         |> Seq.head
         
@@ -47,7 +48,7 @@ let ``A failing koan returns its exception`` () =
 [<Test>]
 let ``A failing koan returns a failure message`` () =
     let result = 
-        new FailureContainer()
+        typeof<FailureContainer>
         |> KoanContainer.runKoans
         |> Seq.head
         
@@ -56,7 +57,7 @@ let ``A failing koan returns a failure message`` () =
 [<Test>]
 let ``A successful koans returns a success message`` () =
     let result =
-        new SuccessContainer()
+        typeof<SuccessContainer>
         |> KoanContainer.runKoans
         |> Seq.head
         
@@ -65,7 +66,7 @@ let ``A successful koans returns a success message`` () =
 [<Test>]
 let ``The outcome of all successful koans is returned`` () =
     let result =
-        new SomeSuccesses()
+        typeof<SomeSuccesses>
         |> KoanContainer.runKoans
         |> Seq.map (fun x -> x.Message)
         |> Seq.reduce (fun x y -> x + System.Environment.NewLine + y)
@@ -80,7 +81,7 @@ let ``The outcome of all successful koans is returned`` () =
 //might want to change this behavior
 let ``Failed Koans don't stop the enumeration`` () =
     let result =
-        new MixedBag()
+        typeof<MixedBag>
         |> KoanContainer.runKoans
         |> Seq.map (fun x -> x.Message)
         |> Seq.reduce (fun x y -> x + System.Environment.NewLine + y)

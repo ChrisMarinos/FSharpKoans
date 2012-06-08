@@ -8,10 +8,11 @@ open FSharpKoans.Core
 // functions are evaluated. F# offers a couple mechanisms for
 // doing this.
 //---------------------------------------------------------------
-type ``about the order of evaluation``() =
+[<Koan(Sort = 4)>]
+module ``about the order of evaluation`` =
 
     [<Koan>]
-    member this.SometimesYouNeedParenthesisToGroupThings() =
+    let SometimesYouNeedParenthesisToGroupThings() =
         let add x y =
             x + y
 
@@ -22,7 +23,7 @@ type ``about the order of evaluation``() =
         (* TRY IT: What happens if you remove the parensthesis?*)
 
     [<Koan>]
-    member this.TheBackwardPipeOperatorCanAlsoHelpWithGrouping() =
+    let TheBackwardPipeOperatorCanAlsoHelpWithGrouping() =
         let add x y =
             x + y
 

@@ -9,10 +9,11 @@ open System.Collections.Generic
 // languages, you can use all of the basic .NET collections types
 // you're already familiar with if you're a C# or VB programmer.
 //---------------------------------------------------------------
-type ``about dot net collections``() =
+[<Koan(Sort = 12)>]
+module ``about dot net collections`` =
 
     [<Koan>]
-    member this.CreatingDotNetLists() =
+    let CreatingDotNetLists() =
         let fruits = new List<string>()
 
         fruits.Add("apple")
@@ -22,7 +23,7 @@ type ``about dot net collections``() =
         AssertEquality fruits.[1] __
 
     [<Koan>]
-    member this.CreatingDotNetDictionaries() =
+    let CreatingDotNetDictionaries() =
         let addressBook = new Dictionary<string, string>()
 
         addressBook.["Chris"] <- "Ann Arbor"
@@ -32,7 +33,7 @@ type ``about dot net collections``() =
         AssertEquality addressBook.["SkillsMatter"] __
 
     [<Koan>]
-    member this.YouUseCombinatorsWithDotNetTypes() =
+    let YouUseCombinatorsWithDotNetTypes() =
         let addressBook = new Dictionary<string, string>()
 
         addressBook.["Chris"] <- "Ann Arbor"
@@ -52,14 +53,14 @@ type ``about dot net collections``() =
         AssertEquality verboseBook.[1] __
 
     [<Koan>]
-    member this.SkippingElements() =
+    let SkippingElements() =
         let original = [0..5]
         let result = Seq.skip 2 original
         
         AssertEquality result __
 
     [<Koan>]
-    member this.FindingTheMax() =
+    let FindingTheMax() =
         let values = new List<int>()
 
         values.Add(11)
@@ -73,7 +74,7 @@ type ``about dot net collections``() =
         AssertEquality result __
     
     [<Koan>]
-    member this.FindingTheMaxUsingACondition() =
+    let FindingTheMaxUsingACondition() =
         let getNameLength (name:string) =
             name.Length
         
