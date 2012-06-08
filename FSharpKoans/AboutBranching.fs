@@ -7,10 +7,11 @@ open FSharpKoans.Core
 // Branching is used to tell a program to conditionally perform
 // an operation. It's another fundamental part of F#.
 //---------------------------------------------------------------
-type ``about branching``() =
+[<Koan(Sort = 8)>]
+module ``about branching`` =
     
     [<Koan>]
-    member this.BasicBranching() =
+    let BasicBranching() =
         let isEven x =
             if x % 2 = 0 then
                 "it's even!"
@@ -21,7 +22,7 @@ type ``about branching``() =
         AssertEquality result __
     
     [<Koan>]
-    member this.IfStatementsReturnValues() =
+    let IfStatementsReturnValues() =
     
         (* In languages like C#, if statements do not yield results; they can 
            only cause side effects. If statements in F# return values due to 
@@ -36,7 +37,7 @@ type ``about branching``() =
         AssertEquality result __
 
     [<Koan>]
-    member this.BranchingWithAPatternMatch() =
+    let BranchingWithAPatternMatch() =
         let isApple x =
             match x with
             | "apple" -> true
@@ -49,7 +50,7 @@ type ``about branching``() =
         AssertEquality result2 __
     
     [<Koan>]
-    member this.UsingTuplesWithIfStatementsQuicklyBecomesClumsy() =
+    let UsingTuplesWithIfStatementsQuicklyBecomesClumsy() =
         
         let getDinner x = 
             let name, foodChoice = x
@@ -67,7 +68,7 @@ type ``about branching``() =
         AssertEquality (getDinner person2) __
         
     [<Koan>]
-    member this.PatternMatchingIsNicer() =
+    let PatternMatchingIsNicer() =
     
         let getDinner x =
             match x with

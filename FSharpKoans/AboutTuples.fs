@@ -7,16 +7,17 @@ open FSharpKoans.Core
 // Tuples are used to easily group together values in F#. They're 
 // another fundamental construct of the language.
 //---------------------------------------------------------------
-type ``about tuples``() =
+[<Koan(Sort = 6)>]
+module ``about tuples`` =
     
     [<Koan>]
-    member this.CreatingTuples() =
+    let CreatingTuples() =
         let items = ("apple", "dog")
         
         AssertEquality items ("apple", __)
         
     [<Koan>]
-    member this.AccessingTupleElements() =
+    let AccessingTupleElements() =
         let items = ("apple", "dog")
         
         let fruit = fst items
@@ -26,7 +27,7 @@ type ``about tuples``() =
         AssertEquality animal __
 
     [<Koan>]
-    member this.AccessingTupleElementsWithPatternMatching() =
+    let AccessingTupleElementsWithPatternMatching() =
 
         (* fst and snd are useful in some situations, but they only work with
            tuples containing two elements. It's usually better to use a 
@@ -45,7 +46,7 @@ type ``about tuples``() =
         AssertEquality car __
         
     [<Koan>]
-    member this.IgnoringValuesWithPatternMatching() =
+    let IgnoringValuesWithPatternMatching() =
         let items = ("apple", "dog", "Mustang")
         
         let _, animal, _ = items
@@ -56,7 +57,7 @@ type ``about tuples``() =
              throughout F#, and we'll revisit it again later *)
         
     [<Koan>]
-    member this.ReturningMultipleValuesFromAFunction() =
+    let ReturningMultipleValuesFromAFunction() =
         let squareAndCube x =
             (x ** 2.0, x ** 3.0)
         
@@ -71,7 +72,7 @@ type ``about tuples``() =
                        return? *)
     
     [<Koan>]
-    member this.TheTruthBehindMultipleReturnValues() =
+    let TheTruthBehindMultipleReturnValues() =
         let squareAndCube x =
             (x ** 2.0, x ** 3.0)
             

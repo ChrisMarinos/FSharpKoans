@@ -9,10 +9,11 @@ open Microsoft.FSharp.Reflection
 // a value. It's similar to void in other languages, but unit
 // is actually considered to be a type in F#.
 //---------------------------------------------------------------
-type ``about unit``() =
+[<Koan(Sort = 5)>]
+module ``about unit`` =
 
     [<Koan>]
-    member this.UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
+    let UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
         let sendData data =
             //...sending the data to the server...
             ()
@@ -21,7 +22,7 @@ type ``about unit``() =
         AssertEquality x __ //Don't overthink this
 
     [<Koan>]
-    member this.ParameterlessFuncitonsTakeUnitAsTheirArgument() =
+    let ParameterlessFuncitonsTakeUnitAsTheirArgument() =
         let sayHello() =
             "hello"
 
