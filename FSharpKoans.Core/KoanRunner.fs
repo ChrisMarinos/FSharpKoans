@@ -21,7 +21,7 @@ type KoanRunner(containers) =
 
     let getContainerResult container =
         let name = container.GetType().Name.ToString()
-        let lineOne = sprintf "When contemplating %s:" name
+        let lineOne = sprintf "%s:" name
 
         container
         |> KoanContainer.runKoans
