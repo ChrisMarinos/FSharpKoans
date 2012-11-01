@@ -54,3 +54,4 @@ type ``about opened modules``() =
     let OpenedModulesBringTheirContentsInScope() = 
         AssertEquality Mario.Name __
         AssertEquality Mario.Occupation __
+        AssertEquality Mario.Power __
