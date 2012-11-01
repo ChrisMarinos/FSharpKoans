@@ -36,7 +36,7 @@ type ``about option types``() =
     [<Koan>]
     member this.UsingOptionTypesWithPatternMatching() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
-        let gta = { Name = "Halo"; Platform = "Xbox"; Score = None }
+        let halo = { Name = "Halo"; Platform = "Xbox"; Score = None }
 
         let translate score =
             match score with
@@ -53,12 +53,12 @@ type ``about option types``() =
             | None -> "Unknown"
 
         AssertEquality (getScore chronoTrigger) __
-        AssertEquality (getScore gta) __
+        AssertEquality (getScore halo) __
 
     [<Koan>]
     member this.ProjectingValuesFromOptionTypes() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
-        let gta = { Name = "Halo"; Platform = "Xbox"; Score = None }
+        let halo = { Name = "Halo"; Platform = "Xbox"; Score = None }
 
         let decideOn game =
 
@@ -67,4 +67,4 @@ type ``about option types``() =
 
         //HINT: look at the return type of the decide on function
         AssertEquality (decideOn chronoTrigger) __
-        AssertEquality (decideOn gta) __
+        AssertEquality (decideOn halo) __
