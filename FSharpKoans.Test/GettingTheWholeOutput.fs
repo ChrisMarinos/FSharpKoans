@@ -4,35 +4,35 @@ open NUnit.Framework
 
 type ContainerOne() =
     [<Koan>]
-    member this.One() =
+    static member One() =
         "FTW!"
         
     [<Koan>]
-    member this.Two() =
+    static member Two() =
         "FTW!"
         
     [<Koan>]
-    member this.Three() =
+    static member Three() =
         "FTW!"
         
 type ContainerTwo() =
     [<Koan>]
-    member this.Four() =
+    static member Four() =
         "FTW!"
     
     [<Koan>]
-    member this.Five() =
+    static member Five() =
         Assert.Fail("Expected")
         
 
     [<Koan>]
-    member this.Six() =
+    static member Six() =
         "FTW!"
         
 [<Test>]
 let ``Output contains container name followed by koan results. Stops on failure`` () =
-    let runner = KoanRunner([ContainerOne(); ContainerTwo()])
-    let result = runner.ExecuteKoans
+    let runner = KoanRunner([| typeof<ContainerOne>; typeof<ContainerTwo> |])
+    let result = runner.ExecuteKoans()
     
     let expected = 
         "

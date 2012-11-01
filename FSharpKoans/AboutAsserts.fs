@@ -21,10 +21,11 @@ open FSharpKoans.Core
 // passing koan, you'll learn more about F#, and add another
 // weapon to your F# programming arsenal.
 //---------------------------------------------------------------
-type ``about asserts``() =
+[<Koan(Sort = 1)>]
+module ``about asserts`` =
 
     [<Koan>]
-    member this.AssertEquality() =
+    let AssertExpectation() =
         let expected_value = 1 + 1
         let actual_value = __ //start by changing this line
      
@@ -33,5 +34,5 @@ type ``about asserts``() =
     //Easy, right? Now try one more
 
     [<Koan>]
-    member this.FillInValues() =
-        AssertEquality "foo" __
+    let FillInValues() =
+        AssertEquality (1 + 1) __

@@ -11,10 +11,11 @@ open System.Collections.Generic
 // list and perform operations across each value in the 
 // list.
 //---------------------------------------------------------------
-type ``about lists``() =
+[<Koan(Sort = 9)>]
+module ``about lists`` =
 
     [<Koan>]
-    member this.CreatingLists() =
+    let CreatingLists() =
         let list = ["apple"; "pear"; "grape"; "peach"]
         
         //Note: The list data type in F# is a singly linked list, 
@@ -33,7 +34,7 @@ type ``about lists``() =
         AssertInequality (list.GetType()) (dotNetList.GetType())
 
     [<Koan>]
-    member this.BuildingNewLists() =
+    let BuildingNewLists() =
         let first = ["grape"; "peach"]
         let second = "pear" :: first
         let third = "apple" :: second
@@ -54,7 +55,7 @@ type ``about lists``() =
 
 
     [<Koan>]
-    member this.ConcatenatingLists() =
+    let ConcatenatingLists() =
         let first = ["apple"; "pear"; "grape"]
         let second = first @ ["peach"]
 
@@ -69,27 +70,27 @@ type ``about lists``() =
        order to append ["peach"] to "first" to create "second"? *)
         
     [<Koan>]
-    member this.CreatingListsWithARange() =
+    let CreatingListsWithARange() =
         let list = [0..4]
         
         AssertEquality list.Head __
         AssertEquality list.Tail __
         
     [<Koan>]
-    member this.CreatingListsWithComprehensions() =
+    let CreatingListsWithComprehensions() =
         let list = [for i in 0..4 do yield i ]
                             
         AssertEquality list __
     
     [<Koan>]
-    member this.ComprehensionsWithConditions() =
+    let ComprehensionsWithConditions() =
         let list = [for i in 0..10 do 
                         if i % 2 = 0 then yield i ]
                             
         AssertEquality list __
 
     [<Koan>]
-    member this.TransformingListsWithMap() =
+    let TransformingListsWithMap() =
         let square x =
             x * x
 
@@ -100,7 +101,7 @@ type ``about lists``() =
         AssertEquality result __
 
     [<Koan>]
-    member this.FilteringListsWithWhere() =
+    let FilteringListsWithWhere() =
         let isEven x =
             x % 2 = 0
 
@@ -111,7 +112,7 @@ type ``about lists``() =
         AssertEquality result __
 
     [<Koan>]
-    member this.DividingListsWithPartition() =
+    let DividingListsWithPartition() =
         let isOdd x =
             not(x % 2 = 0)
 

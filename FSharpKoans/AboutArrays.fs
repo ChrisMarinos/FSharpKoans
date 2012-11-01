@@ -7,9 +7,10 @@ open System.Collections.Generic
 //
 // Like lists, arrays are another basic container type in F#.
 //---------------------------------------------------------------
-type ``about arrays``() =
+[<Koan(Sort = 11)>]
+module ``about arrays`` =
     [<Koan>]
-    member this.CreatingArrays() =
+    let CreatingArrays() =
         let fruits = [| "apple"; "pear"; "peach"|]
 
         AssertEquality fruits.[0] __
@@ -17,7 +18,7 @@ type ``about arrays``() =
         AssertEquality fruits.[2] __
 
     [<Koan>]
-    member this.ArraysAreDotNetArrays() =
+    let ArraysAreDotNetArrays() =
         let fruits = [| "apple"; "pear" |]
 
         let arrayType = fruits.GetType()
@@ -28,14 +29,14 @@ type ``about arrays``() =
         AssertEquality arrayType systemArray
 
     [<Koan>]
-    member this.ArraysAreMutable() =
+    let ArraysAreMutable() =
         let fruits = [| "apple"; "pear" |]
         fruits.[1] <- "peach"
 
         AssertEquality fruits __
 
     [<Koan>]
-    member this.YouCanCreateArraysWithComprehensions() =
+    let YouCanCreateArraysWithComprehensions() =
         let numbers = 
             [| for i in 0..10 do 
                    if i % 2 = 0 then yield i |]
@@ -43,7 +44,7 @@ type ``about arrays``() =
         AssertEquality numbers __
 
     [<Koan>]
-    member this.ThereAreAlsoSomeOperationsYouCanPerformOnArrays() =
+    let ThereAreAlsoSomeOperationsYouCanPerformOnArrays() =
         let cube x =
             x * x * x
 
