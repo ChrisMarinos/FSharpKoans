@@ -89,5 +89,5 @@ module ``about strings`` =
         let funFactsAboutThree = getFunFacts 3
         let funFactsAboutSix = getFunFacts 6
 
-        AssertEquality "3 doubled is 6, and the square of 3 is 9!" funFactsAboutThree 
-        AssertEquality "6 doubled is 12, and the square of 6 is 36!" funFactsAboutSix 
+        AssertEquality "3 doubled is 6, and 3 tripled is 9!" funFactsAboutThree 
+        AssertEquality "6 doubled is 12, and 6 tripled is 18!" funFactsAboutSix 
