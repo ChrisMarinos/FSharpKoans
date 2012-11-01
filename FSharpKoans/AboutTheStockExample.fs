@@ -11,7 +11,7 @@ open FSharpKoans.Core
 //
 // The following functions may be of use:
 // 
-// abs - takes the absolute value of an arguement
+// abs - takes the absolute value of an argument
 // 
 // System.Double.Parse - converts a string argument into a 
 //                       numerical value.
@@ -58,4 +58,4 @@ type ``about the stock example``() =
     member this.YouGotTheAnswerCorrect() =
         let result =  __
         
-        AssertEquality "2012-3-13" result
+        AssertEquality "2012-03-13" result
