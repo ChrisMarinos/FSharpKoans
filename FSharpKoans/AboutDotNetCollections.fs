@@ -9,7 +9,7 @@ open System.Collections.Generic
 // languages, you can use all of the basic .NET collections types
 // you're already familiar with if you're a C# or VB programmer.
 //---------------------------------------------------------------
-[<Koan(Sort = 12)>]
+[<Koan(Sort = 14)>]
 module ``about dot net collections`` =
 
     [<Koan>]

@@ -8,7 +8,7 @@ open FSharpKoans.Core
 // since F# is a functional language, there are more tricks
 // to learn!
 //---------------------------------------------------------------
-[<Koan(Sort = 14)>]
+[<Koan(Sort = 13)>]
 module ``more about functions`` =
     
     [<Koan>]

@@ -9,7 +9,7 @@ open FSharpKoans.Core
 // back on traditional imperative looping techniques that you may 
 // be more familiar with.
 //---------------------------------------------------------------
-[<Koan(Sort = 13)>]
+[<Koan(Sort = 12)>]
 module ``about looping`` =
     [<Koan>]
     let LoopingOverAList() =
