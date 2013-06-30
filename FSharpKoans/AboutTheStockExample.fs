@@ -57,6 +57,34 @@ module ``about the stock example`` =
 
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
+        let result = 
+            let splitCommas (x:string) =
+                x.Split([|','|])
+            let parseDouble x =
+                System.Double.Parse x
+            let maxBySecond x =
+                snd x
+                
+            let columnNamesRow = splitCommas (List.head stockData)
+            let findColumnIndex columnName =
+                Seq.findIndex (fun x -> x = columnName) columnNamesRow
+                
+            let dateColumn = findColumnIndex "Date"
+            let openColumn = findColumnIndex "Open"
+            let closeColumn = findColumnIndex "Close"
+            
+            let varianceFromStrings x y =
+                abs (parseDouble(x) - parseDouble(y))
+                
+            let mapToDateAndVariance row =
+                let splittedRow = splitCommas row
+                (splittedRow.[dateColumn], varianceFromStrings splittedRow.[openColumn] splittedRow.[closeColumn])
+            
+            stockData
+            |> Seq.skip 1
+            |> Seq.map (fun x -> mapToDateAndVariance x)
+            |> Seq.maxBy maxBySecond
+            |> fst
+        
         
         AssertEquality "2012-03-13" result
