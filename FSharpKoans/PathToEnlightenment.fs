@@ -1,4 +1,5 @@
-﻿open FSharpKoans
+﻿open System
+open FSharpKoans
 open FSharpKoans.Core
 
 let runner = KoanRunner()
@@ -23,4 +24,4 @@ printfn ""
 printfn ""
 printfn ""
 printf "Press any key to continue..."
-System.Console.ReadKey() |> ignore
+Console.ReadKey() |> ignore

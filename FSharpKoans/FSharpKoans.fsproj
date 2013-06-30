@@ -2,10 +2,10 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{87c025e8-3e63-4a20-b1ca-2e346d0e0c51}</ProjectGuid>
+    <ProjectGuid>{87C025E8-3E63-4A20-B1CA-2E346D0E0C51}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>FSharpKoans1</RootNamespace>
     <AssemblyName>FSharpKoans</AssemblyName>
@@ -79,8 +79,7 @@
     <Reference Include="System.Numerics" />
     <ProjectReference Include="..\FSharpKoans.Core\FsharpKoans.Core.fsproj">
       <Name>FsharpKoans.Core</Name>
-      <Project>{71460aa5-7357-4f1c-99bc-54244b50b00e}</Project>
-      <Private>True</Private>
+      <Project>{71460AA5-7357-4F1C-99BC-54244B50B00E}</Project>
     </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

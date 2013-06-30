@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsharpKoans.Core", "FSharpKoans.Core\FsharpKoans.Core.fsproj", "{71460AA5-7357-4F1C-99BC-54244B50B00E}"
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "FsharpKoans.Core", "FSharpKoans.Core\FsharpKoans.Core.fsproj", "{71460AA5-7357-4F1C-99BC-54244B50B00E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpKoans", "FSharpKoans\FSharpKoans.fsproj", "{87C025E8-3E63-4A20-B1CA-2E346D0E0C51}"
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "FSharpKoans", "FSharpKoans\FSharpKoans.fsproj", "{87C025E8-3E63-4A20-B1CA-2E346D0E0C51}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpKoans.Test", "FSharpKoans.Test\FSharpKoans.Test.fsproj", "{69F00CBF-0EDC-4260-B852-C53B8C44BBCE}"
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "FSharpKoans.Test", "FSharpKoans.Test\FSharpKoans.Test.fsproj", "{69F00CBF-0EDC-4260-B852-C53B8C44BBCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +55,9 @@ Global
 		{87C025E8-3E63-4A20-B1CA-2E346D0E0C51}.Release|x64.ActiveCfg = Release|x86
 		{87C025E8-3E63-4A20-B1CA-2E346D0E0C51}.Release|x86.ActiveCfg = Release|x86
 		{87C025E8-3E63-4A20-B1CA-2E346D0E0C51}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FSharpKoans\FSharpKoans.fsproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
