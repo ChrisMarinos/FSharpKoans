@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{69f00cbf-0edc-4260-b852-c53b8c44bbce}</ProjectGuid>
+    <ProjectGuid>{69F00CBF-0EDC-4260-B852-C53B8C44BBCE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>FSharpKoans.Test</RootNamespace>
     <AssemblyName>FSharpKoans.Test</AssemblyName>
@@ -48,15 +48,12 @@
     <Reference Include="FSharp.Core" />
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="nunit.mocks">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="pnunit.framework">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,8 +62,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FSharpKoans.Core\FsharpKoans.Core.fsproj">
       <Name>FsharpKoans.Core</Name>
-      <Project>{71460aa5-7357-4f1c-99bc-54244b50b00e}</Project>
-      <Private>True</Private>
+      <Project>{71460AA5-7357-4F1C-99BC-54244B50B00E}</Project>
     </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
