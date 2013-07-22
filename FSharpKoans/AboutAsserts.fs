@@ -13,7 +13,7 @@ open FSharpKoans.Core
 // 
 // This is where the fun begins! Each Koan method contains
 // an example designed to teach you a lesson about the F# language. 
-// If you exectue the program defined in this project, you will get
+// If you execute the program defined in this project, you will get
 // a message that the AssertEquality koan below has failed. Your
 // job is to fill in the blank (the __ symbol) to make it pass. Once
 // you make the change, re-run the program to make sure the koan
