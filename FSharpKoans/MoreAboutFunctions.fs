@@ -2,9 +2,9 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// More About Funtions
+// More About Functions
 //
-// You've already learned a little about funcitons in F#, but
+// You've already learned a little about functions in F#, but
 // since F# is a functional language, there are more tricks
 // to learn!
 //---------------------------------------------------------------

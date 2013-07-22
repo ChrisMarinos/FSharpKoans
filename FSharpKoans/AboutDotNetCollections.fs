@@ -5,7 +5,7 @@ open System.Collections.Generic
 //---------------------------------------------------------------
 // About .NET Collections
 //
-// Since F# is bulit for seamless interop with other CLR 
+// Since F# is built for seamless interop with other CLR 
 // languages, you can use all of the basic .NET collections types
 // you're already familiar with if you're a C# or VB programmer.
 //---------------------------------------------------------------
