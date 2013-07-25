@@ -21,7 +21,7 @@ module MushroomKingdom =
 //---------------------------------------------------------------
 // About Modules
 //
-// Modules are used to group funcitons, values, and types. 
+// Modules are used to group functions, values, and types. 
 // They're similar to .NET namespaces, but they have slightly 
 // different semantics as you'll see below.
 //---------------------------------------------------------------
