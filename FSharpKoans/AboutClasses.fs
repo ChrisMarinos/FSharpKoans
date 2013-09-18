@@ -36,7 +36,7 @@ type Person2(name:string) =
     member this.Speak() =
         "Hi my name is " + this.Name
 
-[<Koan(Sort = 20)>]
+[<Koan(Sort = 22)>]
 module ``about classes`` =
 
     [<Koan>]
