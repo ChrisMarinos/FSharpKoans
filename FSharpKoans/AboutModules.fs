@@ -49,7 +49,8 @@ module ``about modules`` =
 
 open MushroomKingdom
 
-type ``about opened modules``() =
+[<Koan(Sort = 20)>]
+module ``about opened modules`` =
     [<Koan>]
     let OpenedModulesBringTheirContentsInScope() = 
         AssertEquality Mario.Name __
