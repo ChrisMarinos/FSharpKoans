@@ -20,7 +20,7 @@ module ``about the order of evaluation`` =
 
         AssertEquality result __
 
-        (* TRY IT: What happens if you remove the parensthesis?*)
+        (* TRY IT: What happens if you remove the parenthesis?*)
 
     [<Koan>]
     let TheBackwardPipeOperatorCanAlsoHelpWithGrouping() =
