@@ -101,7 +101,7 @@ module ``about lists`` =
         AssertEquality result __
 
     [<Koan>]
-    let FilteringListsWithWhere() =
+    let FilteringListsWithFilter() =
         let isEven x =
             x % 2 = 0
 
