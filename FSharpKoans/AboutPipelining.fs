@@ -32,7 +32,7 @@ module ``about pipelining`` =
     [<Koan>]
     let SquareEvenNumbersWithParens() =
         (* You can avoid this problem by using parens to pass the result of one
-           funciton to another. This can be difficult to read since you have to 
+           function to another. This can be difficult to read since you have to 
            start from the innermost function and work your way out. *)
 
         let numbers = [0..5]
