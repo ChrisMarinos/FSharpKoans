@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 type Character = {
     Name: string
@@ -13,17 +13,16 @@ type Character = {
 // You can use them to group data in a more structured way than
 // tuples.
 //---------------------------------------------------------------
-[<Koan(Sort = 16)>]
 module ``about record types`` =
 
-    [<Koan>]
+    [<Test>]
     let RecordsHaveProperties() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
 
         AssertEquality mario.Name __
         AssertEquality mario.Occupation __
 
-    [<Koan>]
+    [<Test>]
     let CreatingFromAnExistingRecord() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
         let luigi = { mario with Name = "Luigi"; }
@@ -34,7 +33,7 @@ module ``about record types`` =
         AssertEquality luigi.Name __
         AssertEquality luigi.Occupation __
 
-    [<Koan>]
+    [<Test>]
     let ComparingRecords() =
         let greenKoopa = { Name = "Koopa"; Occupation = "Soldier"; }
         let bowser = { Name = "Bowser"; Occupation = "Kidnapper"; }
@@ -55,7 +54,7 @@ module ``about record types`` =
         AssertEquality koopaComparison __
         AssertEquality bowserComparison __
 
-    [<Koan>]
+    [<Test>]
     let YouCanPatternMatchAgainstRecords() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
         let luigi = { Name = "Luigi"; Occupation = "Plumber"; }

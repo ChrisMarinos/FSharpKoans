@@ -1,5 +1,5 @@
 ﻿[<AutoOpenAttribute>]
-module FSharpKoans.Core.Helpers
+module FSharpKoans.Helpers
 
 open System
 open NUnit.Framework

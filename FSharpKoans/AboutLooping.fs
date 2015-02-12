@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // About Looping
@@ -9,9 +9,8 @@ open FSharpKoans.Core
 // back on traditional imperative looping techniques that you may 
 // be more familiar with.
 //---------------------------------------------------------------
-[<Koan(Sort = 12)>]
 module ``about looping`` =
-    [<Koan>]
+    [<Test>]
     let LoopingOverAList() =
         let values = [0..10]
 
@@ -21,7 +20,7 @@ module ``about looping`` =
 
         AssertEquality sum __
        
-    [<Koan>]
+    [<Test>]
     let LoopingWithExpressions() =
         let mutable sum = 0
 
@@ -30,7 +29,7 @@ module ``about looping`` =
 
         AssertEquality sum __
 
-    [<Koan>]
+    [<Test>]
     let LoopingWithWhile() =
         let mutable sum = 1
 

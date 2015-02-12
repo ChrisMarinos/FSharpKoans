@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // About Let
@@ -8,10 +8,9 @@ open FSharpKoans.Core
 // You'll use it in almost every line of F# code you write, so
 // let's get to know it well! (no pun intended)
 //---------------------------------------------------------------
-[<Koan(Sort = 2)>]
 module ``about let`` =
 
-    [<Koan>]
+    [<Test>]
     let LetBindsANameToAValue() =
         let x = 50
         
@@ -20,7 +19,7 @@ module ``about let`` =
     (* In F#, values created with let are inferred to have a type like
        "int" for integer values, "string" for text values, and "bool" 
        for true or false values. *)
-    [<Koan>]
+    [<Test>]
     let LetInfersTheTypesOfValuesWherePossible() =
         let x = 50
         let typeOfX = x.GetType()
@@ -30,7 +29,7 @@ module ``about let`` =
         let expectedType = y.GetType()
         AssertEquality expectedType typeof<FILL_ME_IN>
 
-    [<Koan>]
+    [<Test>]
     let YouCanMakeTypesExplicit() =
         let (x:int) = 42
         let typeOfX = x.GetType()
@@ -45,7 +44,7 @@ module ``about let`` =
            local varaibles, but type annotations can come in handy in other 
            contexts as you'll see later. *)
     
-    [<Koan>]
+    [<Test>]
     let FloatsAndInts() =
         (* Depending on your background, you may be surprised to learn that
            in F#, integers and floating point numbers are different types. 
@@ -63,14 +62,14 @@ module ``about let`` =
         //If you're coming from another .NET language, float is F# slang for
         //the double type.
 
-    [<Koan>]
+    [<Test>]
     let ModifyingTheValueOfVariables() =
         let mutable x = 100
         x <- 200
 
         AssertEquality x __
 
-    [<Koan>]
+    [<Test>]
     let YouCannotModifyALetBoundValueIfItIsNotMutable() =
         let x = 50
         

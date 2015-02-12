@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // About the Order of Evaluation
@@ -8,10 +8,9 @@ open FSharpKoans.Core
 // functions are evaluated. F# offers a couple mechanisms for
 // doing this.
 //---------------------------------------------------------------
-[<Koan(Sort = 4)>]
 module ``about the order of evaluation`` =
 
-    [<Koan>]
+    [<Test>]
     let SometimesYouNeedParenthesisToGroupThings() =
         let add x y =
             x + y
@@ -22,7 +21,7 @@ module ``about the order of evaluation`` =
 
         (* TRY IT: What happens if you remove the parenthesis?*)
 
-    [<Koan>]
+    [<Test>]
     let TheBackwardPipeOperatorCanAlsoHelpWithGrouping() =
         let add x y =
             x + y

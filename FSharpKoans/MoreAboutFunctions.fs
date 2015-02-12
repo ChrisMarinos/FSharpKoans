@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // More About Functions
@@ -8,10 +8,9 @@ open FSharpKoans.Core
 // since F# is a functional language, there are more tricks
 // to learn!
 //---------------------------------------------------------------
-[<Koan(Sort = 13)>]
 module ``more about functions`` =
     
-    [<Koan>]
+    [<Test>]
     let DefiningLambdas() =
         
         let colors = ["maize"; "blue"]
@@ -26,7 +25,7 @@ module ``more about functions`` =
            it a name. These functions are known as anonymous functions, lambdas,
            or lambda functions. *)
 
-    [<Koan>]
+    [<Test>]
     let FunctionsThatReturnFunctions() =
         (* A neat functional programming trick is to create functions that 
            return other functions. This leads to some interesting behaviors. *)
@@ -47,7 +46,7 @@ module ``more about functions`` =
 
         //NOTE: Functions written in this style are said to be curried.
 
-    [<Koan>]
+    [<Test>]
     let AutomaticCurrying() =
         (* The above technique is common enough that F# actually supports this
            by default. In other words, functions are automatically curried. *)
@@ -61,7 +60,7 @@ module ``more about functions`` =
         AssertEquality unluckyNumber __
         AssertEquality luckyNumber __
 
-    [<Koan>]
+    [<Test>]
     let NonCurriedFunctions() =
         (* You should stick to the auto-curried function syntax most of the 
            time. However, you can also write functions in an uncurried form to

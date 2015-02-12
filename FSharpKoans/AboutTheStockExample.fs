@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // Apply Your Knowledge!
@@ -22,7 +22,6 @@ open FSharpKoans.Core
 // let splitCommas (x:string) =
 //     x.Split([|','|])
 //---------------------------------------------------------------
-[<Koan(Sort = 15)>]
 module ``about the stock example`` =
     
     let stockData =
@@ -51,11 +50,11 @@ module ``about the stock example`` =
           "2012-03-01,31.93,32.39,31.85,32.29,77344100,32.29";
           "2012-02-29,31.89,32.00,31.61,31.74,59323600,31.74"; ]
     
-    // Feel free to add extra [<Koan>] members here to write
+    // Feel free to add extra [<Test>] members here to write
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
 
-    [<Koan>]
+    [<Test>]
     let YouGotTheAnswerCorrect() =
         let result =  __
         

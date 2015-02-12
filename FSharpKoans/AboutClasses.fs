@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // About Classes
@@ -36,23 +36,22 @@ type Person2(name:string) =
     member this.Speak() =
         "Hi my name is " + this.Name
 
-[<Koan(Sort = 21)>]
 module ``about classes`` =
 
-    [<Koan>]
+    [<Test>]
     let ClassesCanHaveProperties() =
         let zombie = new Zombie()
 
         AssertEquality zombie.FavoriteFood __
 
-    [<Koan>]
+    [<Test>]
     let ClassesCanHaveMethods() =
         let zombie = new Zombie()
 
         let result = zombie.Eat "brains"
         AssertEquality result __
     
-    [<Koan>]
+    [<Test>]
     let ClassesCanHaveConstructors() =
     
         let person = new Person("Shaun")
@@ -60,7 +59,7 @@ module ``about classes`` =
         let result = person.Speak()
         AssertEquality result __
 
-    [<Koan>]
+    [<Test>]
     let ClassesCanHaveLetBindingsInsideThem() =
         let zombie = new Zombie2()
 
@@ -70,7 +69,7 @@ module ``about classes`` =
         (* TRY IT: Can you access the let bound value Zombie2.favoriteFood
                    outside of the class definition? *)
 
-    [<Koan>]
+    [<Test>]
     let ClassesCanHaveReadWriteProperties() =
         let person = new Person2("Shaun")
 

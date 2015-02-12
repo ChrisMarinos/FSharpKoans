@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // About Functions
@@ -7,7 +7,6 @@ open FSharpKoans.Core
 // Now that you've seen how to bind a name to a value with let,
 // you'll learn to use the let keyword to create functions.
 //---------------------------------------------------------------
-[<Koan(Sort = 3)>]
 module ``about functions`` =
 
     (* By default, F# is whitespace sensitive.
@@ -19,7 +18,7 @@ module ``about functions`` =
     let add x y =
         x + y
 
-    [<Koan>]
+    [<Test>]
     let CreatingFunctionsWithLet() =
         let result1 = add 2 2
         let result2 = add 5 2
@@ -27,7 +26,7 @@ module ``about functions`` =
         AssertEquality result1 __
         AssertEquality result2 __
 
-    [<Koan>]
+    [<Test>]
     let NestingFunctions() =
         let quadruple x =    
             let double x =
@@ -38,7 +37,7 @@ module ``about functions`` =
         let result = quadruple 4
         AssertEquality result __
 
-    [<Koan>]
+    [<Test>]
     let AddingTypeAnnotations() =
 
         (* Sometimes you need to help F#'s type inference system out with an
@@ -52,7 +51,7 @@ module ``about functions`` =
 
         //TRY IT: What happens if you remove the type annotation on text?
 
-    [<Koan>]
+    [<Test>]
     let VariablesInTheParentScopeCanBeAccessed() =
         let suffix = "!!!"
 

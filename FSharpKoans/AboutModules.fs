@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 module MushroomKingdom =
     type Power =
@@ -25,10 +25,9 @@ module MushroomKingdom =
 // They're similar to .NET namespaces, but they have slightly 
 // different semantics as you'll see below.
 //---------------------------------------------------------------
-[<Koan(Sort = 19)>]
 module ``about modules`` =
 
-    [<Koan>]
+    [<Test>]
     let ModulesCanContainValuesAndTypes() =
 
         AssertEquality MushroomKingdom.Mario.Name __
@@ -37,7 +36,7 @@ module ``about modules`` =
         let moduleType = MushroomKingdom.Mario.GetType()
         AssertEquality moduleType typeof<FILL_ME_IN>
 
-    [<Koan>]
+    [<Test>]
     let ModulesCanContainFunctions() =
         let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
 
@@ -49,9 +48,8 @@ module ``about modules`` =
 
 open MushroomKingdom
 
-[<Koan(Sort = 20)>]
 module ``about opened modules`` =
-    [<Koan>]
+    [<Test>]
     let OpenedModulesBringTheirContentsInScope() = 
         AssertEquality Mario.Name __
         AssertEquality Mario.Occupation __

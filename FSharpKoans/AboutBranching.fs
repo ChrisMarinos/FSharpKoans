@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // About Branching
@@ -7,10 +7,9 @@ open FSharpKoans.Core
 // Branching is used to tell a program to conditionally perform
 // an operation. It's another fundamental part of F#.
 //---------------------------------------------------------------
-[<Koan(Sort = 8)>]
 module ``about branching`` =
     
-    [<Koan>]
+    [<Test>]
     let BasicBranching() =
         let isEven x =
             if x % 2 = 0 then
@@ -21,7 +20,7 @@ module ``about branching`` =
         let result = isEven 2                
         AssertEquality result __
     
-    [<Koan>]
+    [<Test>]
     let IfStatementsReturnValues() =
     
         (* In languages like C#, if statements do not yield results; they can 
@@ -36,7 +35,7 @@ module ``about branching`` =
 
         AssertEquality result __
 
-    [<Koan>]
+    [<Test>]
     let BranchingWithAPatternMatch() =
         let isApple x =
             match x with
@@ -49,7 +48,7 @@ module ``about branching`` =
         AssertEquality result1 __
         AssertEquality result2 __
     
-    [<Koan>]
+    [<Test>]
     let UsingTuplesWithIfStatementsQuicklyBecomesClumsy() =
         
         let getDinner x = 
@@ -67,7 +66,7 @@ module ``about branching`` =
         AssertEquality (getDinner person1) __
         AssertEquality (getDinner person2) __
         
-    [<Koan>]
+    [<Test>]
     let PatternMatchingIsNicer() =
     
         let getDinner x =

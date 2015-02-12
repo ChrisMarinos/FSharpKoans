@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 open System.Collections.Generic
 
 //---------------------------------------------------------------
@@ -9,10 +9,9 @@ open System.Collections.Generic
 // languages, you can use all of the basic .NET collections types
 // you're already familiar with if you're a C# or VB programmer.
 //---------------------------------------------------------------
-[<Koan(Sort = 14)>]
 module ``about dot net collections`` =
 
-    [<Koan>]
+    [<Test>]
     let CreatingDotNetLists() =
         let fruits = new List<string>()
 
@@ -22,7 +21,7 @@ module ``about dot net collections`` =
         AssertEquality fruits.[0] __
         AssertEquality fruits.[1] __
 
-    [<Koan>]
+    [<Test>]
     let CreatingDotNetDictionaries() =
         let addressBook = new Dictionary<string, string>()
 
@@ -32,7 +31,7 @@ module ``about dot net collections`` =
         AssertEquality addressBook.["Chris"] __
         AssertEquality addressBook.["SkillsMatter"] __
 
-    [<Koan>]
+    [<Test>]
     let YouUseCombinatorsWithDotNetTypes() =
         let addressBook = new Dictionary<string, string>()
 
@@ -52,14 +51,14 @@ module ``about dot net collections`` =
         AssertEquality verboseBook.[0] __
         AssertEquality verboseBook.[1] __
 
-    [<Koan>]
+    [<Test>]
     let SkippingElements() =
         let original = [0..5]
         let result = Seq.skip 2 original
         
         AssertEquality result __
 
-    [<Koan>]
+    [<Test>]
     let FindingTheMax() =
         let values = new List<int>()
 
@@ -73,7 +72,7 @@ module ``about dot net collections`` =
         
         AssertEquality result __
     
-    [<Koan>]
+    [<Test>]
     let FindingTheMaxUsingACondition() =
         let getNameLength (name:string) =
             name.Length

@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 open Microsoft.FSharp.Reflection
 
 //---------------------------------------------------------------
@@ -9,10 +9,9 @@ open Microsoft.FSharp.Reflection
 // a value. It's similar to void in other languages, but unit
 // is actually considered to be a type in F#.
 //---------------------------------------------------------------
-[<Koan(Sort = 5)>]
 module ``about unit`` =
 
-    [<Koan>]
+    [<Test>]
     let UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
         let sendData data =
             //...sending the data to the server...
@@ -21,7 +20,7 @@ module ``about unit`` =
         let x = sendData "data"
         AssertEquality x __ //Don't overthink this
 
-    [<Koan>]
+    [<Test>]
     let ParameterlessFunctionsTakeUnitAsTheirArgument() =
         let sayHello() =
             "hello"

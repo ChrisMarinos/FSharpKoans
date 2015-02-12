@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // About Strings
@@ -7,22 +7,21 @@ open FSharpKoans.Core
 // Most languages have a set of utilities for manipulating 
 // strings. F# is no different.
 //---------------------------------------------------------------
-[<Koan(Sort = 7)>]
 module ``about strings`` =
 
-    [<Koan>]
+    [<Test>]
     let StringValue() =
         let message = "hello"
 
         AssertEquality message __
 
-    [<Koan>]
+    [<Test>]
     let StringConcatValue() =
         let message = "hello " + "world"
 
         AssertEquality message __
 
-    [<Koan>]
+    [<Test>]
     let FormattingStringValues() =
         let message = sprintf "F# turns it to %d!" 11
 
@@ -33,13 +32,13 @@ module ``about strings`` =
         (* TRY IT: What happens if you change 11 to be something besides 
                    a number? *)
 
-    [<Koan>]
+    [<Test>]
     let FormattingOtherTypes() =
         let message = sprintf "hello %s" "world"
 
         AssertEquality message __
 
-    [<Koan>]
+    [<Test>]
     let FormattingAnything() =
         let message = sprintf "Formatting other types is as easy as: %A" (1, 2, 3)
 
@@ -48,7 +47,7 @@ module ``about strings`` =
     (* NOTE: For all the %formatters that you can use with string formatting 
              see: http://msdn.microsoft.com/en-us/library/ee370560.aspx *)
 
-    [<Koan>]
+    [<Test>]
     let CombineMultiline() =
         let message = "super\
                         cali\
@@ -58,7 +57,7 @@ module ``about strings`` =
 
         AssertEquality message __
 
-    [<Koan>]
+    [<Test>]
     let Multiline() =
         let message = "This
                         is
@@ -69,7 +68,7 @@ module ``about strings`` =
         AssertEquality
               message __
 
-    [<Koan>]
+    [<Test>]
     let ExtractValues() =
         let message = "hello world"
 
@@ -79,7 +78,7 @@ module ``about strings`` =
         AssertEquality first __
         AssertEquality other __
 
-    [<Koan>]
+    [<Test>]
     let ApplyWhatYouLearned() =
         (* It's time to apply what you've learned so far. Fill in the function below to
            make the asserts pass *)

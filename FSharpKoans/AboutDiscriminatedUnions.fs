@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 type Condiment =
     | Mustard
@@ -19,9 +19,8 @@ type Favorite =
 // of them like a much more powerful version of enums in other
 // languages.
 //---------------------------------------------------------------
-[<Koan(Sort = 18)>]
 module ``about discriminated unions`` =
-    [<Koan>]
+    [<Test>]
     let DiscriminatedUnionsCaptureASetOfOptions() =
 
         let toColor condiment = 
@@ -38,7 +37,7 @@ module ``about discriminated unions`` =
         (* TRY IT: What happens if you remove a case from the above pattern 
                    match? *)
 
-    [<Koan>]
+    [<Test>]
     let DiscriminatedUnionCasesCanHaveTypes() =
 
         let saySomethingAboutYourFavorite favorite =

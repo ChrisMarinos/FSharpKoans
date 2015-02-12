@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 
 //---------------------------------------------------------------
 // Getting Started
@@ -21,10 +21,9 @@ open FSharpKoans.Core
 // passing koan, you'll learn more about F#, and add another
 // weapon to your F# programming arsenal.
 //---------------------------------------------------------------
-[<Koan(Sort = 1)>]
 module ``about asserts`` =
 
-    [<Koan>]
+    [<Test>]
     let AssertExpectation() =
         let expected_value = 1 + 1
         let actual_value = __ //start by changing this line
@@ -33,6 +32,6 @@ module ``about asserts`` =
  
     //Easy, right? Now try one more
 
-    [<Koan>]
+    [<Test>]
     let FillInValues() =
         AssertEquality (1 + 1) __

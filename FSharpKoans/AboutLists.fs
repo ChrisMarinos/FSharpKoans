@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+open NUnit.Framework
 open System.Collections.Generic
 
 //---------------------------------------------------------------
@@ -11,10 +11,9 @@ open System.Collections.Generic
 // list and perform operations across each value in the 
 // list.
 //---------------------------------------------------------------
-[<Koan(Sort = 9)>]
 module ``about lists`` =
 
-    [<Koan>]
+    [<Test>]
     let CreatingLists() =
         let list = ["apple"; "pear"; "grape"; "peach"]
         
@@ -33,7 +32,7 @@ module ``about lists`` =
         //you don't need to modify the following line
         AssertInequality (list.GetType()) (dotNetList.GetType())
 
-    [<Koan>]
+    [<Test>]
     let BuildingNewLists() =
         let first = ["grape"; "peach"]
         let second = "pear" :: first
@@ -54,7 +53,7 @@ module ``about lists`` =
         //                created?
 
 
-    [<Koan>]
+    [<Test>]
     let ConcatenatingLists() =
         let first = ["apple"; "pear"; "grape"]
         let second = first @ ["peach"]
@@ -69,27 +68,27 @@ module ``about lists`` =
        immutable. With that in mind, what does the @ function have to do in
        order to append ["peach"] to "first" to create "second"? *)
         
-    [<Koan>]
+    [<Test>]
     let CreatingListsWithARange() =
         let list = [0..4]
         
         AssertEquality list.Head __
         AssertEquality list.Tail __
         
-    [<Koan>]
+    [<Test>]
     let CreatingListsWithComprehensions() =
         let list = [for i in 0..4 do yield i ]
                             
         AssertEquality list __
     
-    [<Koan>]
+    [<Test>]
     let ComprehensionsWithConditions() =
         let list = [for i in 0..10 do 
                         if i % 2 = 0 then yield i ]
                             
         AssertEquality list __
 
-    [<Koan>]
+    [<Test>]
     let TransformingListsWithMap() =
         let square x =
             x * x
@@ -100,7 +99,7 @@ module ``about lists`` =
         AssertEquality original __
         AssertEquality result __
 
-    [<Koan>]
+    [<Test>]
     let FilteringListsWithFilter() =
         let isEven x =
             x % 2 = 0
@@ -111,7 +110,7 @@ module ``about lists`` =
         AssertEquality original __
         AssertEquality result __
 
-    [<Koan>]
+    [<Test>]
     let DividingListsWithPartition() =
         let isOdd x =
             not(x % 2 = 0)
