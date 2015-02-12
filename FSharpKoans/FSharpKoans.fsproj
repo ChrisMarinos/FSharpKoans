@@ -59,21 +59,21 @@
   <ItemGroup>
     <Compile Include="Helpers.fs" />
     <Compile Include="AboutAsserts.fs" />
-    <Compile Include="AboutLet.fs" />
+    <Compile Include="AboutBinding.fs" />
+    <Compile Include="AboutMatching.fs" />
+    <Compile Include="AboutLists.fs" />
+    <Compile Include="AboutTuples.fs" />
+    <Compile Include="AboutRecords.fs" />
     <Compile Include="AboutFunctions.fs" />
     <Compile Include="AboutTheOrderOfEvaluation.fs" />
     <Compile Include="AboutUnit.fs" />
-    <Compile Include="AboutTuples.fs" />
     <Compile Include="AboutStrings.fs" />
-    <Compile Include="AboutBranching.fs" />
-    <Compile Include="AboutLists.fs" />
     <Compile Include="AboutPipelining.fs" />
     <Compile Include="AboutArrays.fs" />
     <Compile Include="AboutLooping.fs" />
     <Compile Include="MoreAboutFunctions.fs" />
     <Compile Include="AboutDotNetCollections.fs" />
     <Compile Include="AboutTheStockExample.fs" />
-    <Compile Include="AboutRecordTypes.fs" />
     <Compile Include="AboutOptionTypes.fs" />
     <Compile Include="AboutDiscriminatedUnions.fs" />
     <Compile Include="AboutModules.fs" />
@@ -85,6 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FsUnit.NUnit">
+      <HintPath>..\packages\FsUnit.1.3.0.1\Lib\Net40\FsUnit.NUnit.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />

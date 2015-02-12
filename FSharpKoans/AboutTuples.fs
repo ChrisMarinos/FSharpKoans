@@ -1,80 +1,34 @@
 ﻿namespace FSharpKoans
 open NUnit.Framework
+open FsUnit
 
-//---------------------------------------------------------------
-// About Tuples
-//
-// Tuples are used to easily group together values in F#. They're 
-// another fundamental construct of the language.
-//---------------------------------------------------------------
-module ``about tuples`` =
-    
-    [<Test>]
-    let CreatingTuples() =
-        let items = ("apple", "dog")
-        
-        AssertEquality items ("apple", __)
-        
-    [<Test>]
-    let AccessingTupleElements() =
-        let items = ("apple", "dog")
-        
-        let fruit = fst items
-        let animal = snd items
-        
-        AssertEquality fruit __
-        AssertEquality animal __
+module Tuples = 
+   let [<Test>] ``Creating tuples`` () = 
+      let items = "apple", "dog"
+      items |> should equal ("apple", __)
 
-    [<Test>]
-    let AccessingTupleElementsWithPatternMatching() =
+   let [<Test>] ``Elements of a tuple can be different types`` () =
+      let stuff = "Rivet", false, 22.5
+      stuff |> should equal ( __ )
 
-        (* fst and snd are useful in some situations, but they only work with
-           tuples containing two elements. It's usually better to use a 
-           technique called pattern matching to access the values of a tuple. 
-           
-           Pattern matching works with tuples of any arity, and it allows you to 
-           simultaneously break apart the tuple while assigning a name to each 
-           value. Here's an example. *)
-        
-        let items = ("apple", "dog", "Mustang")
-        
-        let fruit, animal, car = items
-        
-        AssertEquality fruit __
-        AssertEquality animal __
-        AssertEquality car __
-        
-    [<Test>]
-    let IgnoringValuesWithPatternMatching() =
-        let items = ("apple", "dog", "Mustang")
-        
-        let _, animal, _ = items
-        
-        AssertEquality animal __
-    
-    (* NOTE: pattern matching is found in many places
-             throughout F#, and we'll revisit it again later *)
-        
-    [<Test>]
-    let ReturningMultipleValuesFromAFunction() =
-        let squareAndCube x =
-            (x ** 2.0, x ** 3.0)
-        
-        let squared, cubed = squareAndCube 3.0
-        
-        
-        AssertEquality squared __
-        AssertEquality cubed __
-    
-    (* THINK ABOUT IT: Is there really more than one return value?
-                       What type does the squareAndCube function
-                       return? *)
-    
-    [<Test>]
-    let TheTruthBehindMultipleReturnValues() =
-        let squareAndCube x =
-            (x ** 2.0, x ** 3.0)
-            
-        let result = squareAndCube 3.0
-       
-        AssertEquality result __
+   let [<Test>] ``Decompose a tuple using tuple pattern`` () =
+      let aida = 2020, "cranberry", false, "wait, what?"
+      let a, b, c, d = aida
+      a |> should equal __
+      b |> should equal __
+      c |> should equal __
+      d |> should equal __
+
+   let [<Test>] ``Using a tuple in a match expression`` () =
+      let result =
+         match "Teresa", "pasta" with
+         | name, "veggies" -> name + " likes vegetables"
+         | name, "fish" -> name + " likes seafood"
+         | name, "chicken" -> name + " crows about their food"
+         | FILL__ME_IN, FILL__ME_IN -> __ + " loves to eat " + __
+      result |> should equal "Teresa loves to eat pasta"   
+   
+   let [<Test>] ``Using the wildcard pattern`` () = 
+      let name, _, _, weapon_name = "Shinji", 9103, true, "Unit 01"
+      name |> should equal __
+      weapon_name |> should equal __
