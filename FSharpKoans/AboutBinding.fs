@@ -1,13 +1,22 @@
 ﻿namespace FSharpKoans
 
 open NUnit.Framework
-open FsUnit
 
 module Binding = 
    [<Test>]
    let ``Basic 'let' binding`` = 
       let x = 50
       x |> should equal __
+
+   let ``Nest your 'let' statements as deeply as you'd like`` =
+      let a =
+         let b =
+            let c =
+               let d = 63
+               d
+            c
+         b + 7
+      a |> should equal ___
    
    [<Test>]
    let ``The type of symbols in variable patterns are inferred``() = 
@@ -25,18 +34,8 @@ module Binding =
    let [<Test>] ``Constant patterns succeed if both sides match`` () =
       let 900 = ___
       let "Can't win all the time" = __
-      0
+      ()
 
    let [<Test;ExpectedException("MatchFailureException")>] ``Constant patterns fail if the sides don't match exactly`` () =
       let "FILL_ME_IN" = __
-      0
-
-(*
-   let YouCanMakeTypesExplicit() = 
-      let (x : int) = 42
-      let typeOfX = x.GetType()
-      let y : string = "forty two"
-      let typeOfY = y.GetType()
-      AssertEquality typeOfX typeof<FILL_ME_IN>
-      AssertEquality typeOfY typeof<FILL_ME_IN>
-*)  
+      ()

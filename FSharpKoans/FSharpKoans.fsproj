@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{87c025e8-3e63-4a20-b1ca-2e346d0e0c51}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>FSharpKoans1</RootNamespace>
     <AssemblyName>FSharpKoans</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -58,26 +58,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers.fs" />
-    <Compile Include="AboutAsserts.fs" />
+    <Compile Include="AboutTesting.fs" />
     <Compile Include="AboutBinding.fs" />
     <Compile Include="AboutMatching.fs" />
     <Compile Include="AboutLists.fs" />
     <Compile Include="AboutTuples.fs" />
     <Compile Include="AboutRecords.fs" />
-    <Compile Include="AboutFunctions.fs" />
-    <Compile Include="AboutTheOrderOfEvaluation.fs" />
-    <Compile Include="AboutUnit.fs" />
-    <Compile Include="AboutStrings.fs" />
-    <Compile Include="AboutPipelining.fs" />
-    <Compile Include="AboutArrays.fs" />
-    <Compile Include="AboutLooping.fs" />
-    <Compile Include="MoreAboutFunctions.fs" />
-    <Compile Include="AboutDotNetCollections.fs" />
-    <Compile Include="AboutTheStockExample.fs" />
-    <Compile Include="AboutOptionTypes.fs" />
     <Compile Include="AboutDiscriminatedUnions.fs" />
+    <Compile Include="AboutFunctions.fs" />
+    <Compile Include="AboutUnit.fs" />
+    <Compile Include="AboutOptionTypes.fs" />
     <Compile Include="AboutModules.fs" />
-    <Compile Include="AboutClasses.fs" />
+    <Compile Include="AboutYou.fs" />
     <None Include="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

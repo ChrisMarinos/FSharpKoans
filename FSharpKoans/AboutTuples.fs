@@ -1,6 +1,5 @@
 ﻿namespace FSharpKoans
 open NUnit.Framework
-open FsUnit
 
 module Tuples = 
    let [<Test>] ``Creating tuples`` () = 

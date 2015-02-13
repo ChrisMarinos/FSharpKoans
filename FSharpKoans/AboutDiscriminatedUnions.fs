@@ -1,54 +1,49 @@
 ﻿namespace FSharpKoans
 open NUnit.Framework
 
-type Condiment =
-    | Mustard
-    | Ketchup
-    | Relish
-    | Vinegar
+(* **********
+IMPORTANT!
 
-type Favorite =
-    | Bourbon of string
-    | Number of int
+Before looking at the tests, take a look at the types defined below.
+********** *)
 
-//---------------------------------------------------------------
-// About Discriminated Unions
-//
-// Discriminated unions are used to represent data that can be
-// one of a fixed number of cases. To start off, you can think
-// of them like a much more powerful version of enums in other
-// languages.
-//---------------------------------------------------------------
-module ``about discriminated unions`` =
-    [<Test>]
-    let DiscriminatedUnionsCaptureASetOfOptions() =
+type Subject = // <-- feel free to add your own major subject ^_^
+| Philosophy
+| Linguistics
+| ComputerScience
+| Mathematics
 
-        let toColor condiment = 
-            match condiment with
-            | Mustard -> "yellow"
-            | Ketchup -> "red"
-            | Relish -> "green"
-            | Vinegar -> "brownish?"
+type UndergraduateDegree = 
+| BSc of Subject * Subject
+| BCom of Subject * Subject
+| BPharm
+| BA of Subject * Subject
 
-        let choice = Mustard
+type PostgraduateDegree =
+| Honours of Subject
+| Masters of Subject
 
-        AssertEquality (toColor choice) __
+type Student = 
+| Undergrad of string * UndergraduateDegree
+| Postgrad of string * PostgraduateDegree
 
-        (* TRY IT: What happens if you remove a case from the above pattern 
-                   match? *)
-
-    [<Test>]
-    let DiscriminatedUnionCasesCanHaveTypes() =
-
-        let saySomethingAboutYourFavorite favorite =
-            match favorite with
-            | Number 7 -> "me too!"
-            | Bourbon "Bookers" -> "me too!"
-            | Bourbon b -> "I prefer Bookers to " + b
-            | Number _ -> "I'm partial to 7"
-
-        let bourbonResult = saySomethingAboutYourFavorite <| Bourbon "Maker's Mark"
-        let numberResult = saySomethingAboutYourFavorite <| Number 7
-        
-        AssertEquality bourbonResult __
-        AssertEquality numberResult __
+module ``Discriminated Unions`` = 
+   let [<Test>] ``A case isn't the same as a type`` () = 
+      let aDegree = BSc (Linguistics, ComputerScience)
+      let anotherDegree = BPharm
+      let philosopherKing = Masters Philosophy
+      
+      aDegree |> should be ofExactType<FILL_ME_IN> 
+      anotherDegree |> should be ofExactType<FILL_ME_IN> 
+      philosopherKing |> should be ofExactType<FILL_ME_IN> 
+   
+   let [<Test>] ``Creating & pattern-matching a discriminated union`` () = 
+      let myDegree = __
+      let randomOpinion =
+         match unbox myDegree with // <-- ignore the 'unbox' on this line, please :)
+         | BSc (_, ComputerScience) -> "Good choice!"
+         | BSc (ComputerScience, _) -> "Nice degree!"
+         | BPharm -> "Meh, it's OK."
+         | BCom _ -> "Money, money, money."
+         | BA _ -> "A thinker, eh?"
+      randomOpinion |> should equal "Money, money, money."

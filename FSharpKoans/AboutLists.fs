@@ -1,7 +1,6 @@
 ﻿namespace FSharpKoans
 
 open NUnit.Framework
-open FsUnit
 
 module Lists = 
    let [<Test>] ``Creating a list (Syntax 1)`` () = 
