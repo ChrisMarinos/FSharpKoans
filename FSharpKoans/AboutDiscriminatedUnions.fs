@@ -38,11 +38,12 @@ module ``Discriminated Unions`` =
       philosopherKing |> should be ofExactType<FILL_ME_IN> 
    
    let [<Test>] ``Creating & pattern-matching a discriminated union`` () = 
-      let myDegree = __
+      let myDegree = ___
       let randomOpinion =
-         match unbox myDegree with // <-- ignore the 'unbox' on this line, please :)
+         match myDegree with
          | BSc (_, ComputerScience) -> "Good choice!"
          | BSc (ComputerScience, _) -> "Nice degree!"
+         | BSc _ -> "!!SCIENCE!!"
          | BPharm -> "Meh, it's OK."
          | BCom _ -> "Money, money, money."
          | BA _ -> "A thinker, eh?"

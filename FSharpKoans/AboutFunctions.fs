@@ -27,27 +27,33 @@ module Functions =
       let k = j 9
       k |> should equal ___
 
-   let [<Test>] ``A function can return a function (one-liner!)`` () =
-      (fun love -> fun hate -> love - hate) 10 9 |> should equal ___
+   let [<Test>] ``You can write the love/hate function as a one-liner`` () =
+      ( fun ___ -> fun ___ -> ___ - ___) 10 9 |> should equal 1
 
    let [<Test>] ``'Multiple-argument' functions are one-input, one-output in disguise`` () =
       let i = fun love hate -> love-hate
-      let j = i 10
-      let k = j 9
-      k |> should equal ___
+      let j = ___ 10
+      let k = ___ 9
+      k |> should equal 1
 
    let [<Test>] ``'let'-syntax for functions`` () =
-      let i love hate = love-hate
-      let j = i 10
-      let k = j 9
-      k |> should equal ___
+      let i _ _ = ___ - ___
+      let j = ___ 10
+      let k = ___ 9
+      k |> should equal 1
 
-   let [<Test>] ``Keeping a function for later use`` () =
+   let [<Test>] ``'let' syntax, with more conventional application`` () =
+      let i love hate = love - hate
+      ___ ___ 6 |> should equal 1
+
+   let [<Test>] ``Partially specifying arguments`` () =
       let f animal noise = animal + " says " + noise
-      let cows = f "cow"
-      let kittehs = f "cat"
-      cows "moo" |> should equal __
-      kittehs "nyan" |> should equal __
+      let cows = f ___
+      let kittehs = ___ "cat"
+      let howl k = f ___ "arooo... ... slash/crunch/snap"
+      cows "moo" |> should equal "cow says moo"
+      ___ "nyan" |> should equal "cat says nyan"
+      howl "dire wolf" |> should equal __
 
    let [<Test>] ``Aliasing a function`` () =
       let f x = x + 2

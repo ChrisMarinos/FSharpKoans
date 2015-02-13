@@ -36,6 +36,6 @@ module Binding =
       let "Can't win all the time" = __
       ()
 
-   let [<Test;ExpectedException("MatchFailureException")>] ``Constant patterns fail if the sides don't match exactly`` () =
-      let "FILL_ME_IN" = __
+   let [<Test;ExpectedException(typeof<MatchFailureException>)>] ``Constant patterns fail if the sides don't match exactly`` () =
+      let "FILL ME IN" = __
       ()

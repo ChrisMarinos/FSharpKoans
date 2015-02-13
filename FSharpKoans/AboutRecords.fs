@@ -48,7 +48,7 @@ module Records =
          | { Attack=blah; Defense=lol } -> (blah + lol) / 2
       result |> should equal __
 
-   let [<Test>] ``Accessing record members by name`` () =
+   let [<Test>] ``Accessing record members using dot syntax`` () =
       let book = { Title="Tigana"; Author="Guy Gavriel Kay"; Year=1990 }
       let k = __
       let j = __

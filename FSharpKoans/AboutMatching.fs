@@ -5,6 +5,7 @@ module ``Match expressions`` =
    let [<Test>] ``Basic match expression`` () =
       match 8000 with
       | FILL_ME__IN -> "Insufficient power-level"
+      ()
 
    let [<Test>] ``Match expressions are expressions, not statements`` () =
       let result =
