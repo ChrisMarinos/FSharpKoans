@@ -47,4 +47,4 @@ let inline should f x y =
       let file =
          sf.GetFileName()
          |> System.IO.Path.GetFileName
-      failwithf "Line %d in \"%s\" (file: %s) doesn't work. What's wrong, I wonder?" lineno methodname file
+      failwithf "There's a problem somewhere around line %d in \"%s\" (file: %s). What's wrong, I wonder?" lineno methodname file
