@@ -27,8 +27,8 @@ module Records =
             Author="Michel Foucault"
             Year=1975
          }
-      myRecord |> should be ofExactType<FILL_ME_IN>
-      myOtherRecord |> should be ofExactType<FILL_ME_IN>
+      myRecord |> should be ofType<FILL_ME_IN>
+      myOtherRecord |> should be ofType<FILL_ME_IN>
 
    let [<Test>] ``Creating records`` () =
       let myRecord = __

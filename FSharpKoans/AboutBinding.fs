@@ -25,11 +25,11 @@ module Binding =
       let z = -4.23
       let a = false
       let b = 't'
-      x |> should be ofExactType<int>
-      y |> should be ofExactType<FILL_ME_IN>
-      z |> should be ofExactType<FILL_ME_IN>
-      a |> should be ofExactType<FILL_ME_IN>
-      b |> should be ofExactType<FILL_ME_IN>
+      x |> should be ofType<int>
+      y |> should be ofType<FILL_ME_IN>
+      z |> should be ofType<FILL_ME_IN>
+      a |> should be ofType<FILL_ME_IN>
+      b |> should be ofType<FILL_ME_IN>
    
    let [<Test>] ``Constant patterns succeed if both sides match`` () =
       let 900 = ___

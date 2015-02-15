@@ -33,9 +33,9 @@ module ``Discriminated Unions`` =
       let anotherDegree = BPharm
       let philosopherKing = Masters Philosophy
       
-      aDegree |> should be ofExactType<FILL_ME_IN> 
-      anotherDegree |> should be ofExactType<FILL_ME_IN> 
-      philosopherKing |> should be ofExactType<FILL_ME_IN> 
+      aDegree |> should be ofType<FILL_ME_IN> 
+      anotherDegree |> should be ofType<FILL_ME_IN> 
+      philosopherKing |> should be ofType<FILL_ME_IN> 
    
    let [<Test>] ``Creating & pattern-matching a discriminated union`` () = 
       let myDegree = ___

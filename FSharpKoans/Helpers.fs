@@ -10,7 +10,7 @@ open FsUnit
 
 // This file contains the Black Magic that makes everything else work.
 // After you've finished the rest of the file, feel free to come
-// back here and look.  Figure out what some of the keywords
+// back here and look.  Figure out what some of the keywords do :).
 
 let __ = "FILL ME IN"
 let inline ___<'a> : ^a = Unchecked.defaultof<'a>
@@ -21,12 +21,9 @@ let [<Literal>] FILL_ME__IN = 1234
 type FILL_ME_IN =
     class end
 
-type FILL_IN_THE_EXCEPTION() =
-    inherit Exception()
-
 let equal = equal
 let be = be
-let inline ofExactType<'a> = ofExactType<'a>
+let inline ofType<'a> = instanceOfType<'a>
 let ``me`` =
    System.Reflection.Assembly.GetExecutingAssembly().FullName
 let inline should f x y =

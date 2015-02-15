@@ -67,7 +67,6 @@
     <Compile Include="AboutDiscriminatedUnions.fs" />
     <Compile Include="AboutFunctions.fs" />
     <Compile Include="AboutUnit.fs" />
-    <Compile Include="AboutOptionTypes.fs" />
     <Compile Include="AboutModules.fs" />
     <Compile Include="AboutYou.fs" />
     <None Include="App.config">

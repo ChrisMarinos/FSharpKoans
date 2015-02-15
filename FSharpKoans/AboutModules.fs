@@ -1,8 +1,12 @@
 ﻿namespace FSharpKoans
 open NUnit.Framework
 
+(* This section isn't covered in the notes.
+But it's pretty useful, so go through it :). *)
+
 module MushroomKingdom = 
    type Power = 
+      | None
       | Mushroom
       | Star
       | FireFlower
@@ -10,14 +14,14 @@ module MushroomKingdom =
    type Character = 
       { Name : string
         Occupation : string
-        Power : Power option }
+        Power : Power }
    
    let Mario = 
       { Name = "Mario"
         Occupation = "Plumber"
         Power = None }
    
-   let powerUp character = { character with Power = Some Mushroom }
+   let powerUp character = { character with Power = Mushroom }
 
 //---------------------------------------------------------------
 // About Modules
@@ -32,7 +36,7 @@ module Modules =
       MushroomKingdom.Mario.Name |> should equal __
       MushroomKingdom.Mario.Occupation |> should equal __
       let moduleType = MushroomKingdom.Mario.GetType()
-      moduleType |> should be ofExactType<FILL_ME_IN>
+      moduleType |> should be ofType<FILL_ME_IN>
    
    [<Test>]
    let ModulesCanContainFunctions() = 
