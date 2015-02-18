@@ -35,8 +35,7 @@ module Modules =
    let ``Modules can contain values and types``() = 
       MushroomKingdom.Mario.Name |> should equal __
       MushroomKingdom.Mario.Occupation |> should equal __
-      let moduleType = MushroomKingdom.Mario.GetType()
-      moduleType |> should be ofType<FILL_ME_IN>
+      MushroomKingdom.Mario |> should be ofType<FILL_ME_IN>
    
    [<Test>]
    let ModulesCanContainFunctions() = 
