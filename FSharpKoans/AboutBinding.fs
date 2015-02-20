@@ -4,11 +4,12 @@ open NUnit.Framework
 
 module Binding = 
    [<Test>]
-   let ``Basic 'let' binding`` = 
+   let ``Basic 'let' binding`` () = 
       let x = 50
       x |> should equal __
 
-   let ``Nest your 'let' statements as deeply as you'd like`` =
+   [<Test>]
+   let ``Nest your 'let' statements as deeply as you'd like`` () =
       let a =
          let b =
             let c =

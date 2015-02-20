@@ -32,13 +32,13 @@ module MushroomKingdom =
 //---------------------------------------------------------------
 module Modules = 
    [<Test>]
-   let ``Modules can contain values and types``() = 
+   let ``Modules can contain values and types`` () = 
       MushroomKingdom.Mario.Name |> should equal __
       MushroomKingdom.Mario.Occupation |> should equal __
       MushroomKingdom.Mario |> should be ofType<FILL_ME_IN>
    
    [<Test>]
-   let ModulesCanContainFunctions() = 
+   let ``Modules can contain functions`` () = 
       let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
       superMario.Power |> should equal __
 
