@@ -16,6 +16,9 @@ open FSharpKoans.Core
 // System.Double.Parse - converts a string argument into a 
 //                       numerical value.
 //
+// Hint: Use CultureInfo.InvariantCulture to always parse '.' as 
+// the decimal point.
+//
 // The following function will convert a comma separated string
 // into an array of the column values.
 //                       
