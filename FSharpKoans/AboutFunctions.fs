@@ -56,16 +56,16 @@ module ``about functions`` =
     let VariablesInTheParentScopeCanBeAccessed() =
         let suffix = "!!!"
 
-        let caffinate (text:string) =
+        let caffeinate (text:string) =
             let exclaimed = text + suffix
             let yelled = exclaimed.ToUpper()
             yelled.Trim()
 
-        let caffinatedReply = caffinate "hello there"
+        let caffeinatedReply = caffeinate "hello there"
 
-        AssertEquality caffinatedReply __
+        AssertEquality caffeinatedReply __
 
-        (* NOTE: Accessing the suffix variable in the nested caffinate function 
+        (* NOTE: Accessing the suffix variable in the nested caffeinate function 
                  is known as a closure. 
                  
                  See http://en.wikipedia.org/wiki/Closure_(computer_science) 
