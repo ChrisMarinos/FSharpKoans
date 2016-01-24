@@ -42,7 +42,7 @@ module ``about let`` =
         AssertEquality typeOfY typeof<FILL_ME_IN>
 
         (* You don't usually need to provide explicit type annotations types for 
-           local varaibles, but type annotations can come in handy in other 
+           local variables, but type annotations can come in handy in other 
            contexts as you'll see later. *)
     
     [<Koan>]
