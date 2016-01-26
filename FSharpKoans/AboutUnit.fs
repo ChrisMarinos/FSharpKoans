@@ -5,7 +5,7 @@ module ``20: Unit 00`` =
     [<Test>]
     let ``Unit is used when there is no return value for a function``() = 
         let sendData data = () //<-- a function which is invoked for its side-effect(s)
-        sendData "data" |> should equal __ // ... don't overthink this one!
+        sendData "data" |> should equal ___ // ... don't overthink this one!
    
     [<Test>]
     let ``Unit, as an input, conveys no data`` () = 

@@ -162,5 +162,5 @@ module ``02: About Binding`` =
 
     [<Test;ExpectedException(typeof<MatchFailureException>)>]
     let ``Constant patterns fail if the sides don't match exactly`` () =
-        let "FILL ME IN" = __
+        let "FILL ME IN" = FILL__ME_IN
         ()

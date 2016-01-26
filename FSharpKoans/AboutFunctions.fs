@@ -103,14 +103,14 @@ module ``08: Putting the Function into Functional Programming`` =
         let f a =
             failwith "An exception will be thrown as soon as this is executed."
             a + 2
-        __ |> should be ofType<int -> int>
+        ___ |> should be ofType<int -> int>
 
     [<Test;ExpectedException(typeof<System.Exception>)>]
     let ``A function is executed when it is called, NOT when it is defined or referenced (Part 2)`` () =
         let f a =
             failwith "An exception will be thrown as soon as this is executed."
             a + 2
-        FILL__ME_IN |> should equal 10
+        FILL_ME__IN |> should equal 1234
 
     [<Test>]
     let ``Partially specifying arguments (Part 1)`` () =
