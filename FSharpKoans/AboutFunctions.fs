@@ -21,30 +21,30 @@ module ``08: Putting the Function into Functional Programming`` =
         (fun a -> a + 100) __ |> should equal 2097
 
     [<Test>]
-    let ``The input to a function is a pattern (Part 1)`` () =
+    let ``The input to a function is a pattern (Part 1).`` () =
         (fun 7 -> 9) __ |> should equal 9
 
     [<Test>]
-    let ``The input to a function is a pattern (Part 2)`` () =
+    let ``The input to a function is a pattern (Part 2).`` () =
         (fun (t,u) -> u, t) __ |> should equal (9, 0)
 
     [<Test>]
-    let ``The input to a function is a pattern (Part 3)`` () =
+    let ``The input to a function is a pattern (Part 3).`` () =
         // remember our record types from AboutRecords.fs ?
         (fun { Author=k } -> "Author is " + k) __ |> should equal "Author is Plato"
 
     [<Test>]
-    let ``A function can be bound to a name (Part 1)`` () =
+    let ``A function can be bound to a name (Part 1).`` () =
         let one_third = fun ka -> ka / 3
         __ 21 |> should equal 7
 
     [<Test>]
-    let ``A function can be bound to a name (Part 2)`` () =
+    let ``A function can be bound to a name (Part 2).`` () =
         let pinky bleh = bleh / 3 // The syntax has changed from Part 1, but the meaning is the same
         __ 21 |> should equal 7
 
     [<Test>]
-    let ``A function can span multiple lines (Part 1)`` () =
+    let ``A function can span multiple lines (Part 1).`` () =
         (fun zorro ->
             let k = "swash"
             let b = "buckle"
@@ -52,14 +52,14 @@ module ``08: Putting the Function into Functional Programming`` =
         ) "Zorro the pirate" |> should equal __
 
     [<Test>]
-    let ``A function can span multiple lines (Part 2)`` () =
+    let ``A function can span multiple lines (Part 2).`` () =
         let jorus who =
             let p = 5
             who * p
         jorus 12 |> should equal __
 
     [<Test>]
-    let ``A function can span multiple lines (Part 2, expanded syntax)`` () =
+    let ``A function can span multiple lines (Part 2, expanded syntax).`` () =
         // This is exactly the same as the previous test; the syntax is just more explicit.
         // Does the syntax make what's going on more clear?
         let jorus =
@@ -70,25 +70,25 @@ module ``08: Putting the Function into Functional Programming`` =
             jorus 12 |> should equal __
 
     [<Test>]
-    let ``A function can return a function (Part 1)`` () =
+    let ``A function can return a function (Part 1).`` () =
         let i = fun love -> fun hate -> love - hate
         let j = i 10
         let k = j 9
         k |> should equal __
 
     [<Test>]
-    let ``A function can return a function (Part 2)`` () =
+    let ``A function can return a function (Part 2).`` () =
         let funky a b = a + b
         let j = funky 10
         let k = j 9
         k |> should equal __
 
     [<Test>]
-    let ``You can write a function as a one-liner (Part 1)`` () =
+    let ``You can write a function as a one-liner (Part 1).`` () =
         (fun ___ -> fun ___ -> __ - __) 10 9 |> should equal 1
 
     [<Test>]
-    let ``You can write a function as a one-liner (Part 2)`` () =
+    let ``You can write a function as a one-liner (Part 2).`` () =
         (fun _____ ____ -> __ - __) 10 9 |> should equal 1
 
     [<Test>]
@@ -99,21 +99,21 @@ module ``08: Putting the Function into Functional Programming`` =
       k |> should equal 48
 
     [<Test>]
-    let ``A function is executed when it is called, NOT when it is defined or referenced (Part 1)`` () =
+    let ``A function is executed when it is called, NOT when it is defined or referenced (Part 1).`` () =
         let f a =
             failwith "An exception will be thrown as soon as this is executed."
             a + 2
         ___ |> should be ofType<int -> int>
 
     [<Test;ExpectedException(typeof<System.Exception>)>]
-    let ``A function is executed when it is called, NOT when it is defined or referenced (Part 2)`` () =
+    let ``A function is executed when it is called, NOT when it is defined or referenced (Part 2).`` () =
         let f a =
             failwith "An exception will be thrown as soon as this is executed."
             a + 2
         FILL_ME__IN |> should equal 1234
 
     [<Test>]
-    let ``Partially specifying arguments (Part 1)`` () =
+    let ``Partially specifying arguments (Part 1).`` () =
         // this shows you how you can partially specify particular arguments to
         // reuse functionality.  This technique is exceptionally flexible and often
         // seen in functional code, so you should try to understand it fully.
@@ -122,7 +122,7 @@ module ``08: Putting the Function into Functional Programming`` =
         __ "nyan" |> should equal "cat says nyan"
 
     [<Test>]
-    let ``Partially specifying arguments (Part 2)`` () =
+    let ``Partially specifying arguments (Part 2).`` () =
         // as above, but what do you do when the arguments aren't in the order
         // that you want them to be in?
         let f animal noise = animal + " says " + noise
@@ -131,7 +131,7 @@ module ``08: Putting the Function into Functional Programming`` =
         howl "direr wolf" |> should equal "direr wolf says slash/crunch/snap"
 
     [<Test>]
-    let ``Partially specifying arguments (Part 3)`` () =
+    let ``Partially specifying arguments (Part 3).`` () =
         // Extending a bit more, what do you do when you want to apply a function,
         // but modify the result before you give it back?
         let f animal noise = animal + " says " + noise

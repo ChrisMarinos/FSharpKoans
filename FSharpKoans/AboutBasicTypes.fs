@@ -15,17 +15,17 @@ module ``07: Strings and Conversions`` =
         String.FILL_ME_IN b |> should equal 19
 
     [<Test>]
-    let ``Getting a substring (Part 1)`` () =
+    let ``Getting a substring (Part 1).`` () =
         let a = "bright"
         a.[1..] |> should equal __
 
     [<Test>]
-    let ``Getting a substring (Part 2)`` () =
+    let ``Getting a substring (Part 2).`` () =
         let a = "bright"
         a.[..3] |> should equal __
 
     [<Test>]
-    let ``Getting a substring (Part 3)`` () =
+    let ``Getting a substring (Part 3).`` () =
         let a = "bright"
         a.[1..3] |> should equal __
 
@@ -37,7 +37,7 @@ module ``07: Strings and Conversions`` =
         String.FILL__ME_IN __ __ |> should equal "hip! hip! hurray"
 
     [<Test>]
-    let ``Getting an integer or float from a string (unsafely)`` () =
+    let ``Getting an integer or float from a string (unsafely).`` () =
         // we will learn the safe method of doing this when we do Options
         let a = "23"
         int a |> should equal __ // hm. 'int' is the function that converts-to-int.

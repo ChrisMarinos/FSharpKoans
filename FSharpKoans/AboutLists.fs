@@ -6,14 +6,14 @@ open NUnit.Framework
 Lists are immutable, ordered, finite sequences of a single type.
 *)
 
-module ``04: Lists, lists everywhere`` = 
+module ``04: I Have Here In My Hand A List`` = 
     [<Test>]
-    let ``Creating a list (Syntax 1)`` () = 
+    let ``Creating a list (Syntax 1).`` () = 
         let myList = [ __; __; __; __ ]
         myList |> should equal [ "apple"; "grape"; "pear"; "biscuit" ]
    
     [<Test>]
-    let ``Creating a list (Syntax 2)`` () =
+    let ``Creating a list (Syntax 2).`` () =
         let myList = __::__::__::__::[]
         let myOtherList = __::__::__::[ __ ]
         let myLastList = __::__::__
@@ -22,7 +22,7 @@ module ``04: Lists, lists everywhere`` =
         myLastList |> should equal [ "naartjie"; "raisin"; "apple"; "grape"; "pear"; "biscuit" ]
 
     [<Test>]
-    let ``Creating a list (via concatenation)`` () =
+    let ``Creating a list (via concatenation).`` () =
         let a = [902; 10]
         let b = [3; 13; 37]
         let result = __ @ __
@@ -38,40 +38,40 @@ module ``04: Lists, lists everywhere`` =
         first |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 1)`` () =
+    let ``Pattern-matching a list (Part 1).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let a::_ = fruits
         a |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 2)`` () =
+    let ``Pattern-matching a list (Part 2).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let b::c::_ = fruits
         b |> should equal __
         c |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 3)`` () =
+    let ``Pattern-matching a list (Part 3).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let _::d::e = fruits
         d |> should equal __
         e |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 4)`` () =
+    let ``Pattern-matching a list (Part 4).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let f::_::_::g::_ = fruits
         f |> should equal __
         g |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 5)`` () =
+    let ``Pattern-matching a list (Part 5).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let _::_::h = fruits
         h |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 6)`` () =
+    let ``Pattern-matching a list (Part 6).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let [i;j;k;l;m;n] = fruits
         i |> should equal __
@@ -82,7 +82,7 @@ module ``04: Lists, lists everywhere`` =
         n |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 7)`` () =
+    let ``Pattern-matching a list (Part 7).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let _::o::_::[p;q;r] = fruits
         o |> should equal __
@@ -91,14 +91,14 @@ module ``04: Lists, lists everywhere`` =
         r |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 8)`` () =
+    let ``Pattern-matching a list (Part 8).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let [_;s;_;_;t;_] = fruits
         s |> should equal __
         t |> should equal __
 
     [<Test>]
-    let ``Pattern-matching a list (Part 9)`` () =
+    let ``Pattern-matching a list (Part 9).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
         let k =
             match fruits with

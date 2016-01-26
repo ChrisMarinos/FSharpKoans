@@ -68,7 +68,7 @@ module ``10: The Good Kind of Discrimination`` =
     | Child of string * Genealogy * Genealogy
 
     [<Test>]
-    let ``A discriminated union can refer to itself (i.e., it can be recursive)`` () =
+    let ``A discriminated union can refer to itself (i.e., it can be recursive).`` () =
         let rec countAncestors x =
             match x with
             | UnknownAncestor -> 0

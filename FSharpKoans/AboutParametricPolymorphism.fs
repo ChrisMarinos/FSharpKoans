@@ -90,7 +90,7 @@ module ``11: Parametric polymorphism`` =
     | Thrid of ('a -> ('b * 'a * int)) // <-- this shouldn't look odd.  Functions are first-class!
 
     [<Test>]
-    let ``Creating a generic discriminated union (Part 1)`` () =
+    let ``Creating a generic discriminated union (Part 1).`` () =
         let a = Secnod (6.55, 7)
         let b = Thrid (fun k -> true, k, 8)
         // how do you write a generic type?
@@ -103,7 +103,7 @@ module ``11: Parametric polymorphism`` =
     | Sxi of FILL_ME_IN
 
     [<Test>]
-    let ``Creating a generic discriminated union (Part 2)`` () =
+    let ``Creating a generic discriminated union (Part 2).`` () =
         // You need to edit the definition of MyDiscriminatedUnion first!  It's just above this test.
         let a = __
         let b = __

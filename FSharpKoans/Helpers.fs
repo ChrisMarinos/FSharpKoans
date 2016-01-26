@@ -22,6 +22,17 @@ open FsUnit
 
 // note to self: this is a helpful regex: let ``.*``[^(]+=
 
+(*
+== Things That I Now Know About NUnit ==
+
+NUnit's test adapter is horrible about name-mangling.
+If a test ends with a bracket ), or a bracket ) and then whitespace,
+it refuses to find the location of the test.  Why?  'cos NUnit.
+So that's why we have method names ending with ")." instead.
+
+And ordering tests is apparently far beyond its capabilities... :-/
+*)
+
 let inline __<'a> : ^a = Unchecked.defaultof<'a>
 let inline ___<'a> : ^a list = []
 let [<Literal>] FILL__ME_IN = "FILL ME IN"
@@ -58,7 +69,7 @@ let inline should (f : 'a -> #Constraints.Constraint) x (y : obj) =
         | :? (unit -> unit) -> box (TestDelegate(y :?> unit -> unit))
         | _ -> y
     try
-        Assert.That(y, c)   
+        Assert.That(y, c)
     with
     | ex ->
         // ok, let's pull out the line number.  We'll need to

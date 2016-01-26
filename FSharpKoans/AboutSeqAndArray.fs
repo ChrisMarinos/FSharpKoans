@@ -53,14 +53,14 @@ module ``21: Sequences and Arrays`` =
     *)
 
     [<Test>]
-    let ``Creating a sequence (Method 1)`` () =
+    let ``Creating a sequence (Method 1).`` () =
         let a = Seq.init 10 id // this creates a finite sequence.
         let b = __ // <-- should be a sequence going from 1..15 inclusive
         Seq.length b |> should equal 15
         Seq.head b |> should equal 1
 
     [<Test>]
-    let ``Creating a sequence (Method 2)`` () =
+    let ``Creating a sequence (Method 2).`` () =
         // this creates an infinite sequence.
         // (well, infinite enough...!  It might wrap around when we get to
         // the maximum value of a 32-bit signed integer.)
@@ -71,7 +71,7 @@ module ``21: Sequences and Arrays`` =
         Seq.skip 2139 multiplesOfFive |> Seq.head |> should equal 10695
 
     [<Test>]
-    let ``Creating a sequence (Method 3)`` () =
+    let ``Creating a sequence (Method 3).`` () =
         // this creates a sequence based on some "seed" value.
         let puffery seed =
             Seq.unfold (fun state ->
@@ -91,7 +91,7 @@ module ``21: Sequences and Arrays`` =
         hailstone 19 |> Seq.toList |> should equal [19; 58; 29; 88; 44; 22; 11; 34; 17; 52; 26; 13; 40; 20; 10; 5; 16; 8; 4; 2; 1]
 
     [<Test>]
-    let ``Creating a sequence (Method 4)`` () =
+    let ``Creating a sequence (Method 4).`` () =
         // this is called a sequence expression.
         // It can `yield` values, and it can `yield!` sequences.
         let rec hailstone x =
