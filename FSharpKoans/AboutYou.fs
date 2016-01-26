@@ -1,4 +1,5 @@
 ﻿namespace FSharpKoans
+open NUnit.Framework
 
 (*
 Yay, you're here, so you know all about functional programming
@@ -37,8 +38,8 @@ So awkward!
 No.  Sorry again, but the answer is "no".
 
 We haven't gone into computation expressions or function
-composition or isolating side-effects with monads or advanced
-techniques of functional programming.  Or a bunch of other things,
+composition or isolating side-effects with monads or more advanced
+functional programming techniques.  Or a bunch of other things,
 now that I come to think of it...
 
 But, hey, don't be down.  Don't be despondent, don't be
@@ -56,3 +57,10 @@ fsharpforfunandprofit.com
 discovery.  Functional programming is a rich, amazing experience.
 I hope that you'll enjoy it as much as I do ^_^.
 *)
+
+module ``24: About You`` =
+    [<Test>]
+    let ``Where to now?`` () =
+        let resources = ["http://fsharpforfunandprofit.com"; "http://fssnip.org"; "http://stackoverflow.com"]
+        let visited = __ // <-- as you visit, add to a list here!
+        visited |> should equal resources
