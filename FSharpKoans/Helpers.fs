@@ -7,12 +7,29 @@
 \____/   \_/   \___/ \_|    (_)
                                
 No, no.  This isn't the file you're looking for.
-You should be starting on the next file, AboutAsserts.fs.
+You should be starting on the next file, AboutTesting.fs.
 
 This file contains the Black Magic that makes everything else work.
 After you've finished the rest of the file, feel free to come
 back here and look.  Figure out what some of the keywords do :).
 *)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [<AutoOpenAttribute>]
 module FSharpKoans.Helpers
 

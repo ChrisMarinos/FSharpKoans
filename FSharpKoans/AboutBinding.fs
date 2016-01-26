@@ -1,5 +1,4 @@
 ﻿namespace FSharpKoans
-
 open NUnit.Framework
 
 (*
