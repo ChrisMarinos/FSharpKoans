@@ -37,7 +37,7 @@ So awkward!
 
 No.  Sorry again, but the answer is "no".
 
-We haven't gone into computation expressions or monads or
+We haven't gone into computation expressions or
 isolating side-effects with monads or more advanced
 functional programming techniques.  Or a bunch of other things,
 now that I come to think of it...
