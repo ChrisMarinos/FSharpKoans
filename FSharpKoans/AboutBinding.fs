@@ -60,17 +60,17 @@ module ``02: About Binding`` =
 
     // this should look like code that you're familiar with, perhaps from C#.
     [<Test>]
-    let ``Basic 'let' binding`` () = 
+    let ``01 Basic 'let' binding`` () = 
         let x = 50
         x |> should equal __
 
     [<Test>]
-    let ``Equivalent basic 'let' binding`` () = // this is exactly equivalent to the previous binding.
+    let ``02 Equivalent basic 'let' binding`` () = // this is exactly equivalent to the previous binding.
         let x = 50 in // note that the syntax is more explicit about what's really going on!
             x |> should equal __
 
     [<Test>]
-    let ``Nest your 'let' statements as deeply as you'd like`` () =
+    let ``03 Nest your 'let' statements as deeply as you'd like`` () =
         let a =
             let b =
                 let c =
@@ -107,7 +107,7 @@ module ``02: About Binding`` =
 *)
 
     [<Test>]
-    let ``Shadowing`` () =
+    let ``04 Shadowing`` () =
         let a = 21
         let b =
             let a = 8
@@ -133,7 +133,7 @@ module ``02: About Binding`` =
     *)
    
     [<Test>]
-    let ``The type of symbols in variable patterns are inferred`` () = 
+    let ``05 The type of symbols in variable patterns are inferred`` () = 
         let x = 50
         let y = "a string"
         let z = -4.23
@@ -155,12 +155,12 @@ module ``02: About Binding`` =
    *)
 
     [<Test>]
-    let ``Constant patterns succeed if both sides match`` () =
+    let ``06 Constant patterns succeed if both sides match`` () =
         let 900 = __
         let "Can't win all the time" = __
         () // eh? what's this funny thing? It's called "unit", and you'll learn more about it in AboutUnit.fs later on.
 
     [<Test;ExpectedException(typeof<MatchFailureException>)>]
-    let ``Constant patterns fail if the sides don't match exactly`` () =
+    let ``07 Constant patterns fail if the sides don't match exactly`` () =
         let "FILL ME IN" = FILL__ME_IN
         ()

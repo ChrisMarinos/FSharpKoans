@@ -44,7 +44,7 @@ open NUnit.Framework
 
 module ``11: Parametric polymorphism`` =
     [<Test>]
-    let ``id: the simplest built-in generic function`` () =
+    let ``01 id: the simplest built-in generic function`` () =
         // `id` is the identify function: it takes an input ... and gives it back immediately.
         id 8 |> should equal __
         id 7.6 |> should equal __
@@ -52,7 +52,7 @@ module ``11: Parametric polymorphism`` =
         // id can be surprisingly useful.  Remember it :).
 
     [<Test>]
-    let ``Defining a generic function`` () =
+    let ``02 Defining a generic function`` () =
         let f x y = __
         f 4 5 |> should equal (4, 5, 5)
         f "k" 'p' |> should equal ("k", 'p', 'p')
@@ -73,7 +73,7 @@ module ``11: Parametric polymorphism`` =
     }
 
     [<Test>]
-    let ``Creating a generic record`` () =
+    let ``03 Creating a generic record`` () =
         // You need to edit the definition of MyRecord first!  It's just above this test.
         let a = __
         let b = __  
@@ -90,7 +90,7 @@ module ``11: Parametric polymorphism`` =
     | Thrid of ('a -> ('b * 'a * int)) // <-- this shouldn't look odd.  Functions are first-class!
 
     [<Test>]
-    let ``Creating a generic discriminated union (Part 1).`` () =
+    let ``04 Creating a generic discriminated union (Part 1).`` () =
         let a = Secnod (6.55, 7)
         let b = Thrid (fun k -> true, k, 8)
         // how do you write a generic type?
@@ -103,7 +103,7 @@ module ``11: Parametric polymorphism`` =
     | Sxi of FILL_ME_IN
 
     [<Test>]
-    let ``Creating a generic discriminated union (Part 2).`` () =
+    let ``05 Creating a generic discriminated union (Part 2).`` () =
         // You need to edit the definition of MyDiscriminatedUnion first!  It's just above this test.
         let a = __
         let b = __

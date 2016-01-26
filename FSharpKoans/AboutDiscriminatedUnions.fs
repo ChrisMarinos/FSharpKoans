@@ -29,7 +29,7 @@ module ``10: The Good Kind of Discrimination`` =
     | Masters of Subject
 
     [<Test>]
-    let ``A case isn't the same as a type`` () = 
+    let ``01 A case isn't the same as a type`` () = 
         let aDegree = BSc (Linguistics, ComputerScience)
         let anotherDegree = BPharm
         let philosopherKing = Masters Philosophy
@@ -38,7 +38,7 @@ module ``10: The Good Kind of Discrimination`` =
         philosopherKing |> should be ofType<FILL_ME_IN> 
    
     [<Test>]
-    let ``Creating & pattern-matching a discriminated union`` () = 
+    let ``02 Creating & pattern-matching a discriminated union`` () = 
         let randomOpinion degree =
             match degree with
             | BSc (_, ComputerScience) | BSc (ComputerScience, _) -> "Good choice!"
@@ -59,7 +59,7 @@ module ``10: The Good Kind of Discrimination`` =
     | Rented of string
 
     [<Test>]
-    let ``A discriminated union case with associated data is a function`` () =
+    let ``03 A discriminated union case with associated data is a function`` () =
         Broken |> should be ofType<FILL_ME_IN>
         Rented |> should be ofType<FILL_ME_IN>
 
@@ -68,7 +68,7 @@ module ``10: The Good Kind of Discrimination`` =
     | Child of string * Genealogy * Genealogy
 
     [<Test>]
-    let ``A discriminated union can refer to itself (i.e., it can be recursive).`` () =
+    let ``04 A discriminated union can refer to itself (i.e., it can be recursive).`` () =
         let rec countAncestors x =
             match x with
             | UnknownAncestor -> 0

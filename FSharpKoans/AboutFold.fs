@@ -33,14 +33,14 @@ or something else), it's likely that you'll be able to use a fold.
 
 module ``16: Welcome to the functional fold`` =
     [<Test>]
-    let ``A fold which sums a list`` () =
+    let ``01 A fold which sums a list`` () =
         let fold initialState xs =
             __ // write a function to do what's described above
         fold 0 [1; 2; 3; 4] |> should equal 10
         fold 100 [2;4;6;8] |> should equal 120
 
     [<Test>]
-    let ``A fold which multiplies a list`` () =
+    let ``02 A fold which multiplies a list`` () =
         let fold initialState xs =
             __ // write a function to multiply the elements of a list
         fold __ [99] |> should equal 99
@@ -53,7 +53,7 @@ module ``16: Welcome to the functional fold`` =
     // it?
 
     [<Test>]
-    let ``Folding, the hard way`` () =
+    let ``03 Folding, the hard way`` () =
         let fold (f : 'a -> 'b -> 'a) (initialState : 'a) (xs : 'b list) : 'a =
             __  // write a function to do a fold.
         fold (+) 0 [1;2;3;4] |> should equal 10
@@ -64,7 +64,7 @@ module ``16: Welcome to the functional fold`` =
 
     // Hint: https://msdn.microsoft.com/en-us/library/ee353894.aspx
     [<Test>]
-    let ``Folding, the easy way`` () =
+    let ``04 Folding, the easy way`` () =
         __ (+) 0 [1;2;3;4] |> should equal 10
         __ (*) 2 [1;2;3;4] |> should equal 48
         __ (fun state item -> sprintf "%s %s" state item) "items:" ["dog"; "cat"; "bat"; "rat"]

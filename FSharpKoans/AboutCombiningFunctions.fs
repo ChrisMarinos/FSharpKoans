@@ -30,7 +30,7 @@ module ``17: Combining functions`` =
     *)
 
     [<Test>]
-    let ``|>, the 'pipe' operator`` () =
+    let ``01 |>, the 'pipe' operator`` () =
         let add5 a = a + 5
         let double a = a * 2
         3 |> add5 |> double |> should equal __  // <-- start with three, add 5, then double. Readable, isn't it?
@@ -39,7 +39,7 @@ module ``17: Combining functions`` =
         8 |> double |> double |> add5 |> should equal __
 
     [<Test>]
-    let ``The output type of one pipe must be the input type to the next`` () =
+    let ``02 The output type of one pipe must be the input type to the next`` () =
         let toString (x : int) = string x
         let toInt (x : float) = int x
         toInt |> should be ofType<FILL_ME_IN>
@@ -61,7 +61,7 @@ module ``17: Combining functions`` =
     *)
 
     [<Test>]
-    let ``<|, the lesser-used (but still useful) backwards pipe`` () =
+    let ``03 <|, the lesser-used (but still useful) backwards pipe`` () =
         let a x =
             x = 4
         not (a 4) |> should equal false
@@ -83,7 +83,7 @@ module ``17: Combining functions`` =
     *)
 
     [<Test>]
-    let ``>>, the 'compose' operator`` () =
+    let ``04 >>, the 'compose' operator`` () =
         let add5 a = a + 5
         let double a = a * 2
         let i = add5 >> double
@@ -96,7 +96,7 @@ module ``17: Combining functions`` =
         l 3 |> should equal __
 
     [<Test>]
-    let ``>>, the compose operator, creates new functions by "joining" old ones`` () =
+    let ``05 >>, the compose operator, creates new functions by "joining" old ones`` () =
         let joinTerms x = String.concat " + " x
         let stringify xs =
             match xs with

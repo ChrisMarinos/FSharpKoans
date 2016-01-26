@@ -16,7 +16,7 @@ module ``09: Advanced pattern-matching`` =
     *)
 
     [<Test>]
-    let ``Using an OR-pattern`` () =
+    let ``01 Using an OR-pattern`` () =
         let f input =
             match input with
             | "wut" | "lol" -> "yolo"
@@ -33,7 +33,7 @@ module ``09: Advanced pattern-matching`` =
         f "vodka" |> should equal "failure"
 
     [<Test>]
-    let ``Identifiers bound on all branches of an OR-pattern must be the same`` () =
+    let ``02 Identifiers bound on all branches of an OR-pattern must be the same`` () =
         let f input =
             match input with
             | 0,0 -> "Both 0"
@@ -53,7 +53,7 @@ module ``09: Advanced pattern-matching`` =
     *)
 
     [<Test>]
-    let ``Binding composed and decomposed structures using 'as'`` () =
+    let ``03 Binding composed and decomposed structures using 'as'`` () =
       let f ((___, ____) as _____) =
          sprintf "%d and %d in a tuple look like %A" __ __ __
       f (0,43) |> should equal "0 and 43 in a tuple look like (0, 43)"

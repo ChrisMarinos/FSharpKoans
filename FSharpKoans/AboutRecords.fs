@@ -24,14 +24,14 @@ type Book =
 // and now, the tests:
 module ``06: On the Record`` =
     [<Test>]
-    let ``Creating records`` () =
+    let ``01 Creating records`` () =
         let myRecord = __
         myRecord.Title |> should equal "Steelheart"
         myRecord.Author |> should equal "Brandon Sanderson"
         myRecord.Year |> should equal 2013
 
     [<Test>]
-    let ``The type of a record is inferred`` () =
+    let ``02 The type of a record is inferred`` () =
         let myRecord = { Name="Pikachu"; Attack=55; Defense=40 }
         let myOtherRecord =
             {
@@ -43,14 +43,14 @@ module ``06: On the Record`` =
         myOtherRecord |> should be ofType<FILL_ME_IN>
 
     [<Test>]
-    let ``Decomposing with a record pattern`` () =
+    let ``03 Decomposing with a record pattern`` () =
         let book = { Title="Dune"; Author="Frank Herbert"; Year=1965 }
         let FILL_ME_IN = book
         __ |> should equal "Dune"
         __ |> should equal 1965
 
     [<Test>]
-    let ``Decomposing in a match expression`` () =
+    let ``04 Decomposing in a match expression`` () =
         let result =
             match { Name="Raichu"; Attack=90; Defense=55 } with
             | { Name="Pikachu"; Attack=a } -> a/2
@@ -59,7 +59,7 @@ module ``06: On the Record`` =
         result |> should equal __
 
     [<Test>]
-    let ``Accessing record members using dot syntax`` () =
+    let ``05 Accessing record members using dot syntax`` () =
         let book = { Title="Tigana"; Author="Guy Gavriel Kay"; Year=1990 }
         let k = __
         let j = __
@@ -67,7 +67,7 @@ module ``06: On the Record`` =
         j |> should equal 1990
 
     [<Test>]
-    let ``Creating records based on other records`` () =
+    let ``06 Creating records based on other records`` () =
         let first = { Title="A Game of Thrones"; Author="George R. R. Martin"; Year=1996 }
         let second = { first with Title="A Clash of Kings"; Year=first.Year+2 } // <-- Pssst - see what I did here?
         let third = { second with Title="A Storm of Swords"; Year=2000 }

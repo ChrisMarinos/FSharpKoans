@@ -7,7 +7,7 @@ A filter only lets particular elements through.
 
 module ``15: Filtering a list`` =
     [<Test>]
-    let ``Fixed-function filtering, the hard way`` () =
+    let ``01 Fixed-function filtering, the hard way`` () =
         let filter (xs : 'a list) : 'a list =
             __ // write a function to filter for odd elements only.
         filter [1; 2; 3; 4] |> should equal [1; 3]
@@ -25,7 +25,7 @@ module ``15: Filtering a list`` =
    // ... you can make a function to do that, right? ^_^.
 
     [<Test>]
-    let ``Specified-function filtering, the hard way`` () =
+    let ``02 Specified-function filtering, the hard way`` () =
         let filter (f : 'a -> bool) (xs : 'a list) : 'a list =
             __ // write a function which filters based on the specified criteria
         filter (fun x -> x > 19) [9; 5; 23; 66; 4] |> should equal [23; 66]
@@ -35,7 +35,7 @@ module ``15: Filtering a list`` =
 
     // Hint: https://msdn.microsoft.com/en-us/library/ee370294.aspx
     [<Test>]
-    let ``Specified-function mapping, the easy way`` () =
+    let ``03 Specified-function mapping, the easy way`` () =
         __ (fun x -> x > 19) [9; 5; 23; 66; 4] |> should equal [23; 66]
         __ (fun x -> String.length x = 4) ["moo"; "woof"; "yip"; "nyan"; "meow"]
         |> should equal ["woof"; "nyan"; "meow"]

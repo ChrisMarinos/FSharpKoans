@@ -18,7 +18,7 @@ no *semantic* difference between them.
 module ``19: Other list functions`` =
     // List.exists
     [<Test>]
-    let ``exists: finding whether any matching item exists`` () =
+    let ``01 exists: finding whether any matching item exists`` () =
         let exists (f : 'a -> bool) (xs : 'a list) : bool =
             __ // Does this: https://msdn.microsoft.com/en-us/library/ee370309.aspx
         exists ((=) 4) [7;6;5;4;5] |> should equal true
@@ -27,7 +27,7 @@ module ``19: Other list functions`` =
 
     // List.partition
     [<Test>]
-    let ``partition: splitting a list based on a criterion`` () =
+    let ``02 partition: splitting a list based on a criterion`` () =
         let partition (f : 'a -> bool) (xs : 'a list) : ('a list) * ('a list) =
             __ // Does this: https://msdn.microsoft.com/en-us/library/ee353782.aspx
         let a, b = partition (fun x -> x%2=0) [1;2;3;4;5;6;7;8;9;10]
@@ -42,7 +42,7 @@ module ``19: Other list functions`` =
 
     // List.init
     [<Test>]
-    let ``init: creating a list based on a size and a function`` () =
+    let ``03 init: creating a list based on a size and a function`` () =
         let init (n : int) (f : int -> 'a) : 'a list =
             __ // Does this: https://msdn.microsoft.com/en-us/library/ee370497.aspx
         init 10 (fun x -> x*2) |> should equal [0;2;4;6;8;10;12;14;16;18]
@@ -50,7 +50,7 @@ module ``19: Other list functions`` =
 
     // List.tryFind
     [<Test>]
-    let ``tryFind: find the first matching element, if any`` () =
+    let ``04 tryFind: find the first matching element, if any`` () =
         let tryFind (p : 'a -> bool) (xs : 'a list) : 'a option =
             __ // Does this: https://msdn.microsoft.com/en-us/library/ee353506.aspx
         tryFind (fun x -> x<=45) [100;85;25;55;6] |> should equal (Some 25)
@@ -58,7 +58,7 @@ module ``19: Other list functions`` =
 
     // List.tryPick
     [<Test>]
-    let ``tryPick: find the first matching element, if any, and transform it`` () =
+    let ``05 tryPick: find the first matching element, if any, and transform it`` () =
         let tryPick (p : 'a -> 'b option) (xs : 'a list) : 'b option =
             __ // Does this: https://msdn.microsoft.com/en-us/library/ee353814.aspx
         let f x =
@@ -85,7 +85,7 @@ module ``19: Other list functions`` =
 
     // List.choose
     [<Test>]
-    let ``choose: find all matching elements, and transform them`` () =
+    let ``06 choose: find all matching elements, and transform them`` () =
         // Think about this: why does the signature of `choose` have to be like this?
         // - why can't it take an 'a->'b, instead of an 'a->'b option ?
         // - why does it return a 'b list, and not a 'b list option ?
@@ -106,7 +106,7 @@ module ``19: Other list functions`` =
         choose g ["And the winner is..."] |> should equal []
 
     [<Test>]
-    let ``mapi: like map, but passes along an item index as well`` () =
+    let ``07 mapi: like map, but passes along an item index as well`` () =
         let mapi (f : int -> 'a -> 'b) (xs : 'a list) : 'b list =
             __ // Does this: https://msdn.microsoft.com/en-us/library/ee353425.aspx
         mapi (fun i x -> -i, x+1) [9;8;7;6] |> should equal [0,10; -1,9; -2,8; -3,7]

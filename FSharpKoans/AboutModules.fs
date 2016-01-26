@@ -31,13 +31,13 @@ module MushroomKingdom =
 //---------------------------------------------------------------
 module ``22: Modules`` = 
    [<Test>]
-   let ``Modules can contain values and types``() = 
+   let ``01 Modules can contain values and types`` () = 
       MushroomKingdom.Mario.Name |> should equal __
       MushroomKingdom.Mario.Occupation |> should equal __
       MushroomKingdom.Mario |> should be ofType<FILL_ME_IN>
    
    [<Test>]
-   let ModulesCanContainFunctions() = 
+   let ``02 Modules can contain functions`` () = 
       let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
       superMario.Power |> should equal __
 
@@ -47,7 +47,7 @@ open MushroomKingdom // <-- IMPORTANT LINE!
 
 module ``23: Opened modules`` = 
    [<Test>]
-   let ``Opened modules bring their contents into scope``() =
+   let ``01 Opened modules bring their contents into scope``() =
       // Notice tham I'm *not* saying MushroomKingdom.whatever below.
       Mario.Name |> should equal __
       Mario.Occupation |> should equal __

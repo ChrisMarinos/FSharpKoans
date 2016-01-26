@@ -3,12 +3,12 @@ open NUnit.Framework
 
 module ``20: Unit 00`` = 
     [<Test>]
-    let ``Unit is used when there is no return value for a function``() = 
+    let ``01 Unit is used when there is no return value for a function``() = 
         let sendData data = () //<-- a function which is invoked for its side-effect(s)
         sendData "data" |> should equal ___ // ... don't overthink this one!
    
     [<Test>]
-    let ``Unit, as an input, conveys no data`` () = 
+    let ``02 Unit, as an input, conveys no data`` () = 
         let sayHello () = "hello"
         let result = sayHello ()
         sayHello |> should be ofType<FILL_ME_IN>
@@ -40,7 +40,7 @@ module ``20: Unit 00`` =
 *)
 
     [<Test>]
-    let ``Unit is often used to defer code execution`` () =
+    let ``03 Unit is often used to defer code execution`` () =
         let webpageWork x = // this simulates the different tasks that a web browser might perform
             match x%5 with
             | 0 -> fun () -> "Load video"
@@ -69,7 +69,7 @@ module ``20: Unit 00`` =
     *)
 
     [<Test>]
-    let ``The 'ignore' function is used to map anything to 'unit'`` () =
+    let ``04 The 'ignore' function is used to map anything to 'unit'`` () =
         let doSomethingForTheSideEffect x =
             // ...perform side effect...
             x // return x

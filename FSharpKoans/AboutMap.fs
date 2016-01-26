@@ -7,7 +7,7 @@ Transforming a sequence is called "mapping".
 
 module ``14: Applying a map to a list`` =
     [<Test>]
-    let ``Fixed-function mapping, the hard way (part 1).`` () =
+    let ``01 Fixed-function mapping, the hard way (part 1).`` () =
         let map (xs : 'a list) : 'b list =
             __ // write a function which adds 1 to each element
         map [1; 2; 3; 4] |> should equal [2; 3; 4; 5]
@@ -17,7 +17,7 @@ module ``14: Applying a map to a list`` =
         map [] |> should equal []
 
     [<Test>]
-    let ``Fixed-function mapping, the hard way (part 2).`` () =
+    let ``02 Fixed-function mapping, the hard way (part 2).`` () =
         let map (xs : 'a list) : 'b list =
             __ // write a function which doubles each element
         map [1; 2; 3; 4] |> should equal [2; 4; 6; 8]
@@ -36,7 +36,7 @@ module ``14: Applying a map to a list`` =
    *)
 
     [<Test>]
-    let ``Specified-function mapping, the hard way`` () =
+    let ``03 Specified-function mapping, the hard way`` () =
         let map (f : 'a -> 'b) (xs : 'a list) : 'b list =
             __ // write a map which applies f to each element
         map (fun x -> x+1) [9;8;7] |> should equal [10;9;8]
@@ -45,7 +45,7 @@ module ``14: Applying a map to a list`` =
 
     // Hint: https://msdn.microsoft.com/en-us/library/ee370378.aspx
     [<Test>]
-    let ``Specified-function mapping, the easy way`` () =
+    let ``04 Specified-function mapping, the easy way`` () =
         __ (fun x -> x+1) [9;8;7] |> should equal [10;9;8]
         __ ((*) 2) [9;8;7] |> should equal [18;16;14]
         __ (fun x -> sprintf "%.2f wut?" x)  [9.3; 1.22] |> should equal ["9.30 wut?"; "1.22 wut?"]

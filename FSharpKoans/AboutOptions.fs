@@ -42,14 +42,14 @@ module ``18: Exploring your options`` =
     // success and failure cases explicit.
 
     [<Test>]
-    let ``Basic Option example`` () =
+    let ``01 Basic Option example`` () =
         getSurname "Taylor Swift" |> should equal __
         getSurname "Eminem" |> should equal __
 
     // the System.Int32.TryParse, System.Double.TryParse, etc functions return
     // a tuple of bool * XYZ, where XYZ is the converted value.
     [<Test>]
-    let ``Parsing a string safely`` () =
+    let ``02 Parsing a string safely`` () =
         let parse s =
             match System.Int32.TryParse s with
             | _ -> __ // <-- fill in the match cases
@@ -58,7 +58,7 @@ module ``18: Exploring your options`` =
         parse "wut" |> should equal None
 
     [<Test>]
-    let ``Remapping Option values`` () =
+    let ``03 Remapping Option values`` () =
       let f n =
          match getSurname n with
          | _ -> __ // <-- write good match cases

@@ -12,13 +12,13 @@ Sad Panda.
 
 module ``03: Match expressions`` = 
     [<Test>]
-    let ``Basic match expression`` () =
+    let ``01 Basic match expression`` () =
         match 8000 with
         | FILL_ME__IN -> "Insufficient power-level"
         ()
 
     [<Test>]
-    let ``Match expressions are expressions, not statements`` () =
+    let ``02 Match expressions are expressions, not statements`` () =
         let result =
             match 9001 with
             | FILL_ME__IN -> // <-- use a variable pattern here!
@@ -29,7 +29,7 @@ module ``03: Match expressions`` =
         result |> should equal "Hah! It's a palindromic number!"
 
     [<Test>]
-    let ``Shadowing in match expressions`` () =
+    let ``03 Shadowing in match expressions`` () =
         let x = 213
         let y = 19
         match x with
@@ -40,7 +40,7 @@ module ``03: Match expressions`` =
             x |> should equal __
 
     [<Test>]
-    let ``Match order in match expressions`` () =
+    let ``04 Match order in match expressions`` () =
         let x = 213
         let y = 19
         let z =
