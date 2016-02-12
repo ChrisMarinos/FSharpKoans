@@ -57,6 +57,14 @@ module ``07: Strings and Conversions`` =
         __ a |> should equal "23"
         __ b |> should equal "17.8"
 
+    (*
+        The next few tests involve the `sprintf` function, which
+        creates a string.  The `printf` function does exactly the same
+        thing, except that instead of returning the string as output,
+        it returns `unit` (see AboutUnit.fs) and prints the string
+        to the console.
+    *)
+
     [<Test>]
     let ``09 String formatting: %s format specifier`` () =
         let result = sprintf __ "perfect"
