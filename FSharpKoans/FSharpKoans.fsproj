@@ -76,13 +76,13 @@
     <Compile Include="AboutPatterns.fs" />
     <Compile Include="AboutDiscriminatedUnions.fs" />
     <Compile Include="AboutParametricPolymorphism.fs" />
+    <Compile Include="AboutOptions.fs" />
     <Compile Include="AboutLength.fs" />
     <Compile Include="AboutRev.fs" />
     <Compile Include="AboutMap.fs" />
     <Compile Include="AboutFilter.fs" />
     <Compile Include="AboutFold.fs" />
     <Compile Include="AboutCombiningFunctions.fs" />
-    <Compile Include="AboutOptions.fs" />
     <Compile Include="AboutOtherListFunctions.fs" />
     <Compile Include="AboutUnit.fs" />
     <Compile Include="AboutSeqAndArray.fs" />

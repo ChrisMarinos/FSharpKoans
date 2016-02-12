@@ -31,7 +31,7 @@ Efficient use of this functionality can make you much, much more productive in a
 short amount of time.
 *)
 
-module ``12: Finding the length of a list`` =
+module ``13: Finding the length of a list`` =
 
     (*
         Once you've learned about the Easy Way of doing something,

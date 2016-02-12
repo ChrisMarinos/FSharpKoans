@@ -31,7 +31,7 @@ reducing them to one value (whether summing, averaging, concatenating,
 or something else), it's likely that you'll be able to use a fold.
 *)
 
-module ``16: Welcome to the functional fold`` =
+module ``17: Welcome to the functional fold`` =
     [<Test>]
     let ``01 A fold which sums a list`` () =
         let fold initialState xs =

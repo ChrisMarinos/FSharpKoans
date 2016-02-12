@@ -5,7 +5,7 @@ open NUnit.Framework
 Transforming a sequence is called "mapping".
 *)
 
-module ``14: Applying a map to a list`` =
+module ``15: Applying a map to a list`` =
     [<Test>]
     let ``01 Fixed-function mapping, the hard way (part 1).`` () =
         let map (xs : int list) : int list =

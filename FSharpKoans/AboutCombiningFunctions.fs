@@ -16,7 +16,7 @@ open NUnit.Framework
     (+), (*), (-), and so on.
 *)
 
-module ``17: Combining functions`` =
+module ``18: Combining functions`` =
 
     (*
         The pipe operator takes:

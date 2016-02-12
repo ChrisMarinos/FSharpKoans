@@ -5,7 +5,7 @@ open NUnit.Framework
 A filter only lets particular elements through.
 *)
 
-module ``15: Filtering a list`` =
+module ``16: Filtering a list`` =
     [<Test>]
     let ``01 Fixed-function filtering, the hard way`` () =
         let filter (xs : int list) : int list =
