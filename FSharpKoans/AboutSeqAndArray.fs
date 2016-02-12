@@ -72,7 +72,9 @@ module ``21: Sequences and Arrays`` =
 
     [<Test>]
     let ``03 Creating a sequence (Method 3).`` () =
-        // this creates a sequence based on some "seed" value.
+        // the 'puffery' function creates a sequence based on some "seed" value.
+        // Examine how it works, because you'll have to make
+        // the 'hailstone' function based on Seq.unfold
         let puffery seed =
             Seq.unfold (fun state ->
                 match String.length state with
@@ -89,11 +91,13 @@ module ``21: Sequences and Arrays`` =
             __
         hailstone 6 |> Seq.toList |> should equal [6; 3; 10; 5; 16; 8; 4; 2; 1]
         hailstone 19 |> Seq.toList |> should equal [19; 58; 29; 88; 44; 22; 11; 34; 17; 52; 26; 13; 40; 20; 10; 5; 16; 8; 4; 2; 1]
+        hailstone 1 |> Seq.toList |> should equal [1]
 
     [<Test>]
     let ``04 Creating a sequence (Method 4).`` () =
         // this is called a sequence expression.
         // It can `yield` values, and it can `yield!` sequences.
+        // Here's the hailstone sequence, crafted as a sequence expression.
         let rec hailstone x =
             seq {
                 yield x // I'm giving back a generated value here
@@ -111,6 +115,7 @@ module ``21: Sequences and Arrays`` =
             // Implement that here, using a sequence expression.
         puffery "Whizz!" |> Seq.toList |> should equal ["Whizz!"; "Whizz"; "Whiz"; "Whi"; "Wh"; "W"]
         puffery "ZchelnIk" |> Seq.toList |> should equal ["ZchelnIk"; "ZchelnI"; "Zcheln"; "Zchel"; "Zche"; "Zch"; "Zc"; "Z"]
+        puffery "T" |> Seq.toList |> should equal ["T"]
 
     [<Test>]
     let ``05 Arrays are much like lists`` () =

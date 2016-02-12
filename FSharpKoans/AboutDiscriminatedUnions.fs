@@ -63,15 +63,15 @@ module ``10: The Good Kind of Discrimination`` =
         Broken |> should be ofType<FILL_ME_IN>
         Rented |> should be ofType<FILL_ME_IN>
 
-    type Genealogy =
-    | UnknownAncestor
-    | Child of string * Genealogy * Genealogy
+    type BinaryTree =
+    | Empty
+    | Node of string * BinaryTree * BinaryTree
 
     [<Test>]
     let ``04 A discriminated union can refer to itself (i.e., it can be recursive).`` () =
-        let rec countAncestors x =
+        let rec depth x =
             match x with
-            | UnknownAncestor -> 0
-            | Child (_, mother, father) -> countAncestors mother + countAncestors father
+            | Empty -> 0
+            | Node (_, a, b) -> 1 + max (depth a) (depth b)
         let a = __ // <-- you may want to spread this over multiple lines and/or let-bindings ...!
-        countAncestors a |> should equal 4
+        depth a |> should equal 4

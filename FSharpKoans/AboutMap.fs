@@ -8,7 +8,7 @@ Transforming a sequence is called "mapping".
 module ``14: Applying a map to a list`` =
     [<Test>]
     let ``01 Fixed-function mapping, the hard way (part 1).`` () =
-        let map (xs : 'a list) : 'b list =
+        let map (xs : int list) : int list =
             __ // write a function which adds 1 to each element
         map [1; 2; 3; 4] |> should equal [2; 3; 4; 5]
         map [9; 8; 7; 6] |> should equal [10; 9; 8; 7]
@@ -18,7 +18,7 @@ module ``14: Applying a map to a list`` =
 
     [<Test>]
     let ``02 Fixed-function mapping, the hard way (part 2).`` () =
-        let map (xs : 'a list) : 'b list =
+        let map (xs : int list) : int list =
             __ // write a function which doubles each element
         map [1; 2; 3; 4] |> should equal [2; 4; 6; 8]
         map [9; 8; 7; 6] |> should equal [18; 16; 14; 12]

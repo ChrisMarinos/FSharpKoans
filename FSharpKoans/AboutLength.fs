@@ -33,6 +33,11 @@ short amount of time.
 
 module ``12: Finding the length of a list`` =
 
+    (*
+        Once you've learned about the Easy Way of doing something,
+        go ahead and use it in subsequent tests.
+    *)
+
     [<Test>]
     let ``01 Finding the length of a list, the hard way`` () =
         let length (xs : 'a list) : int =

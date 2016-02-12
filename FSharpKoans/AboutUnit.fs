@@ -54,6 +54,7 @@ module ``20: Unit 00`` =
             | true -> scrollPositions.[p]
             | _ -> fun () -> "Nothing to do"
         scrollPositions |> should be ofType<FILL_ME_IN>
+        getWorkAtPosition |> should be ofType<FILL_ME_IN>
         getWorkAtPosition 3 |> should be ofType<FILL_ME_IN>
         (getWorkAtPosition 3) () |> should be ofType<FILL_ME_IN>
         getWorkAtPosition 250 |> should be ofType<FILL_ME_IN>

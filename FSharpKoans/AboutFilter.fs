@@ -8,7 +8,7 @@ A filter only lets particular elements through.
 module ``15: Filtering a list`` =
     [<Test>]
     let ``01 Fixed-function filtering, the hard way`` () =
-        let filter (xs : 'a list) : 'a list =
+        let filter (xs : int list) : int list =
             __ // write a function to filter for odd elements only.
         filter [1; 2; 3; 4] |> should equal [1; 3]
         filter [10; 9; 8; 7] |> should equal [9; 7]

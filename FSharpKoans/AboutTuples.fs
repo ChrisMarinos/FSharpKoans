@@ -46,6 +46,8 @@ module ``04: Tuples`` =
 
     [<Test>]
     let ``06 Using the wildcard pattern`` () = 
+        // A single _ is a wildcard pattern, NOT a space to fill things in.
+        // A wildcard pattern successfully matches ANYTHING.
         let name, _, _, weapon_name = "Shinji", 9103, true, "Unit 01"
         name |> should equal __
         weapon_name |> should equal __

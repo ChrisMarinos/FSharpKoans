@@ -16,9 +16,11 @@ module ``05: I Have Here In My Hand A List`` =
     let ``02 Creating a list (Syntax 2).`` () =
         let myList = __::__::__::__::[]
         let myOtherList = __::__::__::[ __ ]
-        let myLastList = __::__::__
+        let myNextList = __::__::__ // you may use [ and ] symbols on this line.
+        let myLastList = __::__::__ // DO NOT use [ or ] symbols on this line!
         myList |> should equal [ "apple"; "grape"; "pear"; "biscuit" ]
         myOtherList |> should equal [ "orange"; "lemon"; "princess"; "queen" ]
+        myNextList |> should equal ["lily"; "sunflower"; "daisy"; "carrot"]
         myLastList |> should equal [ "naartjie"; "raisin"; "apple"; "grape"; "pear"; "biscuit" ]
 
     [<Test>]
@@ -33,7 +35,7 @@ module ``05: I Have Here In My Hand A List`` =
         let first = [ "grape"; "peach" ]
         let second = "pear" :: first
         let third = "apple" :: second
-        third |> should equal ["apple"; "pear"; "grape"; "peach"]
+        third |> should equal __
         second |> should equal __
         first |> should equal __
 
@@ -67,7 +69,7 @@ module ``05: I Have Here In My Hand A List`` =
     [<Test>]
     let ``09 Pattern-matching a list (Part 5).`` () =
         let fruits = ["apple"; "peach"; "orange"; "watermelon"; "pineapple"; "tomato"]
-        let _::_::h = fruits
+        let _::_::_::h = fruits
         h |> should equal __
 
     [<Test>]
@@ -110,6 +112,6 @@ module ``05: I Have Here In My Hand A List`` =
     [<Test>]
     let ``14 Creating a list containing a sequence of numbers, and indexing`` () =
         let k = [6..50]
-        let l = [3..2..20]
+        let l = [3..3..20]
         k.[3] |> should equal __
         l.[3] |> should equal __

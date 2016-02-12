@@ -65,7 +65,7 @@ module ``17: Combining functions`` =
         let a x =
             x = 4
         not (a 4) |> should equal false
-        __ __ a 4 |> should equal false
+        (__ __ a 4) |> should equal false // <-- put <| in one of the spaces to fill in
 
     (*
         The compose operator takes:

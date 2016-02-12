@@ -68,8 +68,8 @@ module ``11: Parametric polymorphism`` =
 
     type MyRecord = {
         Who : FILL_ME_IN // <-- should be generic
-        What : FILL_ME_IN // <-- should be generic
-        Where : int
+        What : FILL_ME_IN // <-- should be generic, and a different type to Who
+        Where : string
     }
 
     [<Test>]

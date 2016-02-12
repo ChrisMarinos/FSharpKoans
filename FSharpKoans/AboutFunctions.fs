@@ -46,8 +46,8 @@ module ``08: Putting the Function into Functional Programming`` =
     [<Test>]
     let ``07 A function can span multiple lines (Part 1).`` () =
         (fun zorro ->
-            let k = "swash"
-            let b = "buckle"
+            let k = "swash" // notice the indentation.
+            let b = "buckle" // F# is whitespace-sensitive, so it is important!
             zorro + " likes to " + k + b
         ) "Zorro the pirate" |> should equal __
 
@@ -69,9 +69,15 @@ module ``08: Putting the Function into Functional Programming`` =
         in
             jorus 12 |> should equal __
 
+    // The next few are very similar.  Resist the temptation to
+    // just fill out values without having any idea about what's
+    // going on!  Learn the different forms of the syntax.  You
+    // will have to understand and apply these in your own code.
+
     [<Test>]
     let ``10 A function can return a function (Part 1).`` () =
         let i = fun love -> fun hate -> love - hate
+        // read the above as: fun love -> (fun hate -> (love - hate))
         let j = i 10
         let k = j 9
         k |> should equal __
@@ -223,8 +229,8 @@ module ``08: Putting the Function into Functional Programming`` =
     *)
         let myIf cond =
             match cond 23 with
-            | true -> "Black"
-            | false -> "White"
+            | true -> "Pink"
+            | false -> "Slink"
         let check x =
             x % 2 <> 0 && x % 3 <> 0 && x % 5 <> 0 && x % 7 <> 0 && x % 11 <> 0
         myIf (fun x -> x%2 = 0) |> should equal __

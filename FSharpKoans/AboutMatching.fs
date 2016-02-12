@@ -38,6 +38,8 @@ module ``03: Match expressions`` =
         | y ->
             y |> should equal __
             x |> should equal __
+        y |> should equal __
+        x |> should equal __
 
     [<Test>]
     let ``04 Match order in match expressions`` () =
