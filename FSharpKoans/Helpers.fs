@@ -87,6 +87,17 @@ let inline should (f : 'a -> #Constraints.Constraint) x (y : obj) =
         | _ -> y
     try
         Assert.That(y, c)
+        // if we compare for equality, then compare types for equality as well
+        if y <> null && c.GetType().AssemblyQualifiedName = typeof<Constraints.EqualConstraint>.AssemblyQualifiedName then
+            // make an exception for empty lists, so that strongly type List[int] equals List[obj]
+            // Otherwise, we have to make the tests look uuuuuuuuuugly.
+            // If they're NOT empty, then we shouldn't get here because of the Assert.That check.
+            match y.GetType().IsGenericType with
+            | true ->
+                let t0 = y.GetType().GetGenericTypeDefinition().AssemblyQualifiedName
+                let t1 = typedefof<FSharp.Collections.list<_>>.AssemblyQualifiedName
+                if t0 <> t1 then Assert.IsInstanceOf(typeof<'a>, y)
+            | false -> Assert.IsInstanceOf(typeof<'a>, y)
     with
     | ex ->
         // ok, let's pull out the line number.  We'll need to
