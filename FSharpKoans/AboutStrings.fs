@@ -76,6 +76,9 @@ module ``about strings`` =
         let first = message.[0]
         let other = message.[4] 
 
+ (* A single character is denoted using single quotes, example: 'c',
+        not double quotes as you would use for a string *)
+           
         AssertEquality first __
         AssertEquality other __
 
