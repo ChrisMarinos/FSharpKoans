@@ -70,5 +70,3 @@ module ``about functions`` =
                  
                  See http://en.wikipedia.org/wiki/Closure_(computer_science) 
                  for more about about closure. *)
-
-        (* TRY IT: What happens if you make suffix into a mutable variable? *)
