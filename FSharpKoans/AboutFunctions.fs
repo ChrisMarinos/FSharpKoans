@@ -57,9 +57,9 @@ module ``about functions`` =
         let suffix = "!!!"
 
         let caffeinate (text:string) =
-            let exclaimed = text + suffix
+            let exclaimed = text.Trim() + suffix
             let yelled = exclaimed.ToUpper()
-            yelled.Trim()
+            yelled
 
         let caffeinatedReply = caffeinate "hello there"
 
