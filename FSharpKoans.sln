@@ -9,6 +9,11 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpKoans", "FSharpKoans\
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpKoans.Test", "FSharpKoans.Test\FSharpKoans.Test.fsproj", "{69F00CBF-0EDC-4260-B852-C53B8C44BBCE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Readme", "Readme", "{55BF4627-7AED-42BB-AFFA-405AB6B84373}"
+	ProjectSection(SolutionItems) = preProject
+		README.markdown = README.markdown
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
