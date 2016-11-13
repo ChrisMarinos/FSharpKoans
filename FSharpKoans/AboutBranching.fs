@@ -19,7 +19,7 @@ module ``about branching`` =
                 "it's odd!"
                 
         let result = isEven 2                
-        AssertEquality result __
+        AssertEquality result "it's even!"
     
     [<Koan>]
     let IfStatementsReturnValues() =
@@ -34,7 +34,7 @@ module ``about branching`` =
             else
                 "no problem here"
 
-        AssertEquality result __
+        AssertEquality result "no problem here"
 
     [<Koan>]
     let BranchingWithAPatternMatch() =
@@ -45,9 +45,11 @@ module ``about branching`` =
         
         let result1 = isApple "apple"
         let result2 = isApple ""
+        let result3 = isApple "le apple"
         
-        AssertEquality result1 __
-        AssertEquality result2 __
+        AssertEquality result1 true
+        AssertEquality result2 false
+        AssertEquality result3 false
     
     [<Koan>]
     let UsingTuplesWithIfStatementsQuicklyBecomesClumsy() =
@@ -55,7 +57,7 @@ module ``about branching`` =
         let getDinner x = 
             let name, foodChoice = x
             
-            if foodChoice = "veggies" || foodChoice ="fish" || 
+            if foodChoice = "veggies" || foodChoice = "fish" || 
                foodChoice = "chicken" then
                 sprintf "%s doesn't want red meat" name
             else
@@ -64,8 +66,8 @@ module ``about branching`` =
         let person1 = ("Chris", "steak")
         let person2 = ("Dave", "veggies")
         
-        AssertEquality (getDinner person1) __
-        AssertEquality (getDinner person2) __
+        AssertEquality (getDinner person1) "Chris wants 'em some steak"
+        AssertEquality (getDinner person2) "Dave doesn't want red meat"
         
     [<Koan>]
     let PatternMatchingIsNicer() =
@@ -74,11 +76,14 @@ module ``about branching`` =
             match x with
             | (name, "veggies")
             | (name, "fish")
+            | (name, "rice")
             | (name, "chicken") -> sprintf "%s doesn't want red meat" name
             | (name, foodChoice) -> sprintf "%s wants 'em some %s" name foodChoice 
             
         let person1 = ("Bob", "fish")
-        let person2 = ("Sally", "Burger")
+        let person2 = ("Sally", "burgers")
+        let person3 = ("Tim", "rice")
         
-        AssertEquality (getDinner person1) __
-        AssertEquality (getDinner person2) __
+        AssertEquality (getDinner person1) "Bob doesn't want red meat"
+        AssertEquality (getDinner person2) "Sally wants 'em some burgers"
+        AssertEquality (getDinner person3) "Tim doesn't want red meat"
