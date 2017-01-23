@@ -55,8 +55,8 @@ module ``about pipelining`` =
 
     [<Koan>]
     let HowThePipeOperatorIsDefined() =
-        let (|>) x y =
-            y x
+        let (|>) x f =
+            f x
 
         let result =
             [0..5]
