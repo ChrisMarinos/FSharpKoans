@@ -58,8 +58,17 @@ module ``about the stock example`` =
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
 
+    open System
+
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
-        
-        AssertEquality "2012-03-13" result
+                
+        let dayWithMaxVariance = 
+            stockData 
+            |> List.tail
+            |> List.map (fun x -> x.Split([|','|]))
+            |> List.map (fun y -> (y.[0], abs(Double.Parse y.[1] - Double.Parse y.[4])))
+            |> List.maxBy (fun z -> snd z)
+            |> fst
+                    
+        AssertEquality "2012-03-13" dayWithMaxVariance
