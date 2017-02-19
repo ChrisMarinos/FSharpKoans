@@ -44,11 +44,13 @@ module ``07: Strings and Conversions`` =
         // What do you think the function which converts-to-float is called?
         __ a |> should equal 23.0
 
-    [<Test;ExpectedException(typeof<System.FormatException>)>]
+    [<Test>]
     let ``07 Make an int conversion fail`` () =
         // we will learn the safe method of doing this when we do Options
-        let a = __ // <-- this value, when converted...
-        __ a |> should equal 15 // ...should cause an exception.
+        (fun () ->
+            let a = __ // <-- this value, when converted...
+            __ a |> should equal 15 // ...should cause an exception.
+        ) |> should throw typeof<System.FormatException>
 
     [<Test>]
     let ``08 Getting a string from an integer or float`` () =

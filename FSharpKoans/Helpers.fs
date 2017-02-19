@@ -66,16 +66,15 @@ type String with
     member __.FILL_ME_IN = ()
 
 let equal = equal
+let throw = throw
 let inline be<'a> = id<'a>
 let inline ofType<'a> =
     {
         new Constraints.Constraint () with
-            override __.Matches (x:obj) =
-                match x with
-                | :? 'a -> true
-                | _ -> instanceOfType<'a>.Matches x
-            override __.WriteDescriptionTo w =
-                instanceOfType<'a>.WriteDescriptionTo w
+            override __.ApplyTo<'b> (x : 'b) =
+                match box x with
+                | :? 'a -> Constraints.ConstraintResult(__, x, true)
+                | _ -> instanceOfType<'a>.ApplyTo x
     }
 let ``me`` =
     System.Reflection.Assembly.GetExecutingAssembly().FullName

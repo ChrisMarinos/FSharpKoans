@@ -159,7 +159,9 @@ module ``02: About Binding`` =
         let "Can't win all the time" = __
         () // eh? what's this funny thing? It's called "unit", and you'll learn more about it in AboutUnit.fs later on.
 
-    [<Test;ExpectedException(typeof<MatchFailureException>)>]
+    [<Test>]
     let ``07 Constant patterns fail if the sides don't match exactly`` () =
-        let "FILL ME IN" = FILL__ME_IN
-        ()
+        (fun () ->
+            let "FILL ME IN" = FILL__ME_IN
+            ()
+        ) |> should throw typeof<MatchFailureException>
