@@ -17,7 +17,7 @@ you to solve more complicated problems and use more advanced techniques.
 ### Getting Started
 
 The F# Koans currently target Visual Studio 2010. The koans
-should also work with Visual Studio 2008, Visual Studio 11+, command line Mono, MonoDevelop, and Xamarin Studio.
+should also work with Visual Studio 2015+, command line Mono, MonoDevelop, and Xamarin Studio.
 
 *NOTE: [NuGet](http://nuget.org/) is required to properly resolve dependencies.*
 
@@ -46,7 +46,7 @@ The only requirements are [Mono](http://www.mono-project.com/download/), [FSharp
  
 3. Build the solution: 
    ```
-   xbuild FSharpKoans.sln
+   msbuild FSharpKoans.sln
    ```
 
 You can now run the Koans (the following assumes your output path is _bin/Debug_): 
