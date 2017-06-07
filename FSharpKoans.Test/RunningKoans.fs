@@ -52,7 +52,7 @@ let ``A failing koan returns a failure message`` () =
         |> KoanContainer.runKoans
         |> Seq.head
         
-    Assert.AreEqual("FailureKoan has damaged your karma.", result.Message)
+    Assert.AreEqual("FailureKoan failed.", result.Message)
 
 [<Test>]
 let ``A successful koans returns a success message`` () =
@@ -61,7 +61,7 @@ let ``A successful koans returns a success message`` () =
         |> KoanContainer.runKoans
         |> Seq.head
         
-    Assert.AreEqual("SuccessKoan has expanded your awareness.", result.Message)
+    Assert.AreEqual("SuccessKoan passed", result.Message)
     
 [<Test>]
 let ``The outcome of all successful koans is returned`` () =
@@ -72,8 +72,8 @@ let ``The outcome of all successful koans is returned`` () =
         |> Seq.reduce (fun x y -> x + System.Environment.NewLine + y)
     
     let expected =
-        "One has expanded your awareness." + System.Environment.NewLine +
-        "Two has expanded your awareness."
+        "One passed" + System.Environment.NewLine +
+        "Two passed"
         
     Assert.AreEqual(expected, result)
     
@@ -88,7 +88,7 @@ let ``Failed Koans don't stop the enumeration`` () =
         
         
     let expected =
-        "One has damaged your karma." + System.Environment.NewLine +
-        "Two has expanded your awareness."
+        "One failed." + System.Environment.NewLine +
+        "Two passed"
         
     Assert.AreEqual(expected, result)

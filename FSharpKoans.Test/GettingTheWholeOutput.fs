@@ -37,14 +37,14 @@ let ``Output contains container name followed by koan results. Stops on failure`
     let expected = 
         "
 
-When contemplating ContainerOne:
-    One has expanded your awareness.
-    Two has expanded your awareness.
-    Three has expanded your awareness.
+ContainerOne:
+    One passed
+    Two passed
+    Three passed
 
-When contemplating ContainerTwo:
-    Four has expanded your awareness.
-    Five has damaged your karma."
+ContainerTwo:
+    Four passed
+    Five failed."
     
     
     Assert.AreEqual(expected, result.Message)
