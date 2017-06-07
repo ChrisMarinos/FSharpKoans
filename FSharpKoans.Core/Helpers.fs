@@ -4,7 +4,7 @@ module FSharpKoans.Core.Helpers
 open System
 open NUnit.Framework
 
-let __<'T> : 'T = failwith "Seek wisdom by filling in the __"
+let inline __<'T> : 'T = failwith "Seek wisdom by filling in the __"
 
 type FILL_ME_IN =
     class end
