@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>FSharpKoans.Core</RootNamespace>
     <AssemblyName>FSharpKoans.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Name>FSharpKoans.Core</Name>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
