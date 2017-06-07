@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>FSharpKoans1</RootNamespace>
     <AssemblyName>FSharpKoans</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <Name>FSharpKoans</Name>
