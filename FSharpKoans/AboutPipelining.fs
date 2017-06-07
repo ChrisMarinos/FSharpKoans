@@ -44,7 +44,7 @@ module ``about pipelining`` =
     [<Koan>]
     let SquareEvenNumbersWithPipelineOperator() =
         (* In F#, you can use the pipeline operator to get the benefit of the 
-           parens style with the readablity of the statement style. *)
+           parens style with the readability of the statement style. *)
 
         let result =
             [0..5]
