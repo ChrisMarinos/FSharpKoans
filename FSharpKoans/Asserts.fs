@@ -16,4 +16,4 @@ module Asserts =
   let inline AssertThrows<'a> f = Expect.throws f (sprintf "should throw exception of type %s" typeof<'a>.Name)
 
   type FILL_ME_IN () = class end
-  exception FILL_IN_THE_EXCEPTION
+  type FILL_IN_THE_EXCEPTION () = class end

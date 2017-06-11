@@ -4,7 +4,8 @@ open Expecto.Impl
 
 let testOrder =
   [ ``about asserts``.tests
-    ``about let``.tests ] |> List.rev
+    ``about let``.tests
+    ``about functions``.tests ] |> List.rev
   // have to reverse to get the correct order
 
 let tests = testList "Path to enlightenment" testOrder
@@ -28,7 +29,18 @@ let printSuccess ``module`` tests =
   tests |> List.iter (printfn "\t'%s' passed")
   printfn "\n"
 
-let printFailure (test: FlatTest) = printfn "'%s' failed" test.name
+let printFailure ``module`` test =
+  printfn "%s:" ``module``
+  printfn "\t'%s' failed" test
+
+let printErrorMessage (ex: exn) =
+  printfn ""
+  printfn ""
+  printfn "You have not yet reached enlightenment ..."
+  printfn "%s" ex.Message
+  printfn ""
+  printfn "Please meditate on the following code:"
+  printfn "%s" ex.StackTrace
 
 let toGroupName (test: FlatTest) =
   let parts = test.name.Split([|"/"|], System.StringSplitOptions.None)
@@ -56,25 +68,8 @@ match firstFailure with
     | Error exn -> exn.Message, Some exn
     | Passed -> failwith "should never happen"
     | Ignored s -> failwithf "should never happen: %s" s
-  printfn "%s:" ``module``
-  printfn "\t%s failed" testName
-  printfn "%s" error
-  exn |> Option.iter (fun ex ->
-    printfn ""
-    printfn ""
-    printfn ""
-    printfn ""
-    printfn "You have not yet reached enlightenment ..."
-    printfn "%s" ex.Message
-    printfn ""
-    printfn "Please meditate on the following code:"
-    printfn "%s" ex.StackTrace
-  )
-| None -> ()
 
-printfn ""
-printfn ""
-printfn ""
-printfn ""
-printf "Press any key to continue..."
-System.Console.ReadKey() |> ignore
+  printFailure ``module`` testName
+  exn |> Option.iter printErrorMessage
+
+| None -> ()

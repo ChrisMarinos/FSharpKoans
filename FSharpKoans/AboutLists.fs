@@ -113,8 +113,7 @@ module ``about lists`` =
 
 
     let DividingListsWithPartition() =
-        let isOdd x =
-            not(x % 2 = 0)
+        let isOdd x = x % 2 <> 0
 
         let original = [0..5]
         let result1, result2 = List.partition isOdd original
