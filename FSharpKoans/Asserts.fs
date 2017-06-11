@@ -5,7 +5,7 @@ open Expecto
 [<AutoOpen>]
 module Asserts =
 
-  let inline __<'a> = Unchecked.defaultof<'a>
+  let inline __<'a> : 'a = failwith "fill in the __"
 
   let inline AssertEquality actual expected =
     Expect.equal actual expected "should be equal"

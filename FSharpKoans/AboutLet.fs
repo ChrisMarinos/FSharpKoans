@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-
+open Expecto
 
 //---------------------------------------------------------------
 // About Let
@@ -10,18 +10,18 @@
 //---------------------------------------------------------------
 
 module ``about let`` =
-
-
-    let LetBindsANameToAValue() =
+  let tests =
+    testList "teaching about let bindings" [
+      testCase "let binds a name to a value" <| fun () ->
         let x = 50
 
         AssertEquality x __
 
-    (* In F#, values created with let are inferred to have a type like
-       "int" for integer values, "string" for text values, and "bool"
-       for true or false values. *)
+      (*  In F#, values created with let are inferred to have a type like
+          "int" for integer values, "string" for text values, and "bool"
+          for true or false values.  *)
 
-    let LetInfersTheTypesOfValuesWherePossible() =
+      testCase "let infers the types of values where possible" <| fun () ->
         let x = 50
         let typeOfX = x.GetType()
         AssertEquality typeOfX typeof<int>
@@ -30,8 +30,7 @@ module ``about let`` =
         let expectedType = y.GetType()
         AssertEquality expectedType typeof<FILL_ME_IN>
 
-
-    let YouCanMakeTypesExplicit() =
+      testCase "you can make types explicit" <| fun () ->
         let (x:int) = 42
         let typeOfX = x.GetType()
 
@@ -41,15 +40,15 @@ module ``about let`` =
         AssertEquality typeOfX typeof<FILL_ME_IN>
         AssertEquality typeOfY typeof<FILL_ME_IN>
 
-        (* You don't usually need to provide explicit type annotations types for
-           local variables, but type annotations can come in handy in other
-           contexts as you'll see later. *)
+      (*  You don't usually need to provide explicit type annotations types for
+          local variables, but type annotations can come in handy in other
+          contexts as you'll see later.  *)
 
+      testCase "floats and ints" <| fun () ->
+        (*  Depending on your background, you may be surprised to learn that
+            in F#, integers and floating point numbers are different types.
+            In other words, the following is true.  *)
 
-    let FloatsAndInts() =
-        (* Depending on your background, you may be surprised to learn that
-           in F#, integers and floating point numbers are different types.
-           In other words, the following is true. *)
         let x = 20
         let typeOfX = x.GetType()
 
@@ -63,15 +62,13 @@ module ``about let`` =
         //If you're coming from another .NET language, float is F# slang for
         //the double type.
 
-
-    let ModifyingTheValueOfVariables() =
+      testCase "modifying the value of variables" <| fun () ->
         let mutable x = 100
         x <- 200
 
         AssertEquality x __
 
-
-    let YouCannotModifyALetBoundValueIfItIsNotMutable() =
+      testCase "you cannot modify a let bound value if it is not mutable" <| fun () ->
         let x = 50
 
         //What happens if you uncomment the following?
@@ -83,3 +80,4 @@ module ``about let`` =
         let x = 100
 
         AssertEquality x __
+    ]
