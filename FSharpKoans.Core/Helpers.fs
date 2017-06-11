@@ -2,9 +2,9 @@
 module FSharpKoans.Core.Helpers
 
 open System
-open NUnit.Framework
+open Expecto
 
-let inline __<'T> : 'T = failwith "Seek wisdom by filling in the __"
+let inline __<'T> : 'T = Expect.isTrue false "Seek wisdom by filling in the __"; Unchecked.defaultof<'T>
 
 type FILL_ME_IN =
     class end
@@ -12,12 +12,14 @@ type FILL_ME_IN =
 type FILL_IN_THE_EXCEPTION() =
     inherit Exception()
 
-let AssertWithMessage x message = Assert.IsTrue(x, message)
+let inline AssertWithMessage x message = Expect.isTrue x message
 
-let AssertEquality (x:'T) (y:'T) = Assert.AreEqual(x,y)   
+let inline AssertEquality (x:'T) (y:'T) = Expect.equal x y "should be equal"
 
-let AssertInequality (x:'T) (y:'T) = Assert.AreNotEqual(x,y)
+let inline AssertInequality (x:'T) (y:'T) = Expect.notEqual x y "should not be equal"
 
-let AssertThrows<'a when 'a :> exn> action = Assert.Throws<'a>(fun () -> action())
+let inline AssertThrows<'a when 'a :> exn> action =
+    let exnName = (typeof<'a>).Name
+    Expect.throwsT<'a> action (sprintf "should throw exception of type %s" exnName)
 
-let Assert x = Assert.IsTrue(x)
+let inline Assert x = Expect.isTrue x "should be true"
