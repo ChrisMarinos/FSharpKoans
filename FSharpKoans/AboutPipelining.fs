@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
 
 //---------------------------------------------------------------
 // About Pipelining
@@ -8,7 +8,7 @@ open FSharpKoans.Core
 // symbols in F# programming. You can use it combine operations
 // on lists and other data structures in a readable way.
 //---------------------------------------------------------------
-[<Koan(Sort = 10)>]
+
 module ``about pipelining`` =
 
     let square x =
@@ -17,7 +17,7 @@ module ``about pipelining`` =
     let isEven x =
         x % 2 = 0
 
-    [<Koan>]
+
     let SquareEvenNumbersWithSeparateStatements() =
         (* One way to combine the operations is by using separate statements.
            However, this is can be clumsy since you have to name each result. *)
@@ -29,10 +29,10 @@ module ``about pipelining`` =
 
         AssertEquality result __
 
-    [<Koan>]
+
     let SquareEvenNumbersWithParens() =
         (* You can avoid this problem by using parens to pass the result of one
-           function to another. This can be difficult to read since you have to 
+           function to another. This can be difficult to read since you have to
            start from the innermost function and work your way out. *)
 
         let numbers = [0..5]
@@ -41,19 +41,19 @@ module ``about pipelining`` =
 
         AssertEquality result __
 
-    [<Koan>]
+
     let SquareEvenNumbersWithPipelineOperator() =
-        (* In F#, you can use the pipeline operator to get the benefit of the 
+        (* In F#, you can use the pipeline operator to get the benefit of the
            parens style with the readablity of the statement style. *)
 
         let result =
             [0..5]
             |> List.filter isEven
             |> List.map square
-        
+
         AssertEquality result __
 
-    [<Koan>]
+
     let HowThePipeOperatorIsDefined() =
         let (|>) x f =
             f x

@@ -1,0 +1,11 @@
+REDIRECTS: ON
+RESTRICTION: == net45
+NUGET
+  remote: https://www.nuget.org/api/v2
+    Argu (3.7)
+    Expecto (4.2.1)
+      Argu (>= 3.7)
+      FSharp.Core (>= 4.1.12)
+      Mono.Cecil (>= 0.9.6.4)
+    FSharp.Core (4.2.1)
+    Mono.Cecil (0.9.6.4)

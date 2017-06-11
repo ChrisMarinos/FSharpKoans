@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
 open System.Collections.Generic
 
 //---------------------------------------------------------------
@@ -7,9 +7,9 @@ open System.Collections.Generic
 //
 // Like lists, arrays are another basic container type in F#.
 //---------------------------------------------------------------
-[<Koan(Sort = 11)>]
+
 module ``about arrays`` =
-    [<Koan>]
+
     let CreatingArrays() =
         let fruits = [| "apple"; "pear"; "peach"|]
 
@@ -17,7 +17,7 @@ module ``about arrays`` =
         AssertEquality fruits.[1] __
         AssertEquality fruits.[2] __
 
-    [<Koan>]
+
     let ArraysAreDotNetArrays() =
         let fruits = [| "apple"; "pear" |]
 
@@ -28,22 +28,22 @@ module ``about arrays`` =
            you're used to if you're coming from another .NET language *)
         AssertEquality arrayType systemArray
 
-    [<Koan>]
+
     let ArraysAreMutable() =
         let fruits = [| "apple"; "pear" |]
         fruits.[1] <- "peach"
 
         AssertEquality fruits __
 
-    [<Koan>]
+
     let YouCanCreateArraysWithComprehensions() =
-        let numbers = 
-            [| for i in 0..10 do 
+        let numbers =
+            [| for i in 0..10 do
                    if i % 2 = 0 then yield i |]
 
         AssertEquality numbers __
 
-    [<Koan>]
+
     let ThereAreAlsoSomeOperationsYouCanPerformOnArrays() =
         let cube x =
             x * x * x

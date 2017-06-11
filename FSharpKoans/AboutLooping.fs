@@ -1,17 +1,17 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
 
 //---------------------------------------------------------------
 // About Looping
 //
 // While it's more common in F# to use the Seq, List, or Array
-// modules to perform looping operations, you can still fall 
-// back on traditional imperative looping techniques that you may 
+// modules to perform looping operations, you can still fall
+// back on traditional imperative looping techniques that you may
 // be more familiar with.
 //---------------------------------------------------------------
-[<Koan(Sort = 12)>]
+
 module ``about looping`` =
-    [<Koan>]
+
     let LoopingOverAList() =
         let values = [0..10]
 
@@ -20,8 +20,8 @@ module ``about looping`` =
             sum <- sum + value
 
         AssertEquality sum __
-       
-    [<Koan>]
+
+
     let LoopingWithExpressions() =
         let mutable sum = 0
 
@@ -30,7 +30,7 @@ module ``about looping`` =
 
         AssertEquality sum __
 
-    [<Koan>]
+
     let LoopingWithWhile() =
         let mutable sum = 1
 

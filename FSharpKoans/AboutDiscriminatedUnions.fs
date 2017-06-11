@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
 
 type Condiment =
     | Mustard
@@ -19,12 +19,12 @@ type Favorite =
 // of them like a much more powerful version of enums in other
 // languages.
 //---------------------------------------------------------------
-[<Koan(Sort = 18)>]
+
 module ``about discriminated unions`` =
-    [<Koan>]
+
     let DiscriminatedUnionsCaptureASetOfOptions() =
 
-        let toColor condiment = 
+        let toColor condiment =
             match condiment with
             | Mustard -> "yellow"
             | Ketchup -> "red"
@@ -35,10 +35,10 @@ module ``about discriminated unions`` =
 
         AssertEquality (toColor choice) __
 
-        (* TRY IT: What happens if you remove a case from the above pattern 
+        (* TRY IT: What happens if you remove a case from the above pattern
                    match? *)
 
-    [<Koan>]
+
     let DiscriminatedUnionCasesCanHaveTypes() =
 
         let saySomethingAboutYourFavorite favorite =
@@ -50,6 +50,6 @@ module ``about discriminated unions`` =
 
         let bourbonResult = saySomethingAboutYourFavorite <| Bourbon "Maker's Mark"
         let numberResult = saySomethingAboutYourFavorite <| Number 7
-        
+
         AssertEquality bourbonResult __
         AssertEquality numberResult __

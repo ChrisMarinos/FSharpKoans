@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch",
+      "type": "mono",
+      "request": "launch",
+      "program": "${workspaceRoot}/FSharpKoans/bin/Debug/FSharpKoans.exe",
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "build",
+      "runtimeExecutable": null,
+      "env": {},
+      "console": "internalConsole",
+      "osx": {
+        "runtimeArgs": [
+          "--debug"
+        ]
+      },
+      "linux": {
+        "runtimeArgs": [
+          "--debug"
+        ]
+      }
+    },
+    {
+      "name": "Attach",
+      "type": "mono",
+      "request": "attach",
+      "address": "localhost",
+      "port": 55555
+    }
+  ]
+}

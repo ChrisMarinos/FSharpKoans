@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
 
 type Game = {
     Name: string
@@ -15,18 +15,18 @@ type Game = {
 // in other languages. However, using option types instead of nulls
 // has subtle but far reaching benefits.
 //---------------------------------------------------------------
-[<Koan(Sort = 17)>]
+
 module ``about option types`` =
 
-    [<Koan>]
+
     let OptionTypesMightContainAValue() =
         let someValue = Some 10
-        
+
         AssertEquality someValue.IsSome __
         AssertEquality someValue.IsNone __
         AssertEquality someValue.Value __
 
-    [<Koan>]
+
     let OrTheyMightNot() =
         let noValue = None
 
@@ -34,7 +34,7 @@ module ``about option types`` =
         AssertEquality noValue.IsNone __
         AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value)
 
-    [<Koan>]
+
     let UsingOptionTypesWithPatternMatching() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let halo = { Name = "Halo"; Platform = "Xbox"; Score = None }
@@ -56,7 +56,7 @@ module ``about option types`` =
         AssertEquality (getScore chronoTrigger) __
         AssertEquality (getScore halo) __
 
-    [<Koan>]
+
     let ProjectingValuesFromOptionTypes() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let halo = { Name = "Halo"; Platform = "Xbox"; Score = None }
