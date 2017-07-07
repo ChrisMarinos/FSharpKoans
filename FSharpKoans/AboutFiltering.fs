@@ -3,7 +3,7 @@ open FSharpKoans.Core
 
 module NumberFilterer =
 
-    let someIfPositive x =
+    let someIfEven x =
         if x % 2 = 0 then Some x
         else None
 
@@ -79,11 +79,11 @@ module ``about filtering`` =
         
         // choose takes a function that transforms the input into an option
         // And filters out the results that are None.
-        let positiveNumbers =
+        let evenNumbers =
             numbers
-            |> List.choose someIfPositive
+            |> List.choose someIfEven
 
-        AssertEquality positiveNumbers  [ __ ]
+        AssertEquality evenNumbers  [ __ ]
 
         //You can also use the "id" function on types of 'a option list 
         //"id" will tell choose only to return just those that are "Some"
@@ -102,11 +102,11 @@ module ``about filtering`` =
        
         //Pick is similar to choose, but returns the first element, or throwns an exception if are no
         //items that return "Some" (a bit like find does)
-        let firstEvenPositive =
+        let firstEven =
             numbers
-            |> List.pick someIfPositive
+            |> List.pick someIfEven
 
-        AssertEquality firstEvenPositive __
+        AssertEquality firstEven __
 
         //As with choose, you can also use the "id" function on types of 'a option list 
         //to return just those that are "Some"
