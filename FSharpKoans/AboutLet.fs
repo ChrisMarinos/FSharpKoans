@@ -11,7 +11,7 @@ open Expecto
 
 module ``about let`` =
   let tests =
-    testList "teaching about let bindings" [
+    testListRev "teaching about let bindings" [
       testCase "let binds a name to a value" <| fun () ->
         let x = 50
 

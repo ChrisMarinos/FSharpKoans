@@ -23,7 +23,7 @@ type Favorite =
 
 module ``about discriminated unions`` =
   let tests =
-    testList "teaching about discriminated unions" [
+    testListRev "teaching about discriminated unions" [
       testCase "discriminated unions capture a set of options" <| fun () ->
         let toColor condiment =
           match condiment with

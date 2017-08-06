@@ -11,7 +11,7 @@ open Expecto
 
 module ``about the order of evaluation`` =
   let tests =
-    testList "teaching about precedence" [
+    testListRev "teaching about precedence" [
       testCase "sometimes you need parenthesis to group things" <| fun () ->
         let add x y =
           x + y

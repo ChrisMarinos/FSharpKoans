@@ -2,6 +2,12 @@ namespace FSharpKoans
 
 open Expecto
 
+module Expecto =
+  let testListRev name tests =
+    testList name (List.rev tests)
+
+
+
 [<AutoOpen>]
 module Asserts =
 

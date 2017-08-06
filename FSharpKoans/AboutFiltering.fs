@@ -25,7 +25,7 @@ module ``about filtering`` =
   open NumberFilterer
 
   let tests =
-    testList "teaching about filtering" [
+    testListRev "teaching about filtering" [
       testCase "filtering a list" <| fun () ->
         let names = [ "Alice"; "Bob"; "Eve"; ]
 

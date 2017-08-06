@@ -17,7 +17,7 @@ type Character = {
 
 module ``about record types`` =
   let tests =
-    testList "teaching about record types" [
+    testListRev "teaching about record types" [
       testCase "records have properties" <| fun () ->
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
 

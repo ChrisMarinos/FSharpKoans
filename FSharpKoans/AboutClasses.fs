@@ -40,7 +40,7 @@ type Person2(name:string) =
 
 module ``about classes`` =
   let tests =
-    testList "teaching about classes" [
+    testListRev "teaching about classes" [
       testCase "classes can have properties" <| fun () ->
         let zombie = new Zombie()
 

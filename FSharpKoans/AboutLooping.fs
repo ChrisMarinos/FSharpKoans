@@ -13,7 +13,7 @@ open Expecto
 
 module ``about looping`` =
   let tests =
-    testList "teaching about looping" [
+    testListRev "teaching about looping" [
       testCase "looping over a list" <| fun () ->
         let values = [0..10]
 

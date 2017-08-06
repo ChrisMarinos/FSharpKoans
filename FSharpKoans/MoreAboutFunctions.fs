@@ -12,7 +12,7 @@ open Expecto
 
 module ``more about functions`` =
   let tests =
-    testList "teaching more about functions" [
+    testListRev "teaching more about functions" [
       testCase "defining lambdas" <| fun () ->
         let colors = ["maize"; "blue"]
 

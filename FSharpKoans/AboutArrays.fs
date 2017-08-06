@@ -11,7 +11,7 @@ open System.Collections.Generic
 
 module ``about arrays`` =
   let tests =
-    testList "teaching about arrays" [
+    testListRev "teaching about arrays" [
       testCase "creating arrays" <| fun () ->
         let fruits = [| "apple"; "pear"; "peach"|]
 

@@ -11,7 +11,7 @@ open Expecto
 
 module ``about tuples`` =
   let tests =
-    testList "teaching about tuples" [
+    testListRev "teaching about tuples" [
       testCase "creating tuples" <| fun () ->
         let items = ("apple", "dog")
 

@@ -18,7 +18,7 @@ module ``about pipelining`` =
     x % 2 = 0
 
   let tests =
-    testList "teaching about pipelining" [
+    testListRev "teaching about pipelining" [
       testCase "square even numbers with separate statements" <| fun () ->
         (*  One way to combine the operations is by using separate statements.
             However, this is can be clumsy since you have to name each result. *)

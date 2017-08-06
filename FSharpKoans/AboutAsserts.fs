@@ -24,7 +24,7 @@ open Expecto
 module ``about asserts`` =
 
   let tests =
-    testList "teaching about assertions" [
+    testListRev "teaching about assertions" [
       testCase "assert expectation" <| fun () ->
         let expected_value = 1 + 1
         let actual_value = __ //start by changing this line

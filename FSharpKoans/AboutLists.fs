@@ -15,7 +15,7 @@ open System.Collections.Generic
 
 module ``about lists`` =
   let tests =
-    testList "teaching about lists" [
+    testListRev "teaching about lists" [
       testCase "creating lists" <| fun () ->
         let list = ["apple"; "pear"; "grape"; "peach"]
 

@@ -29,7 +29,7 @@ module MushroomKingdom =
 
 module ``about modules`` =
   let tests =
-    testList "teaching about modules" [
+    testListRev "teaching about modules" [
       testCase "modules can contain values and types" <| fun () ->
         AssertEquality MushroomKingdom.Mario.Name __
         AssertEquality MushroomKingdom.Mario.Occupation __

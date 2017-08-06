@@ -11,7 +11,7 @@ open Expecto
 
 module ``about branching`` =
   let tests =
-    testList "teaching about branching" [
+    testListRev "teaching about branching" [
       testCase "basic branching" <| fun () ->
         let isEven x =
           if x % 2 = 0 then

@@ -13,7 +13,7 @@ open System.Collections.Generic
 
 module ``about dot net collections`` =
   let tests =
-    testList "teaching about .Net collections" [
+    testListRev "teaching about .Net collections" [
       testCase "creating .Net lists(Resizeable Arrays)" <| fun () ->
         (*  NOTE: this is not the F# List, because we've overriden the type List by opening
             the `System.Collections.Generic` namespace above *)

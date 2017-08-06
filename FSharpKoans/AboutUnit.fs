@@ -13,7 +13,7 @@ open Microsoft.FSharp.Reflection
 
 module ``about unit`` =
   let tests =
-    testList "teaching about the unit value" [
+    testListRev "teaching about the unit value" [
       testCase "unit is used when there is no return value for a function" <| fun () ->
         let sendData data =
           //...sending the data to the server...

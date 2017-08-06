@@ -11,7 +11,7 @@ open Expecto
 
 module ``about strings`` =
   let tests =
-    testList "teaching about strings" [
+    testListRev "teaching about strings" [
       testCase "string value" <| fun () ->
         let message = "hello"
 

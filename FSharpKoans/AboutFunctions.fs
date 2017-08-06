@@ -9,7 +9,7 @@ open Expecto
 //---------------------------------------------------------------
 module ``about functions`` =
   let tests =
-    testList "learning about functions" [
+    testListRev "learning about functions" [
       (*  By default, F# is whitespace sensitive.
           For functions, this means that the last
           line of a function is its return value,

@@ -19,7 +19,7 @@ type Game = {
 
 module ``about option types`` =
   let tests =
-    testList "teaching about Options" [
+    testListRev "teaching about Options" [
       testCase "option types might contain a value" <| fun () ->
         let someValue = Some 10
 
