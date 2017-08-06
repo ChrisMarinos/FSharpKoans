@@ -27,11 +27,11 @@ module ``about asserts`` =
     testList "teaching about assertions" [
       testCase "assert expectation" <| fun () ->
         let expected_value = 1 + 1
-        let actual_value = 2 //start by changing this line
+        let actual_value = __ //start by changing this line
 
         AssertEquality expected_value actual_value
 
       //Easy, right? Now try one more
       testCase "fill in values" <| fun () ->
-        AssertEquality (1 + 1) 2
+        AssertEquality (1 + 1) __
     ]
