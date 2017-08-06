@@ -3,7 +3,7 @@
     <AssemblyName>FSharpKoans</AssemblyName>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Asserts.fs" />
