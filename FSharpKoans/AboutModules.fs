@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 
+open Expecto
 
 module MushroomKingdom =
     type Power =
@@ -27,32 +28,30 @@ module MushroomKingdom =
 //---------------------------------------------------------------
 
 module ``about modules`` =
-
-
-    let ModulesCanContainValuesAndTypes() =
-
+  let tests =
+    testList "teaching about modules" [
+      testCase "modules can contain values and types" <| fun () ->
         AssertEquality MushroomKingdom.Mario.Name __
         AssertEquality MushroomKingdom.Mario.Occupation __
 
         let moduleType = MushroomKingdom.Mario.GetType()
         AssertEquality moduleType typeof<FILL_ME_IN>
 
-
-    let ModulesCanContainFunctions() =
+      testCase "modules can contain functions" <| fun () ->
         let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
 
         AssertEquality superMario.Power __
 
-(* NOTE: In previous sections, you've seen modules like List and Option that
-         contain useful functions for dealing with List types and Option types
-         respectively. *)
+        (* NOTE:  In previous sections, you've seen modules like List and Option that
+                  contain useful functions for dealing with List types and Option types
+                  respectively. *)
+    ]
 
 open MushroomKingdom
 
-
 module ``about opened modules`` =
-
-    let OpenedModulesBringTheirContentsInScope() =
+  let tests =
+      testCase "opened modules bring their contents into scope" <| fun () ->
         AssertEquality Mario.Name __
         AssertEquality Mario.Occupation __
         AssertEquality Mario.Power __

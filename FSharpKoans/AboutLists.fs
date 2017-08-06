@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 
+open Expecto
 open System.Collections.Generic
 
 //---------------------------------------------------------------
@@ -13,86 +14,79 @@ open System.Collections.Generic
 //---------------------------------------------------------------
 
 module ``about lists`` =
-
-
-    let CreatingLists() =
+  let tests =
+    testList "teaching about lists" [
+      testCase "creating lists" <| fun () ->
         let list = ["apple"; "pear"; "grape"; "peach"]
 
-        //Note: The list data type in F# is a singly linked list,
-        //      so indexing elements is O(n).
+        (* Note: The list data type in F# is a singly linked list,
+              so indexing elements is O(n) *)
 
         AssertEquality list.Head __
         AssertEquality list.Tail __
         AssertEquality list.Length __
 
-        (* .NET developers coming from other languages may be surprised
-           that F#'s list type is not the same as the base class library's
-           List<T>. In other words, the following assertion is true *)
+        (*  .NET developers coming from other languages may be surprised
+            that F#'s list type is not the same as the base class library's
+            List<T>. In other words, the following assertion is true *)
 
         let dotNetList = new List<string>()
         //you don't need to modify the following line
         AssertInequality (list.GetType()) (dotNetList.GetType())
 
-
-    let BuildingNewLists() =
+      testCase "building new lists" <| fun () ->
         let first = ["grape"; "peach"]
         let second = "pear" :: first
         let third = "apple" :: second
 
-        //Note: "::" is known as "cons"
+        // Note: "::" is known as "cons"
 
         AssertEquality ["apple"; "pear"; "grape"; "peach"] third
         AssertEquality second __
         AssertEquality first __
 
-        //What happens if you uncomment the following?
+        // What happens if you uncomment the following?
 
         //first.Head <- "apple"
         //first.Tail <- ["peach"; "pear"]
 
-        //THINK ABOUT IT: Can you change the contents of a list once it has been
-        //                created?
+        (* THINK ABOUT IT:  Can you change the contents of a list once it has been
+                            created? *)
 
-
-
-    let ConcatenatingLists() =
+      testCase "concatenating lists" <| fun () ->
         let first = ["apple"; "pear"; "grape"]
         let second = first @ ["peach"]
 
         AssertEquality first __
         AssertEquality second __
 
-    (* THINK ABOUT IT: In general, what performs better for building lists,
-       :: or @? Why?
+        (* THINK ABOUT IT: In general, what performs better for building lists,
+            :: or @? Why?
 
-       Hint: There is no way to modify "first" in the above example. It's
-       immutable. With that in mind, what does the @ function have to do in
-       order to append ["peach"] to "first" to create "second"? *)
+          Hint: There is no way to modify "first" in the above example. It's
+          immutable. With that in mind, what does the @ function have to do in
+          order to append ["peach"] to "first" to create "second"? *)
 
-
-    let CreatingListsWithARange() =
+      testCase "creating lists with a range" <| fun () ->
         let list = [0..4]
 
         AssertEquality list.Head __
         AssertEquality list.Tail __
 
-
-    let CreatingListsWithComprehensions() =
+      testCase "creating lists with comprehensions" <| fun () ->
         let list = [for i in 0..4 do yield i ]
 
         AssertEquality list __
 
-
-    let ComprehensionsWithConditions() =
+      testCase "comprehensions with conditions" <| fun () ->
         let list = [for i in 0..10 do
-                        if i % 2 = 0 then yield i ]
+                      if i % 2 = 0 then yield i ]
 
         AssertEquality list __
 
-
-    let TransformingListsWithMap() =
+      testCase "transforming lists with map" <| fun () ->
         let square x =
-            x * x
+          x * x
 
         let original = [0..5]
         let result = List.map square original
@@ -100,10 +94,9 @@ module ``about lists`` =
         AssertEquality original __
         AssertEquality result __
 
-
-    let FilteringListsWithFilter() =
+      testCase "filtering lists with filter" <| fun () ->
         let isEven x =
-            x % 2 = 0
+          x % 2 = 0
 
         let original = [0..5]
         let result = List.filter isEven original
@@ -111,8 +104,7 @@ module ``about lists`` =
         AssertEquality original __
         AssertEquality result __
 
-
-    let DividingListsWithPartition() =
+      testCase "dividing lists with partition" <| fun () ->
         let isOdd x = x % 2 <> 0
 
         let original = [0..5]
@@ -121,6 +113,7 @@ module ``about lists`` =
         AssertEquality result1 __
         AssertEquality result2 __
 
-    (* Note: There are many other useful methods in the List module. Check them
-       via intellisense in Visual Studio by typing '.' after List, or online at
-       http://msdn.microsoft.com/en-us/library/ee353738.aspx *)
+        (*  Note: There are many other useful methods in the List module. Check them
+            via intellisense in Visual Studio by typing '.' after List, or online at
+            http://msdn.microsoft.com/en-us/library/ee353738.aspx *)
+    ]

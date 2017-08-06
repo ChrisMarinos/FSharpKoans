@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 
+open Expecto
 
 //---------------------------------------------------------------
 // About Branching
@@ -9,39 +10,36 @@
 //---------------------------------------------------------------
 
 module ``about branching`` =
-
-
-    let BasicBranching() =
+  let tests =
+    testList "teaching about branching" [
+      testCase "basic branching" <| fun () ->
         let isEven x =
-            if x % 2 = 0 then
-                "it's even!"
-            else
-                "it's odd!"
+          if x % 2 = 0 then
+            "it's even!"
+          else
+            "it's odd!"
 
         let result = isEven 2
         AssertEquality result __
 
-
-    let IfStatementsReturnValues() =
-
-        (* In languages like C#, if statements do not yield results; they can
-           only cause side effects. If statements in F# return values due to
-           F#'s functional programming roots. *)
+      testCase "'if' statments return values" <| fun () ->
+        (*  In languages like C#, if statements do not yield results; they can
+            only cause side effects. If statements in F# return values due to
+            F#'s functional programming roots. *)
 
         let result =
-            if 2 = 3 then
-                "something is REALLY wrong"
-            else
-                "no problem here"
+          if 2 = 3 then
+            "something is REALLY wrong"
+          else
+            "no problem here"
 
         AssertEquality result __
 
-
-    let BranchingWithAPatternMatch() =
+      testCase "branching with a pattern match" <| fun () ->
         let isApple x =
-            match x with
-            | "apple" -> true
-            | _ -> false
+          match x with
+          | "apple" -> true
+          | _ -> false
 
         let result1 = isApple "apple"
         let result2 = isApple ""
@@ -49,17 +47,16 @@ module ``about branching`` =
         AssertEquality result1 __
         AssertEquality result2 __
 
-
-    let UsingTuplesWithIfStatementsQuicklyBecomesClumsy() =
-
+      testCase "using tuples with if statements quickly becomes clumsy" <| fun () ->
         let getDinner x =
-            let name, foodChoice = x
+          let name, foodChoice = x
 
-            if foodChoice = "veggies" || foodChoice ="fish" ||
-               foodChoice = "chicken" then
-                sprintf "%s doesn't want red meat" name
-            else
-                sprintf "%s wants 'em some %s" name foodChoice
+          if  foodChoice = "veggies" ||
+              foodChoice ="fish" ||
+              foodChoice = "chicken" then
+            sprintf "%s doesn't want red meat" name
+          else
+            sprintf "%s wants 'em some %s" name foodChoice
 
         let person1 = ("Chris", "steak")
         let person2 = ("Dave", "veggies")
@@ -67,18 +64,17 @@ module ``about branching`` =
         AssertEquality (getDinner person1) __
         AssertEquality (getDinner person2) __
 
-
-    let PatternMatchingIsNicer() =
-
+      testCase "pattern matching is nicer" <| fun () ->
         let getDinner x =
-            match x with
-            | (name, "veggies")
-            | (name, "fish")
-            | (name, "chicken") -> sprintf "%s doesn't want red meat" name
-            | (name, foodChoice) -> sprintf "%s wants 'em some %s" name foodChoice
+          match x with
+          | (name, "veggies")
+          | (name, "fish")
+          | (name, "chicken") -> sprintf "%s doesn't want red meat" name
+          | (name, foodChoice) -> sprintf "%s wants 'em some %s" name foodChoice
 
         let person1 = ("Bob", "fish")
         let person2 = ("Sally", "Burger")
 
         AssertEquality (getDinner person1) __
         AssertEquality (getDinner person2) __
+    ]

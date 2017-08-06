@@ -1,5 +1,5 @@
 ﻿namespace FSharpKoans
-
+open Expecto
 
 //---------------------------------------------------------------
 // About the Order of Evaluation
@@ -10,26 +10,24 @@
 //---------------------------------------------------------------
 
 module ``about the order of evaluation`` =
-
-
-    let SometimesYouNeedParenthesisToGroupThings() =
+  let tests =
+    testList "teaching about precedence" [
+      testCase "sometimes you need parenthesis to group things" <| fun () ->
         let add x y =
-            x + y
+          x + y
 
         let result = add (add 5 8) (add 1 1)
-
         AssertEquality result __
 
         (* TRY IT: What happens if you remove the parenthesis?*)
 
-
-    let TheBackwardPipeOperatorCanAlsoHelpWithGrouping() =
+      testCase "the backwards pipe can also help with grouping" <| fun () ->
         let add x y =
-            x + y
+          x + y
 
         let double x =
-            x * 2
+          x * 2
 
         let result = double <| add 5 8
-
         AssertEquality result __
+    ]

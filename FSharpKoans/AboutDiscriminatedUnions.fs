@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 
+open Expecto
 
 type Condiment =
     | Mustard
@@ -21,35 +22,35 @@ type Favorite =
 //---------------------------------------------------------------
 
 module ``about discriminated unions`` =
-
-    let DiscriminatedUnionsCaptureASetOfOptions() =
-
+  let tests =
+    testList "teaching about discriminated unions" [
+      testCase "discriminated unions capture a set of options" <| fun () ->
         let toColor condiment =
-            match condiment with
-            | Mustard -> "yellow"
-            | Ketchup -> "red"
-            | Relish -> "green"
-            | Vinegar -> "brownish?"
+          match condiment with
+          | Mustard -> "yellow"
+          | Ketchup -> "red"
+          | Relish -> "green"
+          | Vinegar -> "brownish?"
 
         let choice = Mustard
 
         AssertEquality (toColor choice) __
 
-        (* TRY IT: What happens if you remove a case from the above pattern
-                   match? *)
+        (* TRY IT:  What happens if you remove a case from the above pattern
+                    match? *)
 
-
-    let DiscriminatedUnionCasesCanHaveTypes() =
-
+      testCase "discriminated union cases can have types" <| fun () ->
         let saySomethingAboutYourFavorite favorite =
-            match favorite with
-            | Number 7 -> "me too!"
-            | Bourbon "Bookers" -> "me too!"
-            | Bourbon b -> "I prefer Bookers to " + b
-            | Number _ -> "I'm partial to 7"
+          match favorite with
+          | Number 7 -> "me too!"
+          | Bourbon "Bookers" -> "me too!"
+          | Bourbon b -> "I prefer Bookers to " + b
+          | Number _ -> "I'm partial to 7"
 
         let bourbonResult = saySomethingAboutYourFavorite <| Bourbon "Maker's Mark"
         let numberResult = saySomethingAboutYourFavorite <| Number 7
 
         AssertEquality bourbonResult __
         AssertEquality numberResult __
+    ]
+

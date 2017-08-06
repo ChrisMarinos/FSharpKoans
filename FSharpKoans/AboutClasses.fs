@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 
+open Expecto
 
 //---------------------------------------------------------------
 // About Classes
@@ -38,40 +39,35 @@ type Person2(name:string) =
 
 
 module ``about classes`` =
-
-
-    let ClassesCanHaveProperties() =
+  let tests =
+    testList "teaching about classes" [
+      testCase "classes can have properties" <| fun () ->
         let zombie = new Zombie()
 
         AssertEquality zombie.FavoriteFood __
 
-
-    let ClassesCanHaveMethods() =
+      testCase "classes can have methods" <| fun () ->
         let zombie = new Zombie()
 
         let result = zombie.Eat "brains"
         AssertEquality result __
 
-
-    let ClassesCanHaveConstructors() =
-
+      testCase "classes can have constructors" <| fun () ->
         let person = new Person("Shaun")
 
         let result = person.Speak()
         AssertEquality result __
 
-
-    let ClassesCanHaveLetBindingsInsideThem() =
+      testCase "classes can have let bindings inside them" <| fun () ->
         let zombie = new Zombie2()
 
         let result = zombie.Eat "chicken"
         AssertEquality result __
 
-        (* TRY IT: Can you access the let bound value Zombie2.favoriteFood
-                   outside of the class definition? *)
+        (* TRY IT:  Can you access the let bound value Zombie2.favoriteFood
+                    outside of the class definition? *)
 
-
-    let ClassesCanHaveReadWriteProperties() =
+      testCase "classes can have read/write properties" <| fun () ->
         let person = new Person2("Shaun")
 
         let firstPhrase = person.Speak()
@@ -80,3 +76,4 @@ module ``about classes`` =
         person.Name <- "Shaun of the Dead"
         let secondPhrase = person.Speak()
         AssertEquality secondPhrase __
+    ]

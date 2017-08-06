@@ -5,10 +5,29 @@ open Expecto.Impl
 let testOrder =
   [ ``about asserts``.tests
     ``about let``.tests
-    ``about functions``.tests ] |> List.rev
-  // have to reverse to get the correct order
+    ``about functions``.tests
+    ``about the order of evaluation``.tests
+    ``about unit``.tests
+    ``about tuples``.tests
+    ``about strings``.tests
+    ``about branching``.tests
+    ``about lists``.tests
+    ``about pipelining``.tests
+    ``about arrays``.tests
+    ``about looping``.tests
+    ``more about functions``.tests
+    ``about dot net collections``.tests
+    ``about the stock example``.tests
+    ``about record types``.tests
+    ``about option types``.tests
+    ``about discriminated unions``.tests
+    ``about modules``.tests
+    ``about opened modules``.tests
+    ``about classes``.tests
+    ``about filtering``.tests ]
 
-let tests = testList "Path to enlightenment" testOrder
+// we have to reverse the list above due to an implementation detail in Expecto
+let tests = testList "Path to enlightenment" (List.rev testOrder)
 
 let config =
   { defaultConfig with

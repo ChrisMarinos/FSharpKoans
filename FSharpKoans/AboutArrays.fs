@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 
+open Expecto
 open System.Collections.Generic
 
 //---------------------------------------------------------------
@@ -9,47 +10,45 @@ open System.Collections.Generic
 //---------------------------------------------------------------
 
 module ``about arrays`` =
-
-    let CreatingArrays() =
+  let tests =
+    testList "teaching about arrays" [
+      testCase "creating arrays" <| fun () ->
         let fruits = [| "apple"; "pear"; "peach"|]
 
         AssertEquality fruits.[0] __
         AssertEquality fruits.[1] __
         AssertEquality fruits.[2] __
 
-
-    let ArraysAreDotNetArrays() =
+      testCase "arrays are .Net arrays" <| fun () ->
         let fruits = [| "apple"; "pear" |]
 
         let arrayType = fruits.GetType()
         let systemArray = System.Array.CreateInstance(typeof<string>, 0).GetType()
 
-        (* Unlike List, Arrays in F# are the standard .NET arrays that
-           you're used to if you're coming from another .NET language *)
+        (*  Unlike List, Arrays in F# are the standard .NET arrays that
+            you're used to if you're coming from another .NET language *)
         AssertEquality arrayType systemArray
 
-
-    let ArraysAreMutable() =
+      testCase "arrays are mutable" <| fun () ->
         let fruits = [| "apple"; "pear" |]
         fruits.[1] <- "peach"
 
         AssertEquality fruits __
 
-
-    let YouCanCreateArraysWithComprehensions() =
+      testCase "you can create arrays with comprehensions" <| fun () ->
         let numbers =
-            [| for i in 0..10 do
-                   if i % 2 = 0 then yield i |]
+          [| for i in 0..10 do
+              if i % 2 = 0 then yield i |]
 
         AssertEquality numbers __
 
-
-    let ThereAreAlsoSomeOperationsYouCanPerformOnArrays() =
+      testCase "there are also some operations you can perform on arrays" <| fun () ->
         let cube x =
-            x * x * x
+          x * x * x
 
         let original = [| 0..5 |]
         let result = Array.map cube original
 
         AssertEquality original __
         AssertEquality result __
+    ]

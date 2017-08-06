@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 
+open Expecto
 open Microsoft.FSharp.Reflection
 
 //---------------------------------------------------------------
@@ -11,20 +12,21 @@ open Microsoft.FSharp.Reflection
 //---------------------------------------------------------------
 
 module ``about unit`` =
-
-
-    let UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
+  let tests =
+    testList "teaching about the unit value" [
+      testCase "unit is used when there is no return value for a function" <| fun () ->
         let sendData data =
-            //...sending the data to the server...
-            ()
+          //...sending the data to the server...
+          ()
 
         let x = sendData "data"
-        AssertEquality x __ //Don't overthink this. Note also the value "()" displays as "null" in some cases.
+        //Don't overthink this. Note also the value "()" displays as "null" in some cases.
+        AssertEquality x __
 
+      testCase "parameterless functions take unit as their only argument" <| fun () ->
+        let sayHello () =
+          "hello"
 
-    let ParameterlessFunctionsTakeUnitAsTheirArgument() =
-        let sayHello() =
-            "hello"
-
-        let result = sayHello()
+        let result = sayHello ()
         AssertEquality result __
+    ]
