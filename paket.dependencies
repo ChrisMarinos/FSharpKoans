@@ -1,7 +1,9 @@
 source https://www.nuget.org/api/v2
 
-framework: net45
 redirects: on
+
+clitool Microsoft.DotNet.Watcher.Tools
 
 nuget Expecto
 nuget FSharp.Core ~> 4.1
+nuget FSharp.NET.Sdk
