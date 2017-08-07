@@ -11,8 +11,8 @@ open Expecto
 
 module ``about the order of evaluation`` =
   let tests =
-    testListRev "teaching about precedence" [
-      testCase "sometimes you need parenthesis to group things" <| fun () ->
+    koans "about the order of evaluation" [
+      koan "sometimes you need parenthesis to group things" {
         let add x y =
           x + y
 
@@ -20,8 +20,9 @@ module ``about the order of evaluation`` =
         AssertEquality result __
 
         (* TRY IT: What happens if you remove the parenthesis?*)
+      }
 
-      testCase "the backwards pipe can also help with grouping" <| fun () ->
+      koan "the backwards pipe can also help with grouping" {
         let add x y =
           x + y
 
@@ -30,4 +31,5 @@ module ``about the order of evaluation`` =
 
         let result = double <| add 5 8
         AssertEquality result __
+      }
     ]

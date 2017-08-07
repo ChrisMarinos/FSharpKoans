@@ -1,5 +1,7 @@
 ﻿namespace FSharpKoans
+
 open Expecto
+
 //---------------------------------------------------------------
 // Getting Started
 //
@@ -24,14 +26,15 @@ open Expecto
 module ``about asserts`` =
 
   let tests =
-    testListRev "teaching about assertions" [
-      testCase "assert expectation" <| fun () ->
+    koans "about asserts" [
+      koan "assert expectation" {
         let expected_value = 1 + 1
         let actual_value = __ //start by changing this line
 
         AssertEquality expected_value actual_value
+      }
 
-      //Easy, right? Now try one more
-      testCase "fill in values" <| fun () ->
+      koan "fill in values" {
         AssertEquality (1 + 1) __
+      }
     ]

@@ -2,32 +2,30 @@
 open Expecto
 open Expecto.Impl
 
-let testOrder =
-  [ ``about asserts``.tests
-    ``about let``.tests
-    ``about functions``.tests
-    ``about the order of evaluation``.tests
-    ``about unit``.tests
-    ``about tuples``.tests
-    ``about strings``.tests
-    ``about branching``.tests
-    ``about lists``.tests
-    ``about pipelining``.tests
-    ``about arrays``.tests
-    ``about looping``.tests
-    ``more about functions``.tests
-    ``about dot net collections``.tests
-    ``about the stock example``.tests
-    ``about record types``.tests
-    ``about option types``.tests
-    ``about discriminated unions``.tests
-    ``about modules``.tests
-    ``about opened modules``.tests
-    ``about classes``.tests
-    ``about filtering``.tests ]
-
-// we have to reverse the list above due to an implementation detail in Expecto
-let tests = testList "Path to enlightenment" (List.rev testOrder)
+let tests =
+  TestList(
+    [ ``about asserts``.tests
+      ``about let``.tests
+      ``about functions``.tests
+      ``about the order of evaluation``.tests
+      ``about unit``.tests
+      ``about tuples``.tests
+      ``about strings``.tests
+      ``about branching``.tests
+      ``about lists``.tests
+      ``about pipelining``.tests
+      ``about arrays``.tests
+      ``about looping``.tests
+      ``more about functions``.tests
+      ``about dot net collections``.tests
+      ``about the stock example``.tests
+      ``about record types``.tests
+      ``about option types``.tests
+      ``about discriminated unions``.tests
+      ``about modules``.tests
+      ``about opened modules``.tests
+      ``about classes``.tests
+      ``about filtering``.tests ], FocusState.Normal)
 
 let config =
   { defaultConfig with
@@ -37,6 +35,7 @@ let config =
 let result =
   Expecto.Impl.evalTests config tests
   |> Async.RunSynchronously
+  |> List.rev
 
 let isSuccess (summary : TestSummary) =
   match summary.result with
@@ -63,7 +62,7 @@ let printErrorMessage (ex: exn) =
 
 let toGroupName (test: FlatTest) =
   let parts = test.name.Split([|"/"|], System.StringSplitOptions.None)
-  parts.[1], parts.[2]
+  parts.[0], parts.[1]
 
 let successes =
   result

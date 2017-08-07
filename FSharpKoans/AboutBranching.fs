@@ -11,8 +11,8 @@ open Expecto
 
 module ``about branching`` =
   let tests =
-    testListRev "teaching about branching" [
-      testCase "basic branching" <| fun () ->
+    koans "about branching" [
+      koan "basic branching" {
         let isEven x =
           if x % 2 = 0 then
             "it's even!"
@@ -21,8 +21,9 @@ module ``about branching`` =
 
         let result = isEven 2
         AssertEquality result __
+      }
 
-      testCase "'if' statments return values" <| fun () ->
+      koan "'if' statments return values" {
         (*  In languages like C#, if statements do not yield results; they can
             only cause side effects. If statements in F# return values due to
             F#'s functional programming roots. *)
@@ -34,8 +35,9 @@ module ``about branching`` =
             "no problem here"
 
         AssertEquality result __
+      }
 
-      testCase "branching with a pattern match" <| fun () ->
+      koan "branching with a pattern match" {
         let isApple x =
           match x with
           | "apple" -> true
@@ -46,8 +48,9 @@ module ``about branching`` =
 
         AssertEquality result1 __
         AssertEquality result2 __
+      }
 
-      testCase "using tuples with if statements quickly becomes clumsy" <| fun () ->
+      koan "using tuples with if statements quickly becomes clumsy" {
         let getDinner x =
           let name, foodChoice = x
 
@@ -63,8 +66,9 @@ module ``about branching`` =
 
         AssertEquality (getDinner person1) __
         AssertEquality (getDinner person2) __
+      }
 
-      testCase "pattern matching is nicer" <| fun () ->
+      koan "pattern matching is nicer" {
         let getDinner x =
           match x with
           | (name, "veggies")
@@ -77,4 +81,5 @@ module ``about branching`` =
 
         AssertEquality (getDinner person1) __
         AssertEquality (getDinner person2) __
+      }
     ]

@@ -13,8 +13,8 @@ open Microsoft.FSharp.Reflection
 
 module ``about unit`` =
   let tests =
-    testListRev "teaching about the unit value" [
-      testCase "unit is used when there is no return value for a function" <| fun () ->
+    koans "about unit" [
+      koan "unit is used when there is no return value for a function" {
         let sendData data =
           //...sending the data to the server...
           ()
@@ -22,11 +22,13 @@ module ``about unit`` =
         let x = sendData "data"
         //Don't overthink this. Note also the value "()" displays as "null" in some cases.
         AssertEquality x __
+      }
 
-      testCase "parameterless functions take unit as their only argument" <| fun () ->
+      koan "parameterless functions take unit as their only argument" {
         let sayHello () =
           "hello"
 
         let result = sayHello ()
         AssertEquality result __
+      }
     ]

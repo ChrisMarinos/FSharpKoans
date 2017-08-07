@@ -2,14 +2,11 @@ namespace FSharpKoans
 
 open Expecto
 
-module Expecto =
-  let testListRev name tests =
-    testList name (List.rev tests)
-
-
-
 [<AutoOpen>]
 module Asserts =
+
+  let koans = testList
+  let koan = test
 
   let inline __<'a> : 'a = failwith "fill in the __"
 

@@ -25,8 +25,8 @@ module ``about filtering`` =
   open NumberFilterer
 
   let tests =
-    testListRev "teaching about filtering" [
-      testCase "filtering a list" <| fun () ->
+    koans "about filtering" [
+      koan "filtering a list" {
         let names = [ "Alice"; "Bob"; "Eve"; ]
 
         // Find all the names starting with "A" using an anonymous function
@@ -45,8 +45,9 @@ module ``about filtering`` =
           |> List.filter startsWithTheLetterB
 
         AssertEquality namesBeginningWithB [ __ ]
+      }
 
-      testCase "finding just one item" <| fun () ->
+      koan "finding just one item" {
         let names = [ "Alice"; "Bob"; "Eve"; ]
         let expected_name = "Bob"
 
@@ -58,8 +59,9 @@ module ``about filtering`` =
 
         //??? What would happen if there are 2 Bob's in the List?
         AssertEquality expected_name actual_name
+      }
 
-      testCase "finding just one or zero item" <| fun () ->
+      koan "finding just one or zero item" {
         let names = [ "Alice"; "Bob"; "Eve"; ]
 
         // tryFind returns an option so you can handle 0 rows returned
@@ -72,8 +74,9 @@ module ``about filtering`` =
 
         AssertEquality eve.IsSome __
         AssertEquality zelda.IsSome __
+      }
 
-      testCase "choosing items from a list" <| fun () ->
+      koan "choosing items from a list" {
         let numbers = [ 1; 2; 3; ]
 
         // choose takes a function that transforms the input into an option
@@ -94,8 +97,9 @@ module ``about filtering`` =
 
         //Notice the type of actual result is 'string list', where as optionNumbers is 'string option list'
         AssertEquality namesWithValue [ __ ]
+      }
 
-      testCase "picking items from a list" <| fun () ->
+      koan "picking items from a list" {
         let numbers = [ 5..10 ]
 
         //Pick is similar to choose, but returns the first element, or throwns an exception if are no
@@ -117,4 +121,5 @@ module ``about filtering`` =
         AssertEquality firstNameWithValue  __
 
         //There is also a tryPick which works like tryFind, returning "None" instead of throwing an exception.
+      }
     ]

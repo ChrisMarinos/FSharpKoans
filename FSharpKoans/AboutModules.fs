@@ -29,15 +29,16 @@ module MushroomKingdom =
 
 module ``about modules`` =
   let tests =
-    testListRev "teaching about modules" [
-      testCase "modules can contain values and types" <| fun () ->
+    koans "about modules" [
+      koan "modules can contain values and types" {
         AssertEquality MushroomKingdom.Mario.Name __
         AssertEquality MushroomKingdom.Mario.Occupation __
 
         let moduleType = MushroomKingdom.Mario.GetType()
         AssertEquality moduleType typeof<FILL_ME_IN>
+      }
 
-      testCase "modules can contain functions" <| fun () ->
+      koan "modules can contain functions" {
         let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
 
         AssertEquality superMario.Power __
@@ -45,13 +46,15 @@ module ``about modules`` =
         (* NOTE:  In previous sections, you've seen modules like List and Option that
                   contain useful functions for dealing with List types and Option types
                   respectively. *)
+      }
     ]
 
 open MushroomKingdom
 
 module ``about opened modules`` =
   let tests =
-      testCase "opened modules bring their contents into scope" <| fun () ->
+      koan "opened modules bring their contents into scope" {
         AssertEquality Mario.Name __
         AssertEquality Mario.Occupation __
         AssertEquality Mario.Power __
+      }

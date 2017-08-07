@@ -18,8 +18,8 @@ module ``about pipelining`` =
     x % 2 = 0
 
   let tests =
-    testListRev "teaching about pipelining" [
-      testCase "square even numbers with separate statements" <| fun () ->
+    koans "about pipelining" [
+      koan "square even numbers with separate statements" {
         (*  One way to combine the operations is by using separate statements.
             However, this is can be clumsy since you have to name each result. *)
 
@@ -29,8 +29,9 @@ module ``about pipelining`` =
         let result = List.map square evens
 
         AssertEquality result __
+      }
 
-      testCase "square even numbers with parens" <| fun () ->
+      koan "square even numbers with parens" {
         (*  You can avoid this problem by using parens to pass the result of one
             function to another. This can be difficult to read since you have to
             start from the innermost function and work your way out. *)
@@ -40,8 +41,9 @@ module ``about pipelining`` =
         let result = List.map square (List.filter isEven numbers)
 
         AssertEquality result __
+      }
 
-      testCase "square even numbers with pipeline operator" <| fun () ->
+      koan "square even numbers with pipeline operator" {
         (*  In F#, you can use the pipeline operator to get the benefit of the
             parens style with the readablity of the statement style. *)
 
@@ -51,8 +53,9 @@ module ``about pipelining`` =
           |> List.map square
 
         AssertEquality result __
+      }
 
-      testCase "how the pipeline operator is defined" <| fun () ->
+      koan "how the pipeline operator is defined" {
         let (|>) x f =
           f x
 
@@ -62,4 +65,5 @@ module ``about pipelining`` =
           |> List.map square
 
         AssertEquality result __
+      }
     ]

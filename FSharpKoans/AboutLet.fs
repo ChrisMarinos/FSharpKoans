@@ -11,8 +11,9 @@ open Expecto
 
 module ``about let`` =
   let tests =
-    testListRev "teaching about let bindings" [
-      testCase "let binds a name to a value" <| fun () ->
+    koans "about let" [
+
+      koan "let binds a name to a value" {
         let x = 50
 
         AssertEquality x __
@@ -21,7 +22,9 @@ module ``about let`` =
           "int" for integer values, "string" for text values, and "bool"
           for true or false values.  *)
 
-      testCase "let infers the types of values where possible" <| fun () ->
+      }
+
+      koan "let infers the types of values where possible" {
         let x = 50
         let typeOfX = x.GetType()
         AssertEquality typeOfX typeof<int>
@@ -29,8 +32,9 @@ module ``about let`` =
         let y = "a string"
         let expectedType = y.GetType()
         AssertEquality expectedType typeof<FILL_ME_IN>
+      }
 
-      testCase "you can make types explicit" <| fun () ->
+      koan "you can make types explicit" {
         let (x:int) = 42
         let typeOfX = x.GetType()
 
@@ -43,8 +47,9 @@ module ``about let`` =
       (*  You don't usually need to provide explicit type annotations types for
           local variables, but type annotations can come in handy in other
           contexts as you'll see later.  *)
+      }
 
-      testCase "floats and ints" <| fun () ->
+      koan "floats and ints" {
         (*  Depending on your background, you may be surprised to learn that
             in F#, integers and floating point numbers are different types.
             In other words, the following is true.  *)
@@ -61,14 +66,16 @@ module ``about let`` =
 
         //If you're coming from another .NET language, float is F# slang for
         //the double type.
+      }
 
-      testCase "modifying the value of variables" <| fun () ->
+      koan "modifying the value of variables" {
         let mutable x = 100
         x <- 200
 
         AssertEquality x __
+      }
 
-      testCase "you cannot modify a let bound value if it is not mutable" <| fun () ->
+      koan "you cannot modify a let bound value if it is not mutable" {
         let x = 50
 
         //What happens if you uncomment the following?
@@ -80,4 +87,5 @@ module ``about let`` =
         let x = 100
 
         AssertEquality x __
+      }
     ]

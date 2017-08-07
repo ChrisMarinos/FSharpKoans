@@ -40,34 +40,38 @@ type Person2(name:string) =
 
 module ``about classes`` =
   let tests =
-    testListRev "teaching about classes" [
-      testCase "classes can have properties" <| fun () ->
+    koans "about classes" [
+      koan "classes can have properties" {
         let zombie = new Zombie()
 
         AssertEquality zombie.FavoriteFood __
+      }
 
-      testCase "classes can have methods" <| fun () ->
+      koan "classes can have methods" {
         let zombie = new Zombie()
 
         let result = zombie.Eat "brains"
         AssertEquality result __
+      }
 
-      testCase "classes can have constructors" <| fun () ->
+      koan "classes can have constructors" {
         let person = new Person("Shaun")
 
         let result = person.Speak()
         AssertEquality result __
+      }
 
-      testCase "classes can have let bindings inside them" <| fun () ->
+      koan "classes can have let bindings inside them" {
         let zombie = new Zombie2()
 
         let result = zombie.Eat "chicken"
         AssertEquality result __
+      }
 
         (* TRY IT:  Can you access the let bound value Zombie2.favoriteFood
                     outside of the class definition? *)
 
-      testCase "classes can have read/write properties" <| fun () ->
+      koan "classes can have read/write properties" {
         let person = new Person2("Shaun")
 
         let firstPhrase = person.Speak()
@@ -76,4 +80,5 @@ module ``about classes`` =
         person.Name <- "Shaun of the Dead"
         let secondPhrase = person.Speak()
         AssertEquality secondPhrase __
+      }
     ]

@@ -13,8 +13,8 @@ open System.Collections.Generic
 
 module ``about dot net collections`` =
   let tests =
-    testListRev "teaching about .Net collections" [
-      testCase "creating .Net lists(Resizeable Arrays)" <| fun () ->
+    koans "about .Net collections" [
+      koan "creating .Net lists(Resizeable Arrays)" {
         (*  NOTE: this is not the F# List, because we've overriden the type List by opening
             the `System.Collections.Generic` namespace above *)
         let fruits = new List<string>()
@@ -24,8 +24,9 @@ module ``about dot net collections`` =
 
         AssertEquality fruits.[0] __
         AssertEquality fruits.[1] __
+      }
 
-      testCase "creating .Net dictionaries" <| fun () ->
+      koan "creating .Net dictionaries" {
         let addressBook = new Dictionary<string, string>()
 
         addressBook.["Chris"] <- "Ann Arbor"
@@ -33,8 +34,9 @@ module ``about dot net collections`` =
 
         AssertEquality addressBook.["Chris"] __
         AssertEquality addressBook.["SkillsMatter"] __
+      }
 
-      testCase "you use combinators with .Net types" <| fun () ->
+      koan "you use combinators with .Net types" {
         let addressBook = new Dictionary<string, string>()
 
         addressBook.["Chris"] <- "Ann Arbor"
@@ -52,14 +54,16 @@ module ``about dot net collections`` =
 
         AssertEquality verboseBook.[0] __
         AssertEquality verboseBook.[1] __
+      }
 
-      testCase "skipping elements" <| fun () ->
+      koan "skipping elements" {
         let original = [0..5]
         let result = Seq.skip 2 original
 
         AssertEquality result __
+      }
 
-      testCase "finding the max" <| fun () ->
+      koan "finding the max" {
         let values = new List<int>()
 
         values.Add(11)
@@ -71,8 +75,9 @@ module ``about dot net collections`` =
         let result = Seq.max values
 
         AssertEquality result __
+      }
 
-      testCase "finding the max using a condition" <| fun () ->
+      koan "finding the max using a condition" {
         let getNameLength (name:string) =
           name.Length
 
@@ -80,4 +85,5 @@ module ``about dot net collections`` =
         let result = Seq.maxBy getNameLength names
 
         AssertEquality result __
+      }
     ]

@@ -15,8 +15,8 @@ open System.Collections.Generic
 
 module ``about lists`` =
   let tests =
-    testListRev "teaching about lists" [
-      testCase "creating lists" <| fun () ->
+    koans "about lists" [
+      koan "creating lists" {
         let list = ["apple"; "pear"; "grape"; "peach"]
 
         (* Note: The list data type in F# is a singly linked list,
@@ -33,8 +33,9 @@ module ``about lists`` =
         let dotNetList = new List<string>()
         //you don't need to modify the following line
         AssertInequality (list.GetType()) (dotNetList.GetType())
+      }
 
-      testCase "building new lists" <| fun () ->
+      koan "building new lists" {
         let first = ["grape"; "peach"]
         let second = "pear" :: first
         let third = "apple" :: second
@@ -52,8 +53,9 @@ module ``about lists`` =
 
         (* THINK ABOUT IT:  Can you change the contents of a list once it has been
                             created? *)
+      }
 
-      testCase "concatenating lists" <| fun () ->
+      koan "concatenating lists" {
         let first = ["apple"; "pear"; "grape"]
         let second = first @ ["peach"]
 
@@ -66,25 +68,29 @@ module ``about lists`` =
           Hint: There is no way to modify "first" in the above example. It's
           immutable. With that in mind, what does the @ function have to do in
           order to append ["peach"] to "first" to create "second"? *)
+      }
 
-      testCase "creating lists with a range" <| fun () ->
+      koan "creating lists with a range" {
         let list = [0..4]
 
         AssertEquality list.Head __
         AssertEquality list.Tail __
+      }
 
-      testCase "creating lists with comprehensions" <| fun () ->
+      koan "creating lists with comprehensions" {
         let list = [for i in 0..4 do yield i ]
 
         AssertEquality list __
+      }
 
-      testCase "comprehensions with conditions" <| fun () ->
+      koan "comprehensions with conditions" {
         let list = [for i in 0..10 do
                       if i % 2 = 0 then yield i ]
 
         AssertEquality list __
+      }
 
-      testCase "transforming lists with map" <| fun () ->
+      koan "transforming lists with map" {
         let square x =
           x * x
 
@@ -93,8 +99,9 @@ module ``about lists`` =
 
         AssertEquality original __
         AssertEquality result __
+      }
 
-      testCase "filtering lists with filter" <| fun () ->
+      koan "filtering lists with filter" {
         let isEven x =
           x % 2 = 0
 
@@ -103,8 +110,9 @@ module ``about lists`` =
 
         AssertEquality original __
         AssertEquality result __
+      }
 
-      testCase "dividing lists with partition" <| fun () ->
+      koan "dividing lists with partition" {
         let isOdd x = x % 2 <> 0
 
         let original = [0..5]
@@ -116,4 +124,5 @@ module ``about lists`` =
         (*  Note: There are many other useful methods in the List module. Check them
             via intellisense in Visual Studio by typing '.' after List, or online at
             http://msdn.microsoft.com/en-us/library/ee353738.aspx *)
+      }
     ]

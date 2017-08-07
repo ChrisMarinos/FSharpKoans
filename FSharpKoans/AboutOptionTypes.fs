@@ -19,22 +19,24 @@ type Game = {
 
 module ``about option types`` =
   let tests =
-    testListRev "teaching about Options" [
-      testCase "option types might contain a value" <| fun () ->
+    koans "about option types" [
+      koan "option types might contain a value" {
         let someValue = Some 10
 
         AssertEquality someValue.IsSome __
         AssertEquality someValue.IsNone __
         AssertEquality someValue.Value __
+      }
 
-      testCase "or they might not" <| fun () ->
+      koan "or they might not" {
         let noValue = None
 
         AssertEquality noValue.IsSome __
         AssertEquality noValue.IsNone __
         AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value)
+      }
 
-      testCase "using option types with pattern matching" <| fun () ->
+      koan "using option types with pattern matching" {
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let halo = { Name = "Halo"; Platform = "Xbox"; Score = None }
 
@@ -54,8 +56,9 @@ module ``about option types`` =
 
         AssertEquality (getScore chronoTrigger) __
         AssertEquality (getScore halo) __
+      }
 
-      testCase "projecting values from option types" <| fun () ->
+      koan "projecting values from option types" {
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let halo = { Name = "Halo"; Platform = "Xbox"; Score = None }
 
@@ -66,5 +69,6 @@ module ``about option types`` =
         // HINT: look at the return type of the decide on function
         AssertEquality (decideOn chronoTrigger) __
         AssertEquality (decideOn halo) __
+      }
     ]
 

@@ -59,7 +59,8 @@ module ``about the stock example`` =
     // tests for yourself along the way. You can also try
     // using the F# Interactive window to check your progress.
 
-    testCase "you got the answer correct" <| fun () ->
+    koan "you got the answer correct" {
       let result =  __
 
       AssertEquality "2012-03-13" result
+    }

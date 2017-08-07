@@ -23,8 +23,8 @@ type Favorite =
 
 module ``about discriminated unions`` =
   let tests =
-    testListRev "teaching about discriminated unions" [
-      testCase "discriminated unions capture a set of options" <| fun () ->
+    koans "about discriminated unions" [
+      koan "discriminated unions capture a set of options" {
         let toColor condiment =
           match condiment with
           | Mustard -> "yellow"
@@ -38,8 +38,9 @@ module ``about discriminated unions`` =
 
         (* TRY IT:  What happens if you remove a case from the above pattern
                     match? *)
+      }
 
-      testCase "discriminated union cases can have types" <| fun () ->
+      koan "discriminated union cases can have types" {
         let saySomethingAboutYourFavorite favorite =
           match favorite with
           | Number 7 -> "me too!"
@@ -52,5 +53,6 @@ module ``about discriminated unions`` =
 
         AssertEquality bourbonResult __
         AssertEquality numberResult __
+      }
     ]
 

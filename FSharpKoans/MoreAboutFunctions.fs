@@ -12,8 +12,8 @@ open Expecto
 
 module ``more about functions`` =
   let tests =
-    testListRev "teaching more about functions" [
-      testCase "defining lambdas" <| fun () ->
+    koans "more about functions" [
+      koan "defining lambdas" {
         let colors = ["maize"; "blue"]
 
         let echo =
@@ -25,8 +25,9 @@ module ``more about functions`` =
         (*  The fun keyword allows you to create a function inline without giving
             it a name. These functions are known as anonymous functions, lambdas,
             or lambda functions. *)
+      }
 
-      testCase "functions that return functions" <| fun () ->
+      koan "functions that return functions" {
         (*  A neat functional programming trick is to create functions that
             return other functions. This leads to some interesting behaviors. *)
         let add x =
@@ -44,8 +45,9 @@ module ``more about functions`` =
 
         AssertEquality fancyResult __
         //NOTE: Functions written in this style are said to be curried.
+      }
 
-      testCase "automatic currying" <| fun () ->
+      koan "automatic currying" {
         (*  The above technique is common enough that F# actually supports this
             by default. In other words, functions are automatically curried. *)
         let add x y =
@@ -57,8 +59,9 @@ module ``more about functions`` =
 
         AssertEquality unluckyNumber __
         AssertEquality luckyNumber __
+      }
 
-      testCase "non-curried functions" <| fun () ->
+      koan "non-curried functions" {
         (*  You should stick to the auto-curried function syntax most of the
             time. However, you can also write functions in an uncurried form to
             make them easier to use from languages like C# where currying is not
@@ -78,4 +81,5 @@ module ``more about functions`` =
                             return values are really just functions that return
                             tuples. Do functions defined in the uncurried form
                             really accept more than one argument at a time? *)
+      }
     ]

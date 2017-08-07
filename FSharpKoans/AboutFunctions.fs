@@ -9,13 +9,14 @@ open Expecto
 //---------------------------------------------------------------
 module ``about functions`` =
   let tests =
-    testListRev "learning about functions" [
+    koans "about functions" [
       (*  By default, F# is whitespace sensitive.
           For functions, this means that the last
           line of a function is its return value,
           and the body of a function is denoted
           by indentation.  *)
-      testCase "creating functions with let" <| fun () ->
+
+      koan "creating functions with let" {
         let add x y =
           x + y
 
@@ -24,8 +25,9 @@ module ``about functions`` =
 
         AssertEquality result1 __
         AssertEquality result2 __
+      }
 
-      testCase "nesting functions" <| fun () ->
+      koan "nesting functions" {
         let quadruple x =
             let double x =
                 x * 2
@@ -34,8 +36,9 @@ module ``about functions`` =
 
         let result = quadruple 4
         AssertEquality result __
+      }
 
-      testCase "adding type annotations" <| fun () ->
+      koan "adding type annotations" {
         (*  Sometimes you need to help F#'s type inference system out with an
             explicit type annotation *)
 
@@ -46,8 +49,9 @@ module ``about functions`` =
         AssertEquality auctioneered __
 
         //TRY IT: What happens if you remove the type annotation on text?
+      }
 
-      testCase "variables in the parent scope can be accessed" <| fun () ->
+      koan "variables in the parent scope can be accessed" {
         let suffix = "!!!"
 
         let caffeinate (text:string) =
@@ -64,4 +68,5 @@ module ``about functions`` =
 
                   See http://en.wikipedia.org/wiki/Closure_(computer_science)
                   for more about about closure. *)
+      }
   ]

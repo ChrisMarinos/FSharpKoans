@@ -11,18 +11,20 @@ open Expecto
 
 module ``about strings`` =
   let tests =
-    testListRev "teaching about strings" [
-      testCase "string value" <| fun () ->
+    koans "about strings" [
+      koan "string value" {
         let message = "hello"
 
         AssertEquality message __
+      }
 
-      testCase "string concat value" <| fun () ->
+      koan "string concat value" {
         let message = "hello " + "world"
 
         AssertEquality message __
+      }
 
-      testCase "formatting string values" <| fun () ->
+      koan "formatting string values" {
         let message = sprintf "F# turns it to %d!" 11
 
         AssertEquality message __
@@ -30,21 +32,24 @@ module ``about strings`` =
         //NOTE: you can use printf to print to standard output
         (* TRY IT:  What happens if you change 11 to be something besides
                     a number? *)
+      }
 
-      testCase "formatting other types" <| fun () ->
+      koan "formatting other types" {
         let message = sprintf "hello %s" "world"
 
         AssertEquality message __
+      }
 
-      testCase "formatting anything" <| fun () ->
+      koan "formatting anything" {
         let message = sprintf "Formatting other types is as easy as: %A" (1, 2, 3)
 
         AssertEquality message __
 
         (* NOTE:  For all the %formatters that you can use with string formatting
                   see: http://msdn.microsoft.com/en-us/library/ee370560.aspx *)
+      }
 
-      testCase "combine multiline" <| fun () ->
+      koan "combine multiline" {
         let message = "super\
                         cali\
                         fragilistic\
@@ -52,8 +57,9 @@ module ``about strings`` =
                         docious"
 
         AssertEquality message __
+      }
 
-      testCase "multiline" <| fun () ->
+      koan "multiline" {
         let message = "This
                         is
                         on
@@ -61,8 +67,9 @@ module ``about strings`` =
                         lines"
 
         AssertEquality message __
+      }
 
-      testCase "extract values" <| fun () ->
+      koan "extract values" {
         let message = "hello world"
 
         let first = message.[0]
@@ -73,8 +80,9 @@ module ``about strings`` =
 
         AssertEquality first __
         AssertEquality other __
+      }
 
-      testCase "apply what you've learned" <| fun () ->
+      koan "apply what you've learned" {
         (*  It's time to apply what you've learned so far. Fill in the function below to
             make the asserts pass *)
         let getFunFacts x =
@@ -85,4 +93,5 @@ module ``about strings`` =
 
         AssertEquality "3 doubled is 6, and 3 tripled is 9!" funFactsAboutThree
         AssertEquality "6 doubled is 12, and 6 tripled is 18!" funFactsAboutSix
+      }
     ]
