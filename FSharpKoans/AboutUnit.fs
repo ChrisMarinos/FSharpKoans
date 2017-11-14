@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
+open Expecto
 open Microsoft.FSharp.Reflection
 
 //---------------------------------------------------------------
@@ -9,22 +10,23 @@ open Microsoft.FSharp.Reflection
 // a value. It's similar to void in other languages, but unit
 // is actually considered to be a type in F#.
 //---------------------------------------------------------------
-[<Koan(Sort = 5)>]
-module ``about unit`` =
 
-    [<Koan>]
-    let UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
+module ``about unit`` =
+  let tests =
+    testList "teaching about the unit value" [
+      testCase "unit is used when there is no return value for a function" <| fun () ->
         let sendData data =
-            //...sending the data to the server...
-            ()
+          //...sending the data to the server...
+          ()
 
         let x = sendData "data"
-        AssertEquality x __ //Don't overthink this. Note also the value "()" displays as "null" in some cases.
+        //Don't overthink this. Note also the value "()" displays as "null" in some cases.
+        AssertEquality x __
 
-    [<Koan>]
-    let ParameterlessFunctionsTakeUnitAsTheirArgument() =
-        let sayHello() =
-            "hello"
+      testCase "parameterless functions take unit as their only argument" <| fun () ->
+        let sayHello () =
+          "hello"
 
-        let result = sayHello()
+        let result = sayHello ()
         AssertEquality result __
+    ]

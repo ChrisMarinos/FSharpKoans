@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
+open Expecto
 
 //---------------------------------------------------------------
 // About Pipelining
@@ -8,19 +9,19 @@ open FSharpKoans.Core
 // symbols in F# programming. You can use it combine operations
 // on lists and other data structures in a readable way.
 //---------------------------------------------------------------
-[<Koan(Sort = 10)>]
+
 module ``about pipelining`` =
+  let square x =
+    x * x
 
-    let square x =
-        x * x
+  let isEven x =
+    x % 2 = 0
 
-    let isEven x =
-        x % 2 = 0
-
-    [<Koan>]
-    let SquareEvenNumbersWithSeparateStatements() =
-        (* One way to combine the operations is by using separate statements.
-           However, this is can be clumsy since you have to name each result. *)
+  let tests =
+    testList "teaching about pipelining" [
+      testCase "square even numbers with separate statements" <| fun () ->
+        (*  One way to combine the operations is by using separate statements.
+            However, this is can be clumsy since you have to name each result. *)
 
         let numbers = [0..5]
 
@@ -29,11 +30,10 @@ module ``about pipelining`` =
 
         AssertEquality result __
 
-    [<Koan>]
-    let SquareEvenNumbersWithParens() =
-        (* You can avoid this problem by using parens to pass the result of one
-           function to another. This can be difficult to read since you have to 
-           start from the innermost function and work your way out. *)
+      testCase "square even numbers with parens" <| fun () ->
+        (*  You can avoid this problem by using parens to pass the result of one
+            function to another. This can be difficult to read since you have to
+            start from the innermost function and work your way out. *)
 
         let numbers = [0..5]
 
@@ -41,26 +41,25 @@ module ``about pipelining`` =
 
         AssertEquality result __
 
-    [<Koan>]
-    let SquareEvenNumbersWithPipelineOperator() =
-        (* In F#, you can use the pipeline operator to get the benefit of the 
-           parens style with the readablity of the statement style. *)
+      testCase "square even numbers with pipeline operator" <| fun () ->
+        (*  In F#, you can use the pipeline operator to get the benefit of the
+            parens style with the readablity of the statement style. *)
 
         let result =
-            [0..5]
-            |> List.filter isEven
-            |> List.map square
-        
+          [0..5]
+          |> List.filter isEven
+          |> List.map square
+
         AssertEquality result __
 
-    [<Koan>]
-    let HowThePipeOperatorIsDefined() =
+      testCase "how the pipeline operator is defined" <| fun () ->
         let (|>) x f =
-            f x
+          f x
 
         let result =
-            [0..5]
-            |> List.filter isEven
-            |> List.map square
+          [0..5]
+          |> List.filter isEven
+          |> List.map square
 
         AssertEquality result __
+    ]

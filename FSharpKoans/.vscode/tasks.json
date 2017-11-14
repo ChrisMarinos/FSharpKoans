@@ -1,0 +1,17 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "0.1.0",
+  "command": "dotnet",
+  "showOutput": "silent",
+  "tasks": [
+    {
+      "taskName": "build",
+      // Show the output window only if unrecognized errors occur.
+      "showOutput": "silent",
+      // Use the standard MS compiler pattern to detect errors, warnings and infos
+      "problemMatcher": "$msCompile",
+      "isBuildCommand": true
+    }
+  ]
+}

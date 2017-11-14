@@ -1,29 +1,31 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
+open Expecto
 open System.Collections.Generic
 
 //---------------------------------------------------------------
 // About .NET Collections
 //
-// Since F# is built for seamless interop with other CLR 
+// Since F# is built for seamless interop with other CLR
 // languages, you can use all of the basic .NET collections types
 // you're already familiar with if you're a C# or VB programmer.
 //---------------------------------------------------------------
-[<Koan(Sort = 14)>]
-module ``about dot net collections`` =
 
-    [<Koan>]
-    let CreatingDotNetLists() =
+module ``about dot net collections`` =
+  let tests =
+    testList "teaching about .Net collections" [
+      testCase "creating .Net lists(Resizeable Arrays)" <| fun () ->
+        (*  NOTE: this is not the F# List, because we've overriden the type List by opening
+            the `System.Collections.Generic` namespace above *)
         let fruits = new List<string>()
 
         fruits.Add("apple")
         fruits.Add("pear")
- 
+
         AssertEquality fruits.[0] __
         AssertEquality fruits.[1] __
 
-    [<Koan>]
-    let CreatingDotNetDictionaries() =
+      testCase "creating .Net dictionaries" <| fun () ->
         let addressBook = new Dictionary<string, string>()
 
         addressBook.["Chris"] <- "Ann Arbor"
@@ -32,35 +34,32 @@ module ``about dot net collections`` =
         AssertEquality addressBook.["Chris"] __
         AssertEquality addressBook.["SkillsMatter"] __
 
-    [<Koan>]
-    let YouUseCombinatorsWithDotNetTypes() =
+      testCase "you use combinators with .Net types" <| fun () ->
         let addressBook = new Dictionary<string, string>()
 
         addressBook.["Chris"] <- "Ann Arbor"
         addressBook.["SkillsMatter"] <- "London"
 
-        let verboseBook = 
+        let verboseBook =
             addressBook
             |> Seq.map (fun kvp -> sprintf "Name: %s - City: %s" kvp.Key kvp.Value)
             |> Seq.toArray
 
-        //NOTE: The seq type in F# is an alias for .NET's IEnumerable interface
-        //      Like the List and Array module, the Seq module contains functions 
-        //      that you can combine to perform operations on types implementing 
-        //      seq/IEnumerable.
+        (* NOTE:  The seq type in F# is an alias for .NET's IEnumerable interface.
+                  Like the List and Array module, the Seq module contains functions
+                  that you can combine to perform operations on types implementing
+                  seq/IEnumerable. *)
 
         AssertEquality verboseBook.[0] __
         AssertEquality verboseBook.[1] __
 
-    [<Koan>]
-    let SkippingElements() =
+      testCase "skipping elements" <| fun () ->
         let original = [0..5]
         let result = Seq.skip 2 original
-        
+
         AssertEquality result __
 
-    [<Koan>]
-    let FindingTheMax() =
+      testCase "finding the max" <| fun () ->
         let values = new List<int>()
 
         values.Add(11)
@@ -70,15 +69,15 @@ module ``about dot net collections`` =
         values.Add(3)
 
         let result = Seq.max values
-        
+
         AssertEquality result __
-    
-    [<Koan>]
-    let FindingTheMaxUsingACondition() =
+
+      testCase "finding the max using a condition" <| fun () ->
         let getNameLength (name:string) =
-            name.Length
-        
+          name.Length
+
         let names = [| "Harry"; "Lloyd"; "Nicholas"; "Mary"; "Joe"; |]
-        let result = Seq.maxBy getNameLength names 
-        
+        let result = Seq.maxBy getNameLength names
+
         AssertEquality result __
+    ]
