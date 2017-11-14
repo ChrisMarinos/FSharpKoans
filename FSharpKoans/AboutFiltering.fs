@@ -93,7 +93,7 @@ module ``about filtering`` =
             optionNames
             |> List.choose id
 
-        //Notice the type of actual result is 'string list', where as optionNumbers is 'string option list'
+        //Notice the type of actual result is 'string list', where as optionNames is 'string option list'
         AssertEquality namesWithValue [ __ ]
 
     [<Koan>]
