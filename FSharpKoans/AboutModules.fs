@@ -1,12 +1,13 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
+open Expecto
 
 module MushroomKingdom =
     type Power =
         | Mushroom
         | Star
         | FireFlower
-        
+
     type Character = {
         Name: string
         Occupation: string
@@ -21,38 +22,39 @@ module MushroomKingdom =
 //---------------------------------------------------------------
 // About Modules
 //
-// Modules are used to group functions, values, and types. 
-// They're similar to .NET namespaces, but they have slightly 
+// Modules are used to group functions, values, and types.
+// They're similar to .NET namespaces, but they have slightly
 // different semantics as you'll see below.
 //---------------------------------------------------------------
-[<Koan(Sort = 19)>]
+
 module ``about modules`` =
-
-    [<Koan>]
-    let ModulesCanContainValuesAndTypes() =
-
+  let tests =
+    koans "about modules" [
+      koan "modules can contain values and types" {
         AssertEquality MushroomKingdom.Mario.Name __
         AssertEquality MushroomKingdom.Mario.Occupation __
-        
+
         let moduleType = MushroomKingdom.Mario.GetType()
         AssertEquality moduleType typeof<FILL_ME_IN>
+      }
 
-    [<Koan>]
-    let ModulesCanContainFunctions() =
+      koan "modules can contain functions" {
         let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
 
         AssertEquality superMario.Power __
 
-(* NOTE: In previous sections, you've seen modules like List and Option that 
-         contain useful functions for dealing with List types and Option types
-         respectively. *)
+        (* NOTE:  In previous sections, you've seen modules like List and Option that
+                  contain useful functions for dealing with List types and Option types
+                  respectively. *)
+      }
+    ]
 
 open MushroomKingdom
 
-[<Koan(Sort = 20)>]
 module ``about opened modules`` =
-    [<Koan>]
-    let OpenedModulesBringTheirContentsInScope() = 
+  let tests =
+      koan "opened modules bring their contents into scope" {
         AssertEquality Mario.Name __
         AssertEquality Mario.Occupation __
         AssertEquality Mario.Power __
+      }

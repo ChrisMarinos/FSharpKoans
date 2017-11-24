@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
-open FSharpKoans.Core
+
+open Expecto
 
 //---------------------------------------------------------------
 // More About Functions
@@ -8,51 +9,49 @@ open FSharpKoans.Core
 // since F# is a functional language, there are more tricks
 // to learn!
 //---------------------------------------------------------------
-[<Koan(Sort = 13)>]
+
 module ``more about functions`` =
-    
-    [<Koan>]
-    let DefiningLambdas() =
-        
+  let tests =
+    koans "more about functions" [
+      koan "defining lambdas" {
         let colors = ["maize"; "blue"]
 
-        let echo = 
-            colors
-            |> List.map (fun x -> x + " " + x)
+        let echo =
+          colors
+          |> List.map (fun x -> x + " " + x)
 
         AssertEquality echo __
 
-        (* The fun keyword allows you to create a function inline without giving
-           it a name. These functions are known as anonymous functions, lambdas,
-           or lambda functions. *)
+        (*  The fun keyword allows you to create a function inline without giving
+            it a name. These functions are known as anonymous functions, lambdas,
+            or lambda functions. *)
+      }
 
-    [<Koan>]
-    let FunctionsThatReturnFunctions() =
-        (* A neat functional programming trick is to create functions that 
-           return other functions. This leads to some interesting behaviors. *)
+      koan "functions that return functions" {
+        (*  A neat functional programming trick is to create functions that
+            return other functions. This leads to some interesting behaviors. *)
         let add x =
-            (fun y -> x + y)
+          (fun y -> x + y)
 
-        (* F#'s lightweight syntax allows you to call both functions as if there
-           was only one *)
+        (*  F#'s lightweight syntax allows you to call both functions as if there
+            was only one *)
         let simpleResult = add 2 4
         AssertEquality simpleResult __
 
-        (* ...but you can also pass only one argument at a time to create
-           residual functions. This technique is known as partial appliction. *)
+        (*  ...but you can also pass only one argument at a time to create
+            residual functions. This technique is known as partial appliction. *)
         let addTen = add 10
         let fancyResult = addTen 14
 
         AssertEquality fancyResult __
-
         //NOTE: Functions written in this style are said to be curried.
+      }
 
-    [<Koan>]
-    let AutomaticCurrying() =
-        (* The above technique is common enough that F# actually supports this
-           by default. In other words, functions are automatically curried. *)
-        let add x y = 
-            x + y
+      koan "automatic currying" {
+        (*  The above technique is common enough that F# actually supports this
+            by default. In other words, functions are automatically curried. *)
+        let add x y =
+          x + y
 
         let addSeven = add 7
         let unluckyNumber = addSeven 6
@@ -60,25 +59,27 @@ module ``more about functions`` =
 
         AssertEquality unluckyNumber __
         AssertEquality luckyNumber __
+      }
 
-    [<Koan>]
-    let NonCurriedFunctions() =
-        (* You should stick to the auto-curried function syntax most of the 
-           time. However, you can also write functions in an uncurried form to
-           make them easier to use from languages like C# where currying is not 
-           as commonly used. *)
+      koan "non-curried functions" {
+        (*  You should stick to the auto-curried function syntax most of the
+            time. However, you can also write functions in an uncurried form to
+            make them easier to use from languages like C# where currying is not
+            as commonly used. *)
 
         let add(x, y) =
-            x + y
+          x + y
 
-        (* NOTE: "add 5" will not compile now. You have to pass both arguments 
-                 at once *)
+        (* NOTE:  "add 5" will not compile now. You have to pass both arguments
+                  at once *)
 
         let result = add(5, 40)
 
         AssertEquality result __
 
-        (* THINK ABOUT IT: You learned earlier that functions with multiple 
-                           return values are really just functions that return
-                           tuples. Do functions defined in the uncurried form
-                           really accept more than one argument at a time? *)
+        (* THINK ABOUT IT:  You learned earlier that functions with multiple
+                            return values are really just functions that return
+                            tuples. Do functions defined in the uncurried form
+                            really accept more than one argument at a time? *)
+      }
+    ]
