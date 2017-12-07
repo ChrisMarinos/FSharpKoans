@@ -19,17 +19,23 @@ The F# Koans needs [.Net Core 2.0](https://www.microsoft.com/net/download/core) 
 make sure that you have installed it before building the project.
 
 Additionally, the project provides [Visual Studio Code](https://code.visualstudio.com/) configuration for running.
-To be able to run F# projects in Visual Studio Code, the 
+To be able to run F# projects in Visual Studio Code, the
 [ionide plugin](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) should be also installed.
 
 ### Running the Koans from the command line (.Net Core)
 
 1. To build the Koans, run `dotnet build` command in the project root.
 
-2. To run the Koans, run `dotnet run -p FSharpKoans/FSharpKoans.fsproj` command in the project root 
+2. To run the Koans, run `dotnet run -p FSharpKoans/FSharpKoans.fsproj` command in the project root
 or `dotnet run` in `FSharpKoans` project directory.
 
 ### Running the Koans in Visual Studio Code
 
-1. Open the project directory in Visual Studio Code with Ionide-fharp plugin installed 
+1. Open the project directory in Visual Studio Code with Ionide-fharp plugin installed
 and press F5 to build and launch the Koans (require some time to build the project before launch).
+
+### Using dotnet-watch
+
+You can also use [dotnet-watch](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/dotnet-watch.md) to have your changes reloaded automatically.
+To do so, navigate into `FSharpKoans` directory and run `dotnet watch run`.
+Now, after you change the project code, it will be automatically reloaded and tests rerun.
