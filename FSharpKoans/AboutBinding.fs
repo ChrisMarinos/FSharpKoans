@@ -80,7 +80,7 @@ module ``02: About Binding`` =
         a |> should equal ___
 
 (*
-    Identifiers are *immutable*: the value bound to an identifier never changes.
+    Identifiers are *referentially transparent*: the value bound to an identifier never changes.
     However, identifiers may be *shadowed*.  The best way to explain this is with an example.
 
         let quex = 10

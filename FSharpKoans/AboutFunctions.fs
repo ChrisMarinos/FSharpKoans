@@ -2,11 +2,11 @@
 open NUnit.Framework
 
 (*
-    A function maps a single input to a single output.  Functions in the vast
-    majority of functional languages (and an increasing number of non-functional
-    languages!) are *first-class*.  This means that they can be used in every
-    context that a variable can be used in.  You'll see them passed around as
-    arguments and returned from functions, for example.
+    A function maps a single input to a single output.  Functions in functional
+    languages (and an increasing number of non-functional languages!) are
+    *first-class*.  This means that they can be used in every context that
+    a variable can be used in.  You'll see them passed around as arguments
+    and returned from functions, for example.
 
     When it comes right down to it, that's the essence of computation:
     taking inputs and mapping them to outputs in line with some logic.
