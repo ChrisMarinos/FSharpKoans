@@ -4,7 +4,7 @@ The goal of these is to teach you functional programming in general, and F# in s
 
 ## Quick Start ##
 
-1. If you're using Visual Studio (or VS Code), you'll need to install the [NUnit Test Adapter Extension](https://visualstudiogallery.msdn.microsoft.com/6ab922d0-21c0-4f06-ab5f-4ecd1fe7175d).  If you're running Xamarin, you need to be able to run NUnit tests (but, to my everlasting shame, I have not worked with such a setup, and cannot offer advice!).  I'm using VS2015, but everything should work with VS2012 upwards &mdash; if not, please let me know.
+1. If you're using Visual Studio (or VS Code), you'll need to install the [NUnit 3 Test Adaptor Extension](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter).  If you're running Xamarin, you need to be able to run NUnit tests (but, to my everlasting shame, I have not worked with such a setup, and cannot offer advice!).  I'm using VS2015, but everything should work with VS2012 upwards &mdash; if not, please let me know.
 2. Clone this repository.
 3. Open & build the solution.  This should download and install FsUnit and dependencies (via [NuGet](http://nuget.org/)) for you as well.
 4. ![Group by class](GroupByClass.png?raw=true)
