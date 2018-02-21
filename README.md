@@ -13,43 +13,29 @@ koans will be very simple, so don't overthink them! As you progress through
 more koans, more and more F# syntax will be introduced which will allow
 you to solve more complicated problems and use more advanced techniques.
 
+### Prerequisites
 
-### Getting Started
+The F# Koans needs [.Net Core 2.0](https://www.microsoft.com/net/download/core) to be built and run,
+make sure that you have installed it before building the project.
 
-The F# Koans currently target Visual Studio 2010. The koans
-should also work with Visual Studio 2015+, command line Mono, MonoDevelop, and Xamarin Studio.
+Additionally, the project provides [Visual Studio Code](https://code.visualstudio.com/) configuration for running.
+To be able to run F# projects in Visual Studio Code, the
+[ionide plugin](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) should be also installed.
 
-*NOTE: [NuGet](http://nuget.org/) is required to properly resolve dependencies.*
+### Running the Koans from the command line (.Net Core)
 
-### Running the Koans in Visual Studio
+1. To build the Koans, run `dotnet build` command in the project root.
 
-1. Open the Visual Studio project, right click on the "FSharpKoans" project in the solution explorer 
-   and select "Set as StartUp Project".
+2. To run the Koans, run `dotnet run -p FSharpKoans/FSharpKoans.fsproj` command in the project root
+or `dotnet run` in `FSharpKoans` project directory.
 
-2. Turn off User-unhandled Exceptions. Go to Debug|Exceptions and uncheck the User-unhandled box 
-   from the Common Language Runtime Exceptions item.
+### Running the Koans in Visual Studio Code
 
-You can now run the Koans by selecting Debug|Start Debugging (defaults to f5).
+1. Open the project directory in Visual Studio Code with Ionide-fharp plugin installed
+and press F5 to build and launch the Koans (require some time to build the project before launch).
 
-### Running the Koans from the command line (Mono)
+### Using dotnet-watch
 
-The following instructions will run the Koans without the need for Visual Studio, MonoDevelop, etc. 
-The only requirements are [Mono](http://www.mono-project.com/download/), [FSharp](http://fsharp.org), and [NuGet](http://nuget.org/nuget.exe).
-
-1. In a terminal, navigate to the root of the __FSharpKoans__ solution directory.
-
-2. Restore all NuGet packages (replace _/Path/To/NuGet_ with the appropriate directory for your 
-   environment): 
-   ```
-   mono /Path/To/NuGet/nuget.exe restore FSharpKoans.sln
-   ```
- 
-3. Build the solution: 
-   ```
-   msbuild FSharpKoans.sln
-   ```
-
-You can now run the Koans (the following assumes your output path is _bin/Debug_): 
-```
-mono FSharpKoans/bin/Debug/FSharpKoans.exe
-```
+You can also use [dotnet-watch](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/dotnet-watch.md) to have your changes reloaded automatically.
+To do so, navigate into `FSharpKoans` directory and run `dotnet watch run`.
+Now, after you change the project code, it will be automatically reloaded and tests rerun.
