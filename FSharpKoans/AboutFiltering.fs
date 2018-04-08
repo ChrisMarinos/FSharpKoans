@@ -54,7 +54,7 @@ module ``about filtering`` =
             names
             |> List.find (fun name -> name = __ )
             
-        //??? What would happen if there are 2 Bob's in the List?
+        //??? What would happen if there are 2 Bobs in the List?
 
         AssertEquality expected_name actual_name
 
@@ -86,21 +86,21 @@ module ``about filtering`` =
         AssertEquality evenNumbers  [ __ ]
 
         //You can also use the "id" function on types of 'a option list 
-        //"id" will tell choose only to return just those that are "Some"
+        //"id" will return just those that are "Some"
         let optionNames = [ None; Some "Alice"; None; ]
 
         let namesWithValue = 
             optionNames
             |> List.choose id
 
-        //Notice the type of actual result is 'string list', where as optionNames is 'string option list'
+        //Notice the type of namesWithValue is 'string list', whereas optionNames is 'string option list'
         AssertEquality namesWithValue [ __ ]
 
     [<Koan>]
     let PickingItemsFromAList() =
         let numbers = [ 5..10 ]
        
-        //Pick is similar to choose, but returns the first element, or throwns an exception if are no
+        //Pick is similar to choose, but returns the first element, or throws an exception if there are no
         //items that return "Some" (a bit like find does)
         let firstEven =
             numbers
