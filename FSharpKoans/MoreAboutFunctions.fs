@@ -39,7 +39,7 @@ module ``more about functions`` =
         AssertEquality simpleResult __
 
         (* ...but you can also pass only one argument at a time to create
-           residual functions. This technique is known as partial appliction. *)
+           residual functions. This technique is known as partial application. *)
         let addTen = add 10
         let fancyResult = addTen 14
 
