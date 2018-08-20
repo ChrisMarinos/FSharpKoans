@@ -7,7 +7,7 @@ open FSharpKoans.Core
 // Below is a list containing comma separated data about 
 // Microsoft's stock prices during March of 2012. Without
 // modifying the list, programatically find the day with the
-// greatest variance between the opening and closing price.
+// greatest difference between the opening and closing prices.
 //
 // The following functions may be of use:
 // 
