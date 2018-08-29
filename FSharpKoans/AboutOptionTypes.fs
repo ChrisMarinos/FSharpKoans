@@ -53,8 +53,8 @@ module ``about option types`` =
             | Some score -> translate score
             | None -> "Unknown"
 
-        AssertEquality (getScore chronoTrigger) __
-        AssertEquality (getScore halo) __
+        AssertEquality (getScore chronoTrigger) "Great"
+        AssertEquality (getScore halo) "Unknown"
 
     [<Koan>]
     let ProjectingValuesFromOptionTypes() =
