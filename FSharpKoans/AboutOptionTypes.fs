@@ -22,17 +22,17 @@ module ``about option types`` =
     let OptionTypesMightContainAValue() =
         let someValue = Some 10
         
-        AssertEquality someValue.IsSome __
-        AssertEquality someValue.IsNone __
-        AssertEquality someValue.Value __
+        AssertEquality someValue.IsSome true
+        AssertEquality someValue.IsNone false
+        AssertEquality someValue.Value 10
 
     [<Koan>]
     let OrTheyMightNot() =
         let noValue = None
 
-        AssertEquality noValue.IsSome __
-        AssertEquality noValue.IsNone __
-        AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value)
+        AssertEquality noValue.IsSome false
+        AssertEquality noValue.IsNone true
+        AssertThrows<System.NullReferenceException> (fun () -> noValue.Value)
 
     [<Koan>]
     let UsingOptionTypesWithPatternMatching() =
