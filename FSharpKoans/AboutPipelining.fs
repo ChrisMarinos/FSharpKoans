@@ -20,7 +20,7 @@ module ``about pipelining`` =
     [<Koan>]
     let SquareEvenNumbersWithSeparateStatements() =
         (* One way to combine the operations is by using separate statements.
-           However, this is can be clumsy since you have to name each result. *)
+           However, this can be clumsy since you have to name each result. *)
 
         let numbers = [0..5]
 
