@@ -47,7 +47,7 @@ module ``about dot net collections`` =
         //NOTE: The seq type in F# is an alias for .NET's IEnumerable interface
         //      Like the List and Array module, the Seq module contains functions 
         //      that you can combine to perform operations on types implementing 
-        //      seq/IEnumerable.
+        //      seq/IEnumerable. To create a new sequence you can use seq<int>{0 .. 10}.
 
         AssertEquality verboseBook.[0] __
         AssertEquality verboseBook.[1] __
