@@ -25,7 +25,7 @@ module ``about arrays`` =
         let systemArray = System.Array.CreateInstance(typeof<string>, 0).GetType()
 
         (* Unlike List, Arrays in F# are the standard .NET arrays that
-           you're used to if you're coming from another .NET language *)
+           you've used to if you're coming from another .NET language *)
         AssertEquality arrayType systemArray
 
     [<Koan>]
