@@ -33,7 +33,7 @@
     <Compile Include="PathToEnlightenment.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FSharp.Data" Version="2.4.6" />
+    <PackageReference Include="FSharp.Data" Version="3.0.0-beta4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FSharpKoans.Core\FSharpKoans.Core.fsproj" />
