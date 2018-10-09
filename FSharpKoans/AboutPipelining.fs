@@ -1,13 +1,13 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
-//---------------------------------------------------------------
+//----------------------------------------------------------------
 // About Pipelining
 //
 // The forward pipe operator is one of the most commonly used
-// symbols in F# programming. You can use it combine operations
+// symbols in F# programming. You can use it to combine operations
 // on lists and other data structures in a readable way.
-//---------------------------------------------------------------
+//----------------------------------------------------------------
 [<Koan(Sort = 10)>]
 module ``about pipelining`` =
 
