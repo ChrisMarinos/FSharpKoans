@@ -1,6 +1,5 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
-open System.Collections.Generic
 
 //---------------------------------------------------------------
 // About Arrays
