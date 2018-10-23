@@ -1,7 +1,6 @@
 ﻿namespace FSharpKoans.Core
 
 open System
-open System.Collections.Generic
 open System.Reflection
 
 type KoanRunner(containers) =
