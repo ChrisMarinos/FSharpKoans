@@ -50,7 +50,7 @@ module ``12: Exploring your options`` =
     // a tuple of bool * XYZ, where XYZ is the converted value.
     [<Test>]
     let ``02 Parsing a string safely`` () =
-        let parse s =
+        let parse (s:string) =
             match System.Int32.TryParse s with
             | _ -> __ // <-- fill in the match cases
         parse "25" |> should equal (Some 25)
