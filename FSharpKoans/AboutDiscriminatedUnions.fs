@@ -9,7 +9,7 @@ open NUnit.Framework
 *)
 
 
-module ``10: The Good Kind of Discrimination`` = 
+module ``08: The Good Kind of Discrimination`` = 
     type Subject = // <-- feel free to add your own subjects!
     | Philosophy
     | Linguistics

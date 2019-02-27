@@ -22,7 +22,7 @@ type Book =
      Year : int }
 
 // and now, the tests:
-module ``06: On the Record`` =
+module ``07: On the Record`` =
     [<Test>]
     let ``01 Creating records`` () =
         let myRecord = __

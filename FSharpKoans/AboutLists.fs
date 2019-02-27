@@ -6,7 +6,7 @@ open NUnit.Framework
 Lists are immutable, ordered, finite sequences of a single type.
 *)
 
-module ``05: I Have Here In My Hand A List`` = 
+module ``12: I Have Here In My Hand A List`` = 
     [<Test>]
     let ``01 Creating a list (Syntax 1).`` () = 
         let myList = [ __; __; __; __ ]
@@ -31,7 +31,7 @@ module ``05: I Have Here In My Hand A List`` =
         result |> should equal [902; 10; 3; 13; 37]
 
     [<Test>]
-    let ``04 The : : symbol (called "cons") does not modify an existing list`` () = 
+    let ``04 The : : operator (called "cons") does not modify an existing list`` () = 
         let first = [ "grape"; "peach" ]
         let second = "pear" :: first
         let third = "apple" :: second
@@ -109,9 +109,10 @@ module ``05: I Have Here In My Hand A List`` =
             | _ -> "fig"
         k |> should equal __
 
-    [<Test>]
+    [<Ignore("No??")>]
     let ``14 Creating a list containing a sequence of numbers, and indexing`` () =
         let k = [6..50]
         let l = [3..3..20]
         k.[3] |> should equal __
         l.[3] |> should equal __
+

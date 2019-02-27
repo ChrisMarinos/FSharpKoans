@@ -10,26 +10,19 @@
     <Compile Include="Helpers.fs" />
     <Compile Include="AboutTesting.fs" />
     <Compile Include="AboutBinding.fs" />
-    <Compile Include="AboutMatching.fs" />
-    <Compile Include="AboutTuples.fs" />
-    <Compile Include="AboutLists.fs" />
-    <Compile Include="AboutRecords.fs" />
-    <Compile Include="AboutBasicTypes.fs" />
     <Compile Include="AboutFunctions.fs" />
-    <Compile Include="AboutPatterns.fs" />
+    <Compile Include="AboutMatching.fs" />
+    <Compile Include="AboutIteration.fs" />
+    <Compile Include="AboutTuples.fs" />
+    <Compile Include="AboutRecords.fs" />
     <Compile Include="AboutDiscriminatedUnions.fs" />
+    <Compile Include="AboutPatterns.fs" />
     <Compile Include="AboutParametricPolymorphism.fs" />
     <Compile Include="AboutOptions.fs" />
-    <Compile Include="AboutLength.fs" />
-    <Compile Include="AboutRev.fs" />
-    <Compile Include="AboutMap.fs" />
-    <Compile Include="AboutFilter.fs" />
-    <Compile Include="AboutFold.fs" />
-    <Compile Include="AboutCombiningFunctions.fs" />
-    <Compile Include="AboutOtherListFunctions.fs" />
+    <Compile Include="AboutLists.fs" />
+    <Compile Include="AboutStrings.fs" />
+    <Compile Include="AboutListOperations.fs" />
     <Compile Include="AboutUnit.fs" />
-    <Compile Include="AboutSeqAndArray.fs" />
-    <Compile Include="AboutModules.fs" />
     <Compile Include="AboutYou.fs" />
   </ItemGroup>
 

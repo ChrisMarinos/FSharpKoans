@@ -30,6 +30,23 @@ back here and look.  Figure out what some of the keywords do :).
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [<AutoOpenAttribute>]
 module FSharpKoans.Helpers
 
@@ -50,8 +67,8 @@ So that's why we have method names ending with ")." instead.
 And ordering tests is apparently far beyond its capabilities... :-/
 *)
 
-let inline __<'a> : ^a = Unchecked.defaultof<'a>
-let inline ___<'a> : ^a list = []
+let inline __<'a> : ^a = failwith "Replace the __ with something else to pass this test."
+let inline ___<'a> : ^a list = failwith "Replace the ___ with something else to pass this test."
 let [<Literal>] FILL__ME_IN = "FILL ME IN"
 let [<Literal>] FILL_ME__IN = 1234
 
@@ -64,6 +81,8 @@ module String =
     let FILL__ME_IN _ _ = ()
 type String with
     member __.FILL_ME_IN = ()
+
+let inline (|???|) a b = failwith "Replace the |???| with an appropriate operator to pass this test."
 
 let equal = equal
 let throw = throw

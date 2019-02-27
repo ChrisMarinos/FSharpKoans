@@ -10,7 +10,7 @@ matches, then you get a MatchFailureException at runtime and you turn into a
 Sad Panda.
 *)
 
-module ``03: Match expressions`` = 
+module ``04: Match expressions`` = 
     [<Test>]
     let ``01 Basic match expression`` () =
         match 8000 with
@@ -21,7 +21,7 @@ module ``03: Match expressions`` =
     let ``02 Match expressions are expressions, not statements`` () =
         let result =
             match 9001 with
-            | FILL_ME__IN -> // <-- use a variable pattern here!
+            | FILL_ME__IN -> // <-- use an identifier pattern here!
                 match __ + 1000 with
                 | 10001 -> "Hah! It's a palindromic number!"
                 | x -> "Some number."
@@ -61,3 +61,13 @@ module ``03: Match expressions`` =
         y |> should equal __
         z |> should equal __
         a |> should equal __
+
+    [<Test>]
+    let ``05 Using a mapping function`` () =
+        let mapper = function
+            | _ -> __ // write the cases for this function!
+        mapper 3 |> should equal "Joey"
+        mapper 8 |> should equal "Bingo"
+        mapper 11 |> should equal "Kelvin"
+        mapper 15 |> should equal "Kelvin"
+

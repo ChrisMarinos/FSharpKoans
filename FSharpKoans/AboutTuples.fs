@@ -9,7 +9,7 @@ open NUnit.Framework
     items a 2-tuple, a tuple with 5 elements is a 5-tuple, and so on.
 *)
 
-module ``04: Tuples`` = 
+module ``06: Tuples`` = 
     [<Test>]
     let ``01 Creating tuples`` () = 
         let items = "apple", "dog"
@@ -45,9 +45,9 @@ module ``04: Tuples`` =
         a |> should be ofType<FILL_ME_IN>
 
     [<Test>]
-    let ``06 Using the wildcard pattern`` () = 
+    let ``06 Using the wildcard pattern to structurally decompose tuples`` () = 
         // A single _ is a wildcard pattern, NOT a space to fill things in.
-        // A wildcard pattern successfully matches ANYTHING.
+        // Reminder: A wildcard pattern successfully matches ANYTHING.
         let name, _, _, weapon_name = "Shinji", 9103, true, "Unit 01"
         name |> should equal __
         weapon_name |> should equal __

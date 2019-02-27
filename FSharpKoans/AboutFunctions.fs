@@ -15,7 +15,7 @@ open NUnit.Framework
     just functions rather than keywords.
 *)
 
-module ``08: Putting the Function into Functional Programming`` = 
+module ``03: Putting the Function into Functional Programming`` = 
     [<Test>]
     let ``01 A function takes one input and produces one output`` () =
         (fun a -> a + 100) __ |> should equal 2097
@@ -26,12 +26,11 @@ module ``08: Putting the Function into Functional Programming`` =
 
     [<Test>]
     let ``03 The input to a function is a pattern (Part 2).`` () =
-        (fun (t,u) -> u, t) __ |> should equal (9, 0)
+        (fun _ -> 75) __ |> should equal 75
 
     [<Test>]
     let ``04 The input to a function is a pattern (Part 3).`` () =
-        // remember our record types from AboutRecords.fs ?
-        (fun { Author=k } -> "Author is " + k) __ |> should equal "Author is Plato"
+        (fun (2 | 3 | 5) -> "Prime") __ |> should equal "Prime"
 
     [<Test>]
     let ``05 A function can be bound to a name (Part 1).`` () =
@@ -60,11 +59,11 @@ module ``08: Putting the Function into Functional Programming`` =
 
     [<Test>]
     let ``09 A function can span multiple lines (Part 2, expanded syntax).`` () =
-        // This is exactly the same as the previous test; the syntax is just more explicit.
+        // This is largely the same as the previous test; the syntax is just more explicit.
         // Does the syntax make what's going on more clear?
         let jorus =
             fun who ->
-                let p = 5 in
+                let p = 3 in
                     who * p
         in
             jorus 12 |> should equal __
@@ -91,11 +90,11 @@ module ``08: Putting the Function into Functional Programming`` =
 
     [<Test>]
     let ``12 You can write a function as a one-liner (Part 1).`` () =
-        (fun ___ -> fun ___ -> __ - __) 10 9 |> should equal 1
+        (fun ___ -> fun ___ -> __ * __) __ __ |> should equal 27
 
     [<Test>]
     let ``13 You can write a function as a one-liner (Part 2).`` () =
-        (fun _____ ____ -> __ - __) 10 9 |> should equal 1
+        (fun _____ ____ -> __ + __) __ __ |> should equal 17
 
     [<Test>]
     let ``14 'Multiple-argument' functions are one-input, one-output in disguise`` () =
@@ -120,7 +119,7 @@ module ``08: Putting the Function into Functional Programming`` =
             FILL_ME__IN |> should equal 1234
         ) |> should throw typeof<System.Exception>
 
-    [<Test>]
+    [<Ignore("Later")>]
     let ``17 Partially specifying arguments (Part 1).`` () =
         // this shows you how you can partially specify particular arguments to
         // reuse functionality.  This technique is exceptionally flexible and often
@@ -129,7 +128,7 @@ module ``08: Putting the Function into Functional Programming`` =
         let kittehs = __ "cat"
         __ "nyan" |> should equal "cat says nyan"
 
-    [<Test>]
+    [<Ignore("Later")>]
     let ``18 Partially specifying arguments (Part 2).`` () =
         // as above, but what do you do when the arguments aren't in the order
         // that you want them to be in?
@@ -138,7 +137,7 @@ module ``08: Putting the Function into Functional Programming`` =
         howl "dire wolf" |> should equal "dire wolf says slash/crunch/snap"
         howl "direr wolf" |> should equal "direr wolf says slash/crunch/snap"
 
-    [<Test>]
+    [<Ignore("Later")>]
     let ``19 Partially specifying arguments (Part 3).`` () =
         // Extending a bit more, what do you do when you want to apply a function,
         // but modify the result before you give it back?
@@ -148,12 +147,12 @@ module ``08: Putting the Function into Functional Programming`` =
         cows "MOOooOO" |> should equal "cow says MOOooOO, de gozaru"
 
     [<Test>]
-    let ``20 Aliasing a function`` () =
+    let ``17 Two names can be bound to the same value`` () =
         let f x = x + 2
         let y = f
         y 20 |> should equal ___
 
-    [<Test>]
+    [<Ignore("Later")>]
     let ``21 Getting closure`` () =
         let calculate initial final = // note the number of inputs.
             let middle = (final - initial) / 2
@@ -162,7 +161,7 @@ module ``08: Putting the Function into Functional Programming`` =
         calculate 10 20 5 |> should equal __
         calculate 0 600 250 |> should equal __
 
-    [<Test>]
+    [<Ignore("Later")>]
     let ``22 Using a value defined in an inner scope`` () =
         // this is very similar to the previous test.
         let g t =
@@ -176,47 +175,31 @@ module ``08: Putting the Function into Functional Programming`` =
         // PS. I hope this one brought you some closure.
 
     [<Test>]
-    let ``23 Shadowing and functions`` () =
+    let ``18 Shadowing and functions`` () =
         let a = 25
         let f () = a + 10
         let a = 99
         a |> should equal __
         f () |> should equal __
 
-    (*
-        The `rec` keyword exposes the function identifier for use inside the function.
-        And that's literally all that it does - it has no other purpose whatsoever.
-    *)
-
     [<Test>]
-    let ``24 'rec' exposes the name of the function for use inside the function`` () =
-        let rec isValid dino =
-            match dino with
-            | [] -> "All valid."
-            | "Thesaurus"::_ -> "A thesaurus isn't a dinosaur!"
-            | _::rest -> isValid rest
-        isValid ["Stegosaurus"; "Bambiraptor"] |> should equal __
-        isValid ["Triceratops"; "Thesaurus"; "Tyrannosaurus Rex"] |> should equal __
-
-    [<Test>]
-    let ``25 Nesting functions`` () =
+    let ``19 Nesting functions`` () =
         let hailstone x =
             let triple x = x * 3
             let addOne x = x + 1
-            addOne (triple x) // see AboutCombiningFunctions.fs to see a better way of doing this
+            addOne (triple x)
         hailstone 5 |> should equal __
 
     [<Test>]
-    let ``26 Functions have types`` () =
-        let a x y = x + y
-        let b a b c d e = sprintf "%d %f %s %c %b" a b c d e
+    let ``20 Functions have types`` () =
+        let a x y = x + "cabbage" + y
+        let b r = 50.0 / r
         a |> should be ofType<FILL_ME_IN>
         b |> should be ofType<FILL_ME_IN>
-        b 14 -8.7 |> should be ofType<FILL_ME_IN>
 
 
     [<Test>]
-    let ``27 Passing a function as a parameter`` () =
+    let ``21 Passing a function as a parameter`` () =
     (*
         A function which accepts a function as input is called a "higher-order"
         function.
@@ -229,19 +212,14 @@ module ``08: Putting the Function into Functional Programming`` =
         with your current views about how programming "should" be, and not
         with the feature of higher-order functions :).
     *)
-        let myIf cond =
-            match cond 23 with
-            | true -> "Pink"
-            | false -> "Slink"
-        let check x =
-            x % 2 <> 0 && x % 3 <> 0 && x % 5 <> 0 && x % 7 <> 0 && x % 11 <> 0
-        myIf (fun x -> x%2 = 0) |> should equal __
-        myIf (fun x -> x<35) |> should equal __
-        myIf (fun x -> x+2 = 0) |> should equal __
-        myIf (fun x -> x+2 = 21 || x-2 = 21) |> should equal __
-        myIf check |> should equal __
+        let somefunc x y = x + y x
+        let square v = v * v
+        somefunc 3 square |> should equal __
+        somefunc 3 ((*) 7) |> should equal __
+        somefunc 10 ((+) 8) |> should equal __
+        somefunc 5 (fun z -> z + 22) |> should equal __
 
-    [<Test>]
+    [<Ignore("Later")>]
     let ``28 Type annotations for function types`` () =
         let a (x:FILL_ME_IN) (y:FILL_ME_IN) = x + y
         let b (x:FILL_ME_IN) (y:FILL_ME_IN) = x + y
@@ -250,7 +228,7 @@ module ``08: Putting the Function into Functional Programming`` =
         a __ __ |> should equal "skipping"
         b __ __ |> should equal 1.02
 
-    [<Test>]
+    [<Ignore("Later")>]
     let ``29 We can use a type annotation for a function's output`` () =
         let k a b : FILL_ME_IN = a * b
         k __ __ |> should equal 15.0 
@@ -262,7 +240,7 @@ module ``08: Putting the Function into Functional Programming`` =
     *)
 
     // see: https://msdn.microsoft.com/en-us/library/dd548047.aspx
-    [<Test>]
+    [<Ignore("Later")>]
     let ``30 The 'inline' keyword forces type-resolution at callsite`` () =
         let (*REPLACE_THIS_COMMENT_WITH_KEYWORD*) a x y = x + y
         a 6 7 |> should equal 13 // expected: an int
@@ -275,10 +253,102 @@ module ``08: Putting the Function into Functional Programming`` =
    *)
 
     [<Test>]
-    let ``31 Operators are functions in disguise`` () =
+    let ``22 Operators are functions in disguise`` () =
         (+) 5 8 |> should equal __
         (-) 3 5 |> should equal __
         (/) 12 4 |> should equal __
         (=) 93.1 93.12 |> should equal __
         (<) "hey" "jude" |> should equal __
         // ... and other operators: >, <=, >=, <>, %, ...
+
+(*
+    In a functional language, functions are used for almost everything.
+
+    In "mainstream" object-orientation (e.g. C# or Java), you would make
+    objects and methods and inheritance and all of that jazz to structure your
+    program's logic.  Every method must be in an object, and we create
+    objects and call methods to make things happen.
+
+    In functional programming, we do all of this with functions.  It is normal
+    to make very small functions, and then combine them in various ways to
+    achieve a goal.  There are operators in the language to make this easier,
+    and these operators (of course!) are merely functions themselves, just like
+    (+), (*), (-), and so on.
+*)
+
+    [<Test>]
+    let ``23 |>, the 'pipe' operator`` () =
+        let add5 a = a + 5
+        let double a = a * 2
+        3 |> add5 |> double |> should equal __  // <-- start with three, add 5, then double. Readable, isn't it?
+        3 |> double |> add5 |> should equal __
+        6 |> add5 |> add5 |> should equal __
+        8 |> double |> double |> add5 |> should equal __
+
+    (*
+        The pipe operator takes:
+        - an input 'a
+        - a function 'a -> 'b
+        ...and applies the function to the input.  It is defined as:
+
+            let (|>) x f = f x
+
+        We often use the pipe operator to make code more readable.
+    *)
+
+    [<Test>]
+    let ``24 The output type of one pipe must be the input type to the next`` () =
+        let a x = x * 2.5
+        let b x = x = 7.5
+        a |> should be ofType<FILL_ME_IN>
+        b |> should be ofType<FILL_ME_IN>
+        __ |> __ |> __ |> should equal true
+
+    (*
+        The backwards-pipe operator takes:
+        - a function 'a -> 'b
+        - an input 'a
+        ...and applies the function to the input.  It is defined as:
+
+            let (<|) f x = f x
+
+        Due to the precedence of operators in the language, it's
+        sometimes slightly more readable to use <| instead of brackets.
+        But this is often a matter of taste and aesthetics, and <| is not
+        used nearly as much as |> is.
+    *)
+
+    [<Test>]
+    let ``25 <|, the lesser-used (but still useful) backwards pipe`` () =
+        let a x =
+            x = 4
+        not (a 4) |> should equal false
+        (__ __ a 4) |> should equal false // <-- put <| in one of the spaces to fill in
+
+    (*
+        The compose operator takes:
+        - a function 'a -> 'b
+        - a function 'b -> 'c
+        ...and returns a function 'a -> 'c .  In other words, it "joins" the first and second
+        functions to make a new function.  Composing functions is a very powerful
+        technique: you can think of it as snapping together Lego blocks to create
+        something new.  Functional programmers often make small functions that they
+        will compose into larger ones later on.
+
+        The compose operator can be defined as:
+
+        let (>>) a b = fun input -> b (a input)
+    *)
+
+    [<Test>]
+    let ``26 >>, the 'compose' operator`` () =
+        let add5 a = a + 5
+        let double a = a * 2
+        let i = add5 >> double
+        let j = double >> add5
+        let k = double >> double >> double
+        let l = j >> i
+        i 3 |> should equal __
+        j 3 |> should equal __
+        k 3 |> should equal __
+        l 3 |> should equal __

@@ -1,7 +1,7 @@
 ﻿namespace FSharpKoans
 open NUnit.Framework
 
-module ``20: Unit 00`` = 
+module ``15: Using Unit 01`` = 
     [<Test>]
     let ``01 Unit is used when there is no return value for a function``() = 
         let sendData data = () //<-- a function which is invoked for its side-effect(s)

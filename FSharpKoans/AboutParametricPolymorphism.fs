@@ -42,7 +42,7 @@ open NUnit.Framework
     or discriminated unions, generic.
 *)
 
-module ``11: Parametric polymorphism`` =
+module ``10: Parametric polymorphism`` =
     [<Test>]
     let ``01 id: the simplest built-in generic function`` () =
         // `id` is the identify function: it takes an input ... and gives it back immediately.

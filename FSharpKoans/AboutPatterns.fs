@@ -45,7 +45,7 @@ module ``09: Advanced pattern-matching`` =
         f (0, 0) |> should equal "Both 0"
 
     (*
-        "The as pattern is a pattern that has an as clause appended to it.
+        "The as-pattern is a pattern that has an as clause appended to it.
         The as clause binds the matched value to a name that can be used
         in the execution expression of a match expression, or, in the case
         where this pattern is used in a let binding, the name is added as

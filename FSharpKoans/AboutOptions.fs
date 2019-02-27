@@ -13,7 +13,7 @@ type Option<'a> =
 There are many built-in functions which return an Option.
 *)
 
-module ``12: Exploring your options`` =
+module ``11: Exploring your options and results`` =
    (*
       The next function takes in a name and extracts the surname.
       But not all people have surnames!
@@ -61,8 +61,24 @@ module ``12: Exploring your options`` =
     let ``03 Remapping Option values`` () =
       let f n =
          match getSurname n with
-         | _ -> __ // <-- write good match cases
+         | _ -> __ // <-- write a bunch of good match cases
       f "Anubis" |> should equal "[no surname]"
       f "Niccolo Machiavelli" |> should equal "Machiavelli"
       f "Mara Jade" |> should equal "Jade"
       f "Khazad-Dum" |> should equal "[no surname]"
+
+    type ErrorReason =
+    | DivisionByZero | NegativeNumberSupplied
+
+    [<Test>]
+    let ``04 Using a Result to explain why things went wrong`` () =
+        let f n m =
+            match n<0.0, m=0.0 with
+            | true, _ -> Error NegativeNumberSupplied
+            | _, true -> __
+            | _ ->
+                // 'sqrt' is the square-root function
+                __ (sqrt n / m)
+        f -6.0 2.5 |> should equal __
+        f 144.0 2.0 |> should equal (Ok 6.0)
+        f 7.3 0.0 |> should equal (Error DivisionByZero)
