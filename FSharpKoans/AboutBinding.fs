@@ -143,32 +143,6 @@ module ``02: About Binding`` =
         b |> should equal __
         c |> should equal __
 
-    (*
-        The next test demonstrates *type inference*.
-        
-        Not all functional languages are typed.  The first (and, arguably, the most powerful)
-        functional language was Lisp, and Lisp isn't strongly typed.  Typing is something that tends
-        to work very well with functional programming, but isn't something that is essential to
-        functional programming.  In the case of F#, typing often stops you from making "silly" errors.
-
-        F# uses type inference extensively.  Type inference means that it tries to work out
-        (or "infer") what type a particular name is by looking at code around it.  A readable, if
-        simplified, explanation of how this works can be found at:
-        http://fsharpforfunandprofit.com/posts/type-inference/
-    *)
-   
-    [<Ignore("Move elsewhere")>]
-    let ``05 The type of symbols in variable patterns are inferred`` () = 
-        let x = 50
-        let y = "a string"
-        let z = -4.23
-        let a = false
-        let b = 't'
-        x |> should be ofType<int>
-        y |> should be ofType<FILL_ME_IN>
-        z |> should be ofType<FILL_ME_IN>
-        a |> should be ofType<FILL_ME_IN>
-        b |> should be ofType<FILL_ME_IN>
    
    (*
     What's a pattern?  A pattern is something that expresses the SHAPE of data.  Data may

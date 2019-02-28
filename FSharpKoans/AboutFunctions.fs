@@ -119,60 +119,12 @@ module ``03: Putting the Function into Functional Programming`` =
             FILL_ME__IN |> should equal 1234
         ) |> should throw typeof<System.Exception>
 
-    [<Ignore("Later")>]
-    let ``17 Partially specifying arguments (Part 1).`` () =
-        // this shows you how you can partially specify particular arguments to
-        // reuse functionality.  This technique is exceptionally flexible and often
-        // seen in functional code, so you should try to understand it fully.
-        let f animal noise = animal + " says " + noise
-        let kittehs = __ "cat"
-        __ "nyan" |> should equal "cat says nyan"
-
-    [<Ignore("Later")>]
-    let ``18 Partially specifying arguments (Part 2).`` () =
-        // as above, but what do you do when the arguments aren't in the order
-        // that you want them to be in?
-        let f animal noise = animal + " says " + noise
-        let howl k = __ // <- multiple words on this line.  You MUST use `f`.
-        howl "dire wolf" |> should equal "dire wolf says slash/crunch/snap"
-        howl "direr wolf" |> should equal "direr wolf says slash/crunch/snap"
-
-    [<Ignore("Later")>]
-    let ``19 Partially specifying arguments (Part 3).`` () =
-        // Extending a bit more, what do you do when you want to apply a function,
-        // but modify the result before you give it back?
-        let f animal noise = animal + " says " + noise
-        let cows = __ // <-- multiple words on this line, or you may want to make this a multi-line thing.  You MUST use `f`.
-        cows "moo" |> should equal "cow says moo, de gozaru"
-        cows "MOOooOO" |> should equal "cow says MOOooOO, de gozaru"
-
     [<Test>]
     let ``17 Two names can be bound to the same value`` () =
         let f x = x + 2
         let y = f
         y 20 |> should equal ___
 
-    [<Ignore("Later")>]
-    let ``21 Getting closure`` () =
-        let calculate initial final = // note the number of inputs.
-            let middle = (final - initial) / 2
-            fun t -> t-middle, t+middle
-        // note the number of inputs provided below.  Do you see why I can do this?
-        calculate 10 20 5 |> should equal __
-        calculate 0 600 250 |> should equal __
-
-    [<Ignore("Later")>]
-    let ``22 Using a value defined in an inner scope`` () =
-        // this is very similar to the previous test.
-        let g t =
-            let result =
-                match t%2 with
-                | 0 -> 10
-                | 1 -> 65
-            fun x -> result - x
-        g 5 8 |> should equal __
-        g 8 5 |> should equal __
-        // PS. I hope this one brought you some closure.
 
     [<Test>]
     let ``18 Shadowing and functions`` () =
@@ -218,34 +170,6 @@ module ``03: Putting the Function into Functional Programming`` =
         somefunc 3 ((*) 7) |> should equal __
         somefunc 10 ((+) 8) |> should equal __
         somefunc 5 (fun z -> z + 22) |> should equal __
-
-    [<Ignore("Later")>]
-    let ``28 Type annotations for function types`` () =
-        let a (x:FILL_ME_IN) (y:FILL_ME_IN) = x + y
-        let b (x:FILL_ME_IN) (y:FILL_ME_IN) = x + y
-        a |> should be ofType<string -> string -> string>
-        b |> should be ofType<float -> float -> float>
-        a __ __ |> should equal "skipping"
-        b __ __ |> should equal 1.02
-
-    [<Ignore("Later")>]
-    let ``29 We can use a type annotation for a function's output`` () =
-        let k a b : FILL_ME_IN = a * b
-        k __ __ |> should equal 15.0 
-
-    (*
-        Sometimes you want to force type-resolution to occur at a call-site.
-        In a functional language that isn't strongly-typed, this isn't an issue.
-        Because F# is strongly-typed, it can be an issue.
-    *)
-
-    // see: https://msdn.microsoft.com/en-us/library/dd548047.aspx
-    [<Ignore("Later")>]
-    let ``30 The 'inline' keyword forces type-resolution at callsite`` () =
-        let (*REPLACE_THIS_COMMENT_WITH_KEYWORD*) a x y = x + y
-        a 6 7 |> should equal 13 // expected: an int
-        a __ __ |> should equal 1.2 // expected: a float
-        a __ __ |> should equal "beebop" // expected: a string
 
    (*
        Did you know that operators like +, -, =, >, and so on, are actually

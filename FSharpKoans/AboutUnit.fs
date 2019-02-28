@@ -1,7 +1,7 @@
 ﻿namespace FSharpKoans
 open NUnit.Framework
 
-module ``15: Using Unit 01`` = 
+module ``15: Advanced techniques`` = 
     [<Test>]
     let ``01 Unit is used when there is no return value for a function``() = 
         let sendData data = () //<-- a function which is invoked for its side-effect(s)
@@ -77,3 +77,52 @@ module ``15: Using Unit 01`` =
         doSomethingForTheSideEffect 5 |> should equal __
         ignore (doSomethingForTheSideEffect "blorp") |> should equal __
         doSomethingForTheSideEffect 19.66 |> ignore |> should equal __
+
+    [<Test>]
+    let ``05 Partially specifying arguments (Part 1).`` () =
+        // this shows you how you can partially specify particular arguments to
+        // reuse functionality.  This technique is exceptionally flexible and often
+        // seen in functional code, so you should try to understand it fully.
+        let f animal noise = animal + " says " + noise
+        let kittehs = __ "cat"
+        __ "nyan" |> should equal "cat says nyan"
+
+    [<Test>]
+    let ``06 Partially specifying arguments (Part 2).`` () =
+        // as above, but what do you do when the arguments aren't in the order
+        // that you want them to be in?
+        let f animal noise = animal + " says " + noise
+        let howl k = __ // <- multiple words on this line.  You MUST use `f`.
+        howl "dire wolf" |> should equal "dire wolf says slash/crunch/snap"
+        howl "direr wolf" |> should equal "direr wolf says slash/crunch/snap"
+
+    [<Test>]
+    let ``07 Partially specifying arguments (Part 3).`` () =
+        // Extending a bit more, what do you do when you want to apply a function,
+        // but modify the result before you give it back?
+        let f animal noise = animal + " says " + noise
+        let cows = __ // <-- multiple words on this line, or you may want to make this a multi-line thing.  You MUST use `f`.
+        cows "moo" |> should equal "cow says moo, de gozaru"
+        cows "MOOooOO" |> should equal "cow says MOOooOO, de gozaru"
+
+    [<Test>]
+    let ``08 Getting closure`` () =
+        let calculate initial final = // note the number of inputs.
+            let middle = (final - initial) / 2
+            fun t -> t-middle, t+middle
+        // note the number of inputs provided below.  Do you see why I can do this?
+        calculate 10 20 5 |> should equal __
+        calculate 0 600 250 |> should equal __
+
+    [<Test>]
+    let ``09 Using a value defined in an inner scope`` () =
+        // this is very similar to the previous test.
+        let g t =
+            let result =
+                match t%2 with
+                | 0 -> 10
+                | 1 -> 65
+            fun x -> result - x
+        g 5 8 |> should equal __
+        g 8 5 |> should equal __
+        // PS. I hope this one brought you some closure.

@@ -108,11 +108,3 @@ module ``12: I Have Here In My Hand A List`` =
             | _::t::_::u::_ -> t + u
             | _ -> "fig"
         k |> should equal __
-
-    [<Ignore("No??")>]
-    let ``14 Creating a list containing a sequence of numbers, and indexing`` () =
-        let k = [6..50]
-        let l = [3..3..20]
-        k.[3] |> should equal __
-        l.[3] |> should equal __
-

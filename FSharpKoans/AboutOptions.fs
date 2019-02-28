@@ -13,7 +13,7 @@ type Option<'a> =
 There are many built-in functions which return an Option.
 *)
 
-module ``11: Exploring your options and results`` =
+module ``11: Exploring types, options, and results`` =
    (*
       The next function takes in a name and extracts the surname.
       But not all people have surnames!
@@ -42,14 +42,28 @@ module ``11: Exploring your options and results`` =
     // success and failure cases explicit.
 
     [<Test>]
-    let ``01 Basic Option example`` () =
+    let ``01 Type annotations for function types`` () =
+        let a (x:FILL_ME_IN) (y:FILL_ME_IN) = x + y
+        let b (x:FILL_ME_IN) (y:FILL_ME_IN) = x + y
+        a |> should be ofType<string -> string -> string>
+        b |> should be ofType<float -> float -> float>
+        a __ __ |> should equal "skipping"
+        b __ __ |> should equal 1.02
+
+    [<Test>]
+    let ``02 We can use a type annotation for a function's output`` () =
+        let k a b : FILL_ME_IN = a * b
+        k __ __ |> should equal 15.0 
+
+    [<Test>]
+    let ``03 Basic Option example`` () =
         getSurname "Taylor Swift" |> should equal __
         getSurname "Eminem" |> should equal __
 
     // the System.Int32.TryParse, System.Double.TryParse, etc functions return
     // a tuple of bool * XYZ, where XYZ is the converted value.
     [<Test>]
-    let ``02 Parsing a string safely`` () =
+    let ``04 Parsing a string safely`` () =
         let parse (s:string) =
             match System.Int32.TryParse s with
             | _ -> __ // <-- fill in the match cases
@@ -58,7 +72,7 @@ module ``11: Exploring your options and results`` =
         parse "wut" |> should equal None
 
     [<Test>]
-    let ``03 Remapping Option values`` () =
+    let ``05 Remapping Option values`` () =
       let f n =
          match getSurname n with
          | _ -> __ // <-- write a bunch of good match cases
@@ -71,7 +85,7 @@ module ``11: Exploring your options and results`` =
     | DivisionByZero | NegativeNumberSupplied
 
     [<Test>]
-    let ``04 Using a Result to explain why things went wrong`` () =
+    let ``06 Using a Result to explain why things went wrong`` () =
         let f n m =
             match n<0.0, m=0.0 with
             | true, _ -> Error NegativeNumberSupplied
