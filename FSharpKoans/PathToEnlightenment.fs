@@ -13,10 +13,16 @@ match result with
     printfn ""
     printfn ""
     printfn "You have not yet reached enlightenment ..."
-    printfn "%s" ex.Message
+    printfn "%s" 
+        (match ex with
+        | None -> "No error message could be found!"
+        | Some(ex) -> ex.Message)
     printfn ""
     printfn "Please meditate on the following code:"
-    printfn "%s" ex.StackTrace
+    printfn "%s" 
+        (match ex with
+        | None -> "No stack trace could be found!"
+        | Some(ex) -> ex.StackTrace)
     
 printfn ""
 printfn ""

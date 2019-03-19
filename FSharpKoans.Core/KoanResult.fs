@@ -4,7 +4,7 @@ open System
 
 type KoanResult = 
     | Success of string
-    | Failure of string * Exception
+    | Failure of string * Option<Exception>
 with
     member this.Message =
         match this with
