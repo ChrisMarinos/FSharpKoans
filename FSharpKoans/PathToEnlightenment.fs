@@ -26,7 +26,7 @@ match result with
         | None -> "No stack trace could be found!"
         | Some(ex) -> ex.StackTrace)
     Environment.ExitCode <- 1
-    
+
 printfn ""
 printfn ""
 printfn ""
