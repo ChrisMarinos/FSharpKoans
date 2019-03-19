@@ -37,13 +37,14 @@ let ``A failing koan returns its exception`` () =
         typeof<FailureContainer>
         |> KoanContainer.runKoans
         |> Seq.head
-        
-    let ex = 
+         
+    let msg = 
         match result with
-        | Failure (_, ex) -> ex
-        | _ -> null
+        | Failure (_, Some(ex)) -> ex.Message
+        | Failure (_, None) -> "No Exception!"
+        | Success (s) -> s
     
-    Assert.AreEqual("expected failure", ex.Message)
+    Assert.AreEqual("expected failure", msg)
     
 [<Test>]
 let ``A failing koan returns a failure message`` () =

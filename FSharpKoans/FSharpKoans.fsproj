@@ -5,7 +5,7 @@
     <Name>FSharpKoans</Name>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="data\Simple.csv">
+    <Content Include="data\Stocks.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="AboutTypeProviders.fs" />
