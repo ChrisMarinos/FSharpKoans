@@ -31,17 +31,17 @@ module ``about modules`` =
     [<Koan>]
     let ModulesCanContainValuesAndTypes() =
 
-        AssertEquality MushroomKingdom.Mario.Name "Mario"
-        AssertEquality MushroomKingdom.Mario.Occupation "Plumber"
+        AssertEquality MushroomKingdom.Mario.Name __
+        AssertEquality MushroomKingdom.Mario.Occupation __
         
         let moduleType = MushroomKingdom.Mario.GetType()
-        AssertEquality moduleType typeof<MushroomKingdom.Character>
+        AssertEquality moduleType typeof<FILL_ME_IN>
 
     [<Koan>]
     let ModulesCanContainFunctions() =
         let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
 
-        AssertEquality superMario.Power (Some MushroomKingdom.Power.Mushroom)
+        AssertEquality superMario.Power __
 
 (* NOTE: In previous sections, you've seen modules like List and Option that 
          contain useful functions for dealing with List types and Option types
@@ -53,6 +53,6 @@ open MushroomKingdom
 module ``about opened modules`` =
     [<Koan>]
     let OpenedModulesBringTheirContentsInScope() = 
-        AssertEquality Mario.Name "Mario"
-        AssertEquality Mario.Occupation "Plumber"
-        AssertEquality Mario.Power None
+        AssertEquality Mario.Name __
+        AssertEquality Mario.Occupation __
+        AssertEquality Mario.Power __

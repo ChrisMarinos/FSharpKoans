@@ -31,7 +31,7 @@ module ``about filtering`` =
             names
             |> List.filter (fun name -> name.StartsWith( "A" ))
      
-        AssertEquality actual_names [ "Alice" ]
+        AssertEquality actual_names [ __ ]
 
         //Or passing a function to filter
         let startsWithTheLetterB (s: string) =
@@ -41,18 +41,18 @@ module ``about filtering`` =
             names
             |> List.filter startsWithTheLetterB
 
-        AssertEquality namesBeginningWithB [ "Bob" ]
+        AssertEquality namesBeginningWithB [ __ ]
 
     [<Koan>]
     let FindingJustOneItem() =
-        let names = [ "Alice"; "Bob"; "Eve" ]
+        let names = [ "Alice"; "Bob"; "Eve"; ]
         let expected_name = "Bob"
                 
         // find will return just one item, or throws an exception
 
         let actual_name = 
             names
-            |> List.find (fun name -> name = "Bob" )
+            |> List.find (fun name -> name = __ )
             
         //??? What would happen if there are 2 Bobs in the List?
 
@@ -70,8 +70,8 @@ module ``about filtering`` =
             names
             |> List.tryFind (fun name -> name = "Zelda" )
             
-        AssertEquality eve.IsSome true
-        AssertEquality zelda.IsSome false
+        AssertEquality eve.IsSome __
+        AssertEquality zelda.IsSome __
 
     [<Koan>]
     let ChoosingItemsFromAList() =
@@ -83,7 +83,7 @@ module ``about filtering`` =
             numbers
             |> List.choose someIfEven
 
-        AssertEquality evenNumbers  [ 2 ]
+        AssertEquality evenNumbers  [ __ ]
 
         //You can also use the "id" function on types of 'a option list 
         //"id" will return just those that are "Some"
@@ -94,7 +94,7 @@ module ``about filtering`` =
             |> List.choose id
 
         //Notice the type of namesWithValue is 'string list', whereas optionNames is 'string option list'
-        AssertEquality namesWithValue [ "Alice" ]
+        AssertEquality namesWithValue [ __ ]
 
     [<Koan>]
     let PickingItemsFromAList() =
@@ -106,7 +106,7 @@ module ``about filtering`` =
             numbers
             |> List.pick someIfEven
 
-        AssertEquality firstEven 6
+        AssertEquality firstEven __
 
         //As with choose, you can also use the "id" function on types of 'a option list 
         //to return just those that are "Some"
@@ -116,6 +116,6 @@ module ``about filtering`` =
             optionNames
             |> List.pick id
 
-        AssertEquality firstNameWithValue  "Alice"
+        AssertEquality firstNameWithValue  __
 
         //There is also a tryPick which works like tryFind, returning "None" instead of throwing an exception.

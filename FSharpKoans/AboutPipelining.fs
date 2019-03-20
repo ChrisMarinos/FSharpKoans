@@ -1,13 +1,13 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
 
-//---------------------------------------------------------------
+//----------------------------------------------------------------
 // About Pipelining
 //
 // The forward pipe operator is one of the most commonly used
-// symbols in F# programming. You can use it combine operations
+// symbols in F# programming. You can use it to combine operations
 // on lists and other data structures in a readable way.
-//---------------------------------------------------------------
+//----------------------------------------------------------------
 [<Koan(Sort = 10)>]
 module ``about pipelining`` =
 
@@ -27,7 +27,7 @@ module ``about pipelining`` =
         let evens = List.filter isEven numbers
         let result = List.map square evens
 
-        AssertEquality result [0; 4; 16]
+        AssertEquality result __
 
     [<Koan>]
     let SquareEvenNumbersWithParens() =
@@ -39,7 +39,7 @@ module ``about pipelining`` =
 
         let result = List.map square (List.filter isEven numbers)
 
-        AssertEquality result [0; 4; 16]
+        AssertEquality result __
 
     [<Koan>]
     let SquareEvenNumbersWithPipelineOperator() =
@@ -51,7 +51,7 @@ module ``about pipelining`` =
             |> List.filter isEven
             |> List.map square
         
-        AssertEquality result [0; 4; 16]
+        AssertEquality result __
 
     [<Koan>]
     let HowThePipeOperatorIsDefined() =
@@ -63,4 +63,4 @@ module ``about pipelining`` =
             |> List.filter isEven
             |> List.map square
 
-        AssertEquality result [0; 4; 16]
+        AssertEquality result __

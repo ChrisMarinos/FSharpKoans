@@ -58,30 +58,8 @@ module ``about the stock example`` =
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
 
-    let splitOnComma (x:string) = 
-        x.Split([|','|])
-
-    let parseD (x:string) =
-        System.Convert.ToDouble x
-
-    let getDiffAndDateFromValues (x:string[]) = 
-        match x with 
-        | [| date; openS; high; low; closeS; volume; adjClose |] ->
-            let diff = abs ((parseD openS) - (parseD closeS))
-            (date, diff)
-        | _ -> failwith "Input array size is not 7 elements!"
-
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let rawData = stockData |> Seq.skip 1
-
-        let resDate, _ = 
-            stockData 
-            |> Seq.skip 1
-            |> Seq.map (splitOnComma >> getDiffAndDateFromValues)
-            |> Seq.sortByDescending (fun (d, m) -> m)
-            |> Seq.head
-            
-        let result =  resDate
+        let result =  __
         
         AssertEquality "2012-03-13" result

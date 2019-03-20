@@ -20,7 +20,7 @@ module ``more about functions`` =
             colors
             |> List.map (fun x -> x + " " + x)
 
-        AssertEquality echo ["maize maize"; "blue blue"]
+        AssertEquality echo __
 
         (* The fun keyword allows you to create a function inline without giving
            it a name. These functions are known as anonymous functions, lambdas,
@@ -36,14 +36,14 @@ module ``more about functions`` =
         (* F#'s lightweight syntax allows you to call both functions as if there
            was only one *)
         let simpleResult = add 2 4
-        AssertEquality simpleResult 6
+        AssertEquality simpleResult __
 
         (* ...but you can also pass only one argument at a time to create
            residual functions. This technique is known as partial application. *)
         let addTen = add 10
         let fancyResult = addTen 14
 
-        AssertEquality fancyResult 24
+        AssertEquality fancyResult __
 
         //NOTE: Functions written in this style are said to be curried.
 
@@ -58,8 +58,8 @@ module ``more about functions`` =
         let unluckyNumber = addSeven 6
         let luckyNumber = addSeven 0
 
-        AssertEquality unluckyNumber 13
-        AssertEquality luckyNumber 7
+        AssertEquality unluckyNumber __
+        AssertEquality luckyNumber __
 
     [<Koan>]
     let NonCurriedFunctions() =
@@ -76,7 +76,7 @@ module ``more about functions`` =
 
         let result = add(5, 40)
 
-        AssertEquality result 45
+        AssertEquality result __
 
         (* THINK ABOUT IT: You learned earlier that functions with multiple 
                            return values are really just functions that return
