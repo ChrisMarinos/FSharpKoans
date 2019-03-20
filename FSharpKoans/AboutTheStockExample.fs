@@ -27,6 +27,7 @@ open FSharpKoans.Core
 //---------------------------------------------------------------
 [<Koan(Sort = 15)>]
 module ``about the stock example`` =
+    open System.Globalization
     
     let stockData =
         [ "Date,Open,High,Low,Close,Volume,Adj Close";
@@ -58,8 +59,29 @@ module ``about the stock example`` =
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
 
+    type Row = {date:string; opening:float; closing:float;}
+
+    let splitCommas (x:string) = x.Split([|','|])
+
+    let parseAmount x = System.Double.Parse(x, CultureInfo.InvariantCulture)
+
+    let parseRow (x:string[])  =
+         { date= x.[0]; opening = parseAmount x.[1]; closing= parseAmount x.[4];}
+
+    let change r = 
+        abs(r.closing - r.opening)
+
+    let getDate r =
+        r.date
+
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
+        let result =  
+            stockData 
+            |> Seq.skip 1 
+            |> Seq.map (fun x-> x.Split([|','|]))
+            |> Seq.map (fun x-> { date= x.[0]; opening = parseAmount x.[1]; closing= parseAmount x.[4];})
+            |> Seq.maxBy (fun r-> abs(r.closing - r.opening))
+            |> (fun r-> r.date)
         
         AssertEquality "2012-03-13" result

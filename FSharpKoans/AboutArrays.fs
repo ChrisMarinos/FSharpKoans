@@ -12,9 +12,9 @@ module ``about arrays`` =
     let CreatingArrays() =
         let fruits = [| "apple"; "pear"; "peach"|]
 
-        AssertEquality fruits.[0] __
-        AssertEquality fruits.[1] __
-        AssertEquality fruits.[2] __
+        AssertEquality fruits.[0] "apple"
+        AssertEquality fruits.[1] "pear"
+        AssertEquality fruits.[2] "peach"
 
     [<Koan>]
     let ArraysAreDotNetArrays() =
@@ -32,7 +32,7 @@ module ``about arrays`` =
         let fruits = [| "apple"; "pear" |]
         fruits.[1] <- "peach"
 
-        AssertEquality fruits __
+        AssertEquality fruits [| "apple"; "peach" |]
 
     [<Koan>]
     let YouCanCreateArraysWithComprehensions() =
@@ -40,7 +40,7 @@ module ``about arrays`` =
             [| for i in 0..10 do 
                    if i % 2 = 0 then yield i |]
 
-        AssertEquality numbers __
+        AssertEquality numbers [|0;2;4;6;8;10 |]
 
     [<Koan>]
     let ThereAreAlsoSomeOperationsYouCanPerformOnArrays() =
@@ -50,5 +50,5 @@ module ``about arrays`` =
         let original = [| 0..5 |]
         let result = Array.map cube original
 
-        AssertEquality original __
-        AssertEquality result __
+        AssertEquality original [|0;1;2;3;4;5|]
+        AssertEquality result [|0;1;8;27;64;125|]
