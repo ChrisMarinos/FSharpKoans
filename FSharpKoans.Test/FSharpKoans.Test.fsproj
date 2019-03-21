@@ -3,6 +3,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <Name>FSharpKoans.Test</Name>
+    <IsTestProject>true</IsTestProject>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="FindingKoans.fs" />
@@ -10,7 +11,9 @@
     <Compile Include="GettingTheWholeOutput.fs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.SDK" Version="16.0.1" />
     <PackageReference Include="NUnit" Version="3.8.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FSharpKoans.Core\FSharpKoans.Core.fsproj" />
