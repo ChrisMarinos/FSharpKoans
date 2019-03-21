@@ -25,7 +25,7 @@ type KoanRunner(containers) =
         let lineOne = sprintf "%s:" name
 
         container |> KoanContainer.runKoans
-        |> Seq.scan (buildKoanResult "%s\n    %s") (Success lineOne)
+        |> Seq.scan (buildKoanResult "%s\r\n    %s") (Success lineOne)
         |> findFailureOrLastResult
 
     new () =
@@ -41,9 +41,9 @@ type KoanRunner(containers) =
         let result = 
             containers
             |> Seq.map getContainerResult
-            |> Seq.scan (buildKoanResult "%s\n\n%s") (Success "")
+            |> Seq.scan (buildKoanResult "%s\r\n\r\n%s") (Success "")
             |> findFailureOrLastResult
 
         match result with
-        | Success m -> Success (m.Replace("\n", Environment.NewLine))
-        | Failure (m, e) -> Failure (m.Replace("\n", Environment.NewLine), e)
+        | Success m -> Success (m) //m.Replace("\n", Environment.NewLine))
+        | Failure (m, e) -> Failure (m, e) //(m.Replace("\n", Environment.NewLine), e)
