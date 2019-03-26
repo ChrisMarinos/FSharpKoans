@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 open NUnit.Framework
+open FsUnitTyped
 
 (*
 In F#, we tend to use options instead of exceptions for error-handling.
@@ -93,6 +94,6 @@ module ``11: Exploring types, options, and results`` =
             | _ ->
                 // 'sqrt' is the square-root function
                 __ (sqrt n / m)
-        f -6.0 2.5 |> should equal __
-        f 144.0 2.0 |> should equal (Ok 6.0)
-        f 7.3 0.0 |> should equal (Error DivisionByZero)
+        f -6.0 2.5 |> shouldEqual __
+        f 144.0 2.0 |> shouldEqual (Ok 6.0)
+        f 7.3 0.0 |> shouldEqual (Error DivisionByZero)
