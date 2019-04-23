@@ -13,6 +13,12 @@ koans will be very simple, so don't overthink them! As you progress through
 more koans, more and more F# syntax will be introduced which will allow
 you to solve more complicated problems and use more advanced techniques.
 
+### Running with Docker
+
+To launch in watch mode using docker run the following command;
+
+`$ ./docker.sh`
+
 ### Prerequisites
 
 The F# Koans needs [.Net Core 2.0](https://www.microsoft.com/net/download/core) to be built and run,
