@@ -5,11 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": ".NET Core Launch Koans tests (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/FSharpKoans.Test/bin/Debug/netcoreapp3.0/FSharpKoans.Test.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
             "name": "Launch Koans (.Net Core, Console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/FSharpKoans/bin/Debug/netcoreapp2.0/FSharpKoans.dll",
+            "program": "${workspaceRoot}/FSharpKoans/bin/Debug/netcoreapp3.0/FSharpKoans.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,

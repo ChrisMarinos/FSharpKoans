@@ -2,3 +2,5 @@
 [Oo]bj/
 *.suo
 packages/
+.ionide/
+.idea/
