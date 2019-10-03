@@ -5,8 +5,6 @@ open FSharpKoans.Core.KoanContainer
 
 open NUnit.Framework
 
-open System.IO
-    
 type TestContainer() =
     [<Koan>]
     static member Koan1 () =

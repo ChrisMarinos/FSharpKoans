@@ -1,7 +1,6 @@
 ﻿module FSharpKoans.Core.KoanContainer
 
 open System
-open System.IO
 open System.Reflection
 
 let hasKoanAttribute (info:MethodInfo) =

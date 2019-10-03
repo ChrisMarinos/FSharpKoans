@@ -1,6 +1,6 @@
 ﻿namespace FSharpKoans
+
 open FSharpKoans.Core
-open Microsoft.FSharp.Reflection
 
 //---------------------------------------------------------------
 // About Unit
