@@ -26,7 +26,7 @@ make sure that you have installed it before building the project.
 
 Additionally, the project provides [Visual Studio Code](https://code.visualstudio.com/) configuration for running.
 To be able to run F# projects in Visual Studio Code, the
-[ionide plugin](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) should be also installed.
+[Ionide plugin](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) should be also installed.
 
 ### Running the Koans from the command line (.Net Core)
 
