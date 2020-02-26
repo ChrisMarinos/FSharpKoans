@@ -5,6 +5,10 @@
     <Name>FSharpKoans</Name>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="data\Stocks.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="AboutTypeProviders.fs" />
     <Compile Include="AboutAsserts.fs" />
     <Compile Include="AboutLet.fs" />
     <Compile Include="AboutFunctions.fs" />
@@ -27,6 +31,9 @@
     <Compile Include="AboutClasses.fs" />
     <Compile Include="AboutFiltering.fs" />
     <Compile Include="PathToEnlightenment.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data" Version="3.0.0-beta4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FSharpKoans.Core\FSharpKoans.Core.fsproj" />

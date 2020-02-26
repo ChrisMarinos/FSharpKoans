@@ -1,4 +1,5 @@
-﻿open FSharpKoans
+﻿open System
+open FSharpKoans
 open FSharpKoans.Core
 
 let runner = KoanRunner()
@@ -13,11 +14,19 @@ match result with
     printfn ""
     printfn ""
     printfn "You have not yet reached enlightenment ..."
-    printfn "%s" ex.Message
+    printfn "%s" 
+        (match ex with
+        | None -> "No error message could be found!"
+        | Some(ex) -> ex.Message)
     printfn ""
     printfn "Please meditate on the following code:"
-    printfn "%s" ex.StackTrace
-    
+    printfn ""
+    printfn "%s" 
+        (match ex with
+        | None -> "No stack trace could be found!"
+        | Some(ex) -> ex.StackTrace)
+    Environment.ExitCode <- 1
+
 printfn ""
 printfn ""
 printfn ""

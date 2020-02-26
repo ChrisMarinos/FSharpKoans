@@ -21,7 +21,12 @@ let runKoans container =
         with
         | ex -> 
             let outcome = sprintf "%s failed." m.Name
-            Failure(outcome, ex.InnerException)
+            let ex = 
+                match ex.InnerException with
+                | null -> Some(ex)
+                | _ -> Some(ex.InnerException)
+
+            Failure(outcome, ex)
         
     container
     |> findKoanMethods

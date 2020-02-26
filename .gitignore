@@ -2,3 +2,6 @@
 [Oo]bj/
 *.suo
 packages/
+.vs/
+*.DS_Store
+*.user
