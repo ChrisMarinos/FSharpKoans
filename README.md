@@ -21,8 +21,7 @@ To launch in watch mode using docker run the following command;
 
 ### Prerequisites
 
-The F# Koans needs [.Net Core 2.0](https://www.microsoft.com/net/download/core) or [.Net Core 3.0](https://www.microsoft.com/net/download/core) to be built and run,
-make sure that you have installed it before building the project.
+The F# Koans needs [.Net Core 3.1](https://www.microsoft.com/net/download/core) to be built and run. Make sure that you have installed it before building the project. This is the long-term servicing release of .NET Core that many modern F# and .NET applications use.
 
 Additionally, the project provides [Visual Studio Code](https://code.visualstudio.com/) configuration for running.
 To be able to run F# projects in Visual Studio Code, the
@@ -32,8 +31,7 @@ To be able to run F# projects in Visual Studio Code, the
 
 1. To build the Koans, run `dotnet build` command in the project root.
 
-2. To run the Koans, run `dotnet run -p FSharpKoans/FSharpKoans.fsproj --framework netcoreapp2.0` or `dotnet run -p FSharpKoans/FSharpKoans.fsproj --framework netcoreapp3.0` command in the project root
-or `dotnet run --framework netcoreapp2.0` or `dotnet run --framework netcoreapp3.0` in `FSharpKoans` project directory.
+2. To run the Koans, run `dotnet run -p FSharpKoans/FSharpKoans.fsproj` in the root directory or `dotnet run` in `FSharpKoans` project directory.
 
 ### Running the Koans in Visual Studio Code
 
@@ -43,5 +41,4 @@ and press F5 to build and launch the Koans (require some time to build the proje
 ### Using dotnet-watch
 
 You can also use [dotnet-watch](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/dotnet-watch.md) to have your changes reloaded automatically.
-To do so, navigate into `FSharpKoans` directory and run `dotnet watch run --framework netcoreapp2.0` or `dotnet watch run --framework netcoreapp3.0`.
-Now, after you change the project code, it will be automatically reloaded and tests rerun.
+To do so, navigate into `FSharpKoans` directory and run `dotnet watch run`. Now, after you change the project code, it will be automatically reloaded and tests rerun.
