@@ -33,7 +33,7 @@ module ``about tuples`` =
            tuples containing two elements. It's usually better to use a 
            technique called pattern matching to access the values of a tuple. 
            
-           Pattern matching works with tuples of any arity, and it allows you to 
+           Pattern matching works with tuples of any varity, and it allows you to 
            simultaneously break apart the tuple while assigning a name to each 
            value. Here's an example. *)
         
