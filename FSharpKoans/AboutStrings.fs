@@ -46,7 +46,7 @@ module ``about strings`` =
         AssertEquality message __
 
     (* NOTE: For all the %formatters that you can use with string formatting 
-             see: http://msdn.microsoft.com/en-us/library/ee370560.aspx *)
+             see: https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/plaintext-formatting *)
 
     [<Koan>]
     let CombineMultiline() =
