@@ -66,6 +66,6 @@ module ``about option types`` =
             game.Score
             |> Option.map (fun score -> if score > 3 then "play it" else "don't play")
 
-        //HINT: look at the return type of the decide on function
+        //HINT: look at the return type of the decideOn function
         AssertEquality (decideOn chronoTrigger) __
         AssertEquality (decideOn halo) __
