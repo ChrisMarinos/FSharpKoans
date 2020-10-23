@@ -124,4 +124,4 @@ module ``about lists`` =
 
     (* Note: There are many other useful methods in the List module. Check them
        via intellisense in Visual Studio by typing '.' after List, or online at
-       http://msdn.microsoft.com/en-us/library/ee353738.aspx *)
+       https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/lists *)
