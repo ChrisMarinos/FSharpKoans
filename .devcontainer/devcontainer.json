@@ -1,0 +1,9 @@
+{
+    "name": "F# Koans",
+    "image": "mcr.microsoft.com/vscode/devcontainers/dotnetcore:0-5.0",
+    "extensions": [
+        "Ionide.Ionide-fsharp",
+        "ms-dotnettools.csharp"
+    ],
+    "remoteUser": "vscode"
+}

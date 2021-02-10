@@ -21,7 +21,7 @@ To launch in watch mode using docker run the following command;
 
 ### Prerequisites
 
-The F# Koans needs [.Net Core 3.1](https://www.microsoft.com/net/download/core) to be built and run. Make sure that you have installed it before building the project. This is the long-term servicing release of .NET Core that many modern F# and .NET applications use.
+The F# Koans needs [.Net 5.0](https://www.microsoft.com/net/download/core) to be built and run. Make sure that you have installed it before building the project. This is the current release of .NET Core that many modern F# and .NET applications use.
 
 Additionally, the project provides [Visual Studio Code](https://code.visualstudio.com/) configuration for running.
 To be able to run F# projects in Visual Studio Code, the
@@ -37,6 +37,14 @@ To be able to run F# projects in Visual Studio Code, the
 
 1. Open the project directory in Visual Studio Code with Ionide-fharp plugin installed
 and press F5 to build and launch the Koans (require some time to build the project before launch).
+
+### Running the Koans from a Devcontainer
+
+1. Install the Remote - Containers extension in Visual Studio Code.
+
+2. Open the directory inside a Devcontainer.
+
+3. Open a terminal and start using the Koans.
 
 ### Using dotnet-watch
 
