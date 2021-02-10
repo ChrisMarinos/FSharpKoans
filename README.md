@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ChrisMarinos/FSharpKoans)
+
 # Functional Koans - F# #
 
 Inspired by EdgeCase's fantastic [Ruby koans](http://github.com/edgecase/ruby_koans),
