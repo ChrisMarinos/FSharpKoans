@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/FSharpKoans/bin/Debug/netcoreapp3.1/FSharpKoans.dll",
+            "program": "${workspaceRoot}/FSharpKoans/bin/Debug/net5.0/FSharpKoans.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
