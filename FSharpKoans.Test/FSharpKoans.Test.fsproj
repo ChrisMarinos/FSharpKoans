@@ -8,11 +8,14 @@
     <Compile Include="FindingKoans.fs" />
     <Compile Include="RunningKoans.fs" />
     <Compile Include="GettingTheWholeOutput.fs" />
+    <Compile Include="RomanNumerals.fs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="NUnit" Version="3.8.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FSharpKoans.Core\FSharpKoans.Core.fsproj" />
+    <ProjectReference Include="..\FSharpKoans\FSharpKoans.fsproj" />
   </ItemGroup>
 </Project>

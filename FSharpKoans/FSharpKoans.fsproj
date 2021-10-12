@@ -26,7 +26,7 @@
     <Compile Include="AboutModules.fs" />
     <Compile Include="AboutClasses.fs" />
     <Compile Include="AboutFiltering.fs" />
-    <Compile Include="PathToEnlightenment.fs" />
+    <Compile Include="RomanNumerals.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FSharpKoans.Core\FSharpKoans.Core.fsproj" />
