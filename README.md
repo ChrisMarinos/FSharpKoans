@@ -13,6 +13,10 @@ koans will be very simple, so don't overthink them! As you progress through
 more koans, more and more F# syntax will be introduced which will allow
 you to solve more complicated problems and use more advanced techniques.
 
+### Running with GitHub Codespaces
+[GitHub Codespaces](https://github.com/features/codespaces) is a free platform to run F# Koans completely in your browser, no install or setup required! Just go
+to https://github.com/ChrisMarinos/FSharpKoans/codespaces and click "New CodeSpace"
+
 ### Running with Docker
 
 To launch in watch mode using docker run the following command;
