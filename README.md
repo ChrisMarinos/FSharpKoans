@@ -37,7 +37,7 @@ To be able to run F# projects in Visual Studio Code, the
 
 1. To build the Koans, run `dotnet build` command in the project root.
 
-2. To run the Koans, run `dotnet run -p FSharpKoans/FSharpKoans.fsproj` in the root directory or `dotnet run` in `FSharpKoans` project directory.
+2. To run the Koans, run `dotnet run --project FSharpKoans/FSharpKoans.fsproj` in the root directory or `dotnet run` in `FSharpKoans` project directory.
 
 ### Running the Koans in Visual Studio Code
 
