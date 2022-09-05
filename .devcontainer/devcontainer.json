@@ -4,6 +4,5 @@
     "extensions": [
         "Ionide.Ionide-fsharp",
         "ms-dotnettools.csharp"
-    ],
-    "remoteUser": "vscode"
+    ]
 }
