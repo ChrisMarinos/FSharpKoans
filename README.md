@@ -27,7 +27,7 @@ To launch in watch mode using docker run the following command;
 
 ### Prerequisites
 
-The F# Koans needs [.Net 5.0](https://www.microsoft.com/net/download/core) to be built and run. Make sure that you have installed it before building the project. This is the current release of .NET Core that many modern F# and .NET applications use.
+The F# Koans needs [.NET 6.0](https://dotnet.microsoft.com/download) to be built and run. Make sure that you have installed it before building the project. This is the long-term support release of .NET that many modern F# and .NET applications use.
 
 Additionally, the project provides [Visual Studio Code](https://code.visualstudio.com/) configuration for running.
 To be able to run F# projects in Visual Studio Code, the
