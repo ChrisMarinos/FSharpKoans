@@ -55,7 +55,7 @@ module ``about branching`` =
         let getDinner x = 
             let name, foodChoice = x
             
-            if foodChoice = "veggies" || foodChoice ="fish" || 
+            if foodChoice = "veggies" || foodChoice = "fish" || 
                foodChoice = "chicken" then
                 sprintf "%s doesn't want red meat" name
             else
